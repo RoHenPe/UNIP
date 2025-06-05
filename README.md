@@ -1,3 +1,3 @@
-# Meus Projetos da Universidade Paulista (UNIP) - Rodrigo Pereira
+# Meus Projetos da (UNIP)
 
 
