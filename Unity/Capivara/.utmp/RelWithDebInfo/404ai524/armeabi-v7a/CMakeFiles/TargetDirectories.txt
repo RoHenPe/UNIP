@@ -1,0 +1,5 @@
+I:/Capivara/.utmp/RelWithDebInfo/404ai524/armeabi-v7a/CMakeFiles/edit_cache.dir
+I:/Capivara/.utmp/RelWithDebInfo/404ai524/armeabi-v7a/CMakeFiles/rebuild_cache.dir
+I:/Capivara/.utmp/RelWithDebInfo/404ai524/armeabi-v7a/FramePacing/CMakeFiles/swappywrapper.dir
+I:/Capivara/.utmp/RelWithDebInfo/404ai524/armeabi-v7a/FramePacing/CMakeFiles/edit_cache.dir
+I:/Capivara/.utmp/RelWithDebInfo/404ai524/armeabi-v7a/FramePacing/CMakeFiles/rebuild_cache.dir

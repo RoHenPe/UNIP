@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1005710980380",
+    "project_id": "unipunitygame",
+    "storage_bucket": "unipunitygame.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1005710980380:android:14b3aa243d798d6414b6d9",
+        "android_client_info": {
+          "package_name": "com.unip.capacity"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCm7H782n14LS46BkwICHQtUl5dEXexlkc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

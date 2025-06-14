@@ -1,0 +1,4 @@
+repository "Capivara@Aps_unip@cloud"
+  path "/"
+    br "/main"
+    co "/main"
