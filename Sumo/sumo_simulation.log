@@ -1,0 +1,123 @@
+SUMO_HOME configurado: C:\Users\RoHenPer\Desktop\SUMO\
+Iniciando sistema de controle de tráfego inteligente
+Simulação iniciada com sucesso
+Rotas disponíveis: ['R_H_A0_D0', 'R_H_A1_D1', 'R_H_A2_D2', 'R_H_A3_D3', 'R_H_D0_A0', 'R_H_D1_A1', 'R_H_D2_A2', 'R_H_D3_A3', 'R_Loop_Inner_B1C1C2B2_CW', 'R_Loop_Outer_CW', 'R_V_A0_A3', 'R_V_A3_A0', 'R_V_B0_B3', 'R_V_B3_B0', 'R_V_C0_C3', 'R_V_C3_C0', 'R_V_D0_D3', 'R_V_D3_D0']
+Controlador iniciado para TLS A1: Fases verdes=[0, 2]
+Controlador ativo para A1
+Controlador iniciado para TLS A2: Fases verdes=[0, 2]
+Controlador ativo para A2
+Controlador iniciado para TLS B0: Fases verdes=[0, 2]
+Controlador ativo para B0
+Controlador iniciado para TLS B1: Fases verdes=[2, 4]
+Controlador ativo para B1
+Controlador iniciado para TLS B2: Fases verdes=[2, 4]
+Controlador ativo para B2
+Controlador iniciado para TLS B3: Fases verdes=[0, 2]
+Controlador ativo para B3
+Controlador iniciado para TLS C0: Fases verdes=[0, 2]
+Controlador ativo para C0
+Controlador iniciado para TLS C1: Fases verdes=[2, 4]
+Controlador ativo para C1
+Controlador iniciado para TLS C2: Fases verdes=[2, 4]
+Controlador ativo para C2
+Controlador iniciado para TLS C3: Fases verdes=[0, 2]
+Controlador ativo para C3
+Controlador iniciado para TLS D1: Fases verdes=[0, 2]
+Controlador ativo para D1
+Controlador iniciado para TLS D2: Fases verdes=[0, 2]
+Controlador ativo para D2
+Sistema iniciado com 12 controladores
+TLS:B1 @300s Fase:3, Tempo:280s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @300s Fase:3, Tempo:270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @300s Fase:3, Tempo:280s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @300s Fase:3, Tempo:270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @300s Fase:3, Tempo:270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @300s Fase:5, Tempo:270s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 300/3600 - Veículos: 29
+TLS:B1 @600s Fase:3, Tempo:580s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @600s Fase:3, Tempo:570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @600s Fase:3, Tempo:580s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @600s Fase:3, Tempo:570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @600s Fase:3, Tempo:570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @600s Fase:5, Tempo:570s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 600/3600 - Veículos: 26
+TLS:B1 @900s Fase:3, Tempo:880s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @900s Fase:3, Tempo:870s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @900s Fase:3, Tempo:880s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @900s Fase:3, Tempo:870s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @900s Fase:3, Tempo:870s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @900s Fase:5, Tempo:870s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 900/3600 - Veículos: 29
+TLS:B1 @1200s Fase:3, Tempo:1180s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @1200s Fase:3, Tempo:1170s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @1200s Fase:3, Tempo:1180s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @1200s Fase:3, Tempo:1170s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @1200s Fase:3, Tempo:1170s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @1200s Fase:5, Tempo:1170s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 1200/3600 - Veículos: 33
+TLS:B1 @1500s Fase:3, Tempo:1480s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @1500s Fase:3, Tempo:1470s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @1500s Fase:3, Tempo:1480s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @1500s Fase:3, Tempo:1470s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @1500s Fase:3, Tempo:1470s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @1500s Fase:5, Tempo:1470s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 1500/3600 - Veículos: 37
+TLS:B1 @1800s Fase:3, Tempo:1780s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @1800s Fase:3, Tempo:1770s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @1800s Fase:3, Tempo:1780s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @1800s Fase:3, Tempo:1770s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @1800s Fase:3, Tempo:1770s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @1800s Fase:5, Tempo:1770s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 1800/3600 - Veículos: 39
+TLS:B1 @2100s Fase:3, Tempo:2080s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @2100s Fase:3, Tempo:2070s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @2100s Fase:3, Tempo:2080s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @2100s Fase:3, Tempo:2070s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @2100s Fase:3, Tempo:2070s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @2100s Fase:5, Tempo:2070s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 2100/3600 - Veículos: 42
+TLS:B1 @2400s Fase:3, Tempo:2380s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @2400s Fase:3, Tempo:2370s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @2400s Fase:3, Tempo:2380s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @2400s Fase:3, Tempo:2370s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @2400s Fase:3, Tempo:2370s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @2400s Fase:5, Tempo:2370s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 2400/3600 - Veículos: 47
+TLS:B1 @2700s Fase:3, Tempo:2680s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @2700s Fase:3, Tempo:2670s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @2700s Fase:3, Tempo:2680s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @2700s Fase:3, Tempo:2670s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @2700s Fase:3, Tempo:2670s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @2700s Fase:5, Tempo:2670s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 2700/3600 - Veículos: 48
+TLS:B1 @3000s Fase:3, Tempo:2980s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @3000s Fase:3, Tempo:2970s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @3000s Fase:3, Tempo:2980s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @3000s Fase:3, Tempo:2970s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @3000s Fase:3, Tempo:2970s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @3000s Fase:5, Tempo:2970s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 3000/3600 - Veículos: 51
+TLS:B1 @3300s Fase:3, Tempo:3280s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @3300s Fase:3, Tempo:3270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @3300s Fase:3, Tempo:3280s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @3300s Fase:3, Tempo:3270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @3300s Fase:3, Tempo:3270s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @3300s Fase:5, Tempo:3270s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 3300/3600 - Veículos: 54
+TLS:B1 @3600s Fase:3, Tempo:3580s, Filas: [N:0, S:0, E:0, W:0]
+TLS:B2 @3600s Fase:3, Tempo:3570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C1 @3600s Fase:3, Tempo:3580s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C2 @3600s Fase:3, Tempo:3570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:C3 @3600s Fase:3, Tempo:3570s, Filas: [N:0, S:0, E:0, W:0]
+TLS:D2 @3600s Fase:5, Tempo:3570s, Filas: [N:0, S:0, E:0, W:0]
+Passo: 3600/3600 - Veículos: 55
+Simulação em 3600 passos. Continuar? (s/n): Simulação interrompida pelo usuário
+Conexão com SUMO encerrada
+Dados salvos em dashboard_output\simulation_dashboard_data.json
+
+=== RESUMO DA SIMULAÇÃO ===
+Passos simulados: 3600
+Veículos atendidos: 26
+CO2 total emitido: 41872.54 kg
+Tempo total perdido: 5128.41 horas
+Simulação finalizada
