@@ -48,45 +48,428 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Simgle\Player.cs" />
-    <Compile Include="Assets\Scripts\Home\MudoSom.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UTF8ArrayUnsafeUtility.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeParallelHashSet.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\ImageTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_CharacterInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt4x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeParallelMultiHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeStream.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\LayoutGroupScaling.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\FontFeatureCommonGSUB.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeNotBurstCompatible.cs" />
     <Compile Include="Assets\Scripts\Friends\GameSession.cs" />
-    <Compile Include="Assets\Scripts\Cutscene\PularCena.cs" />
-    <Compile Include="Assets\Scripts\Shared\ParallaxChao.cs" />
-    <Compile Include="Assets\Scripts\Friends\GameManengerMult.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\CollectionHelper.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\ExceptionUtils.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\TextEditor\TextEditorBackspaceDelete.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Button\ButtonTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\InputField\DesktopInputFieldTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollRect\ScrollRectScale.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ScrollbarEventHandler.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestMatrix.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\BridgeScriptForRetainingObjects.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\BenchmarkAllocator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat4x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CanvasResizeCorrectlyForRenderTexture.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SpriteAsset.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\DataStreamReader.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Memory.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TextMeshProUGUI.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\DoubleRewindableAllocators.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\DocCodeSamples.Tests\CollectionsAllocationExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TextMeshPro.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\ListPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\BenchmarkRunner.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\DragCallbackCheck.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\DataStreamWriter.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Slider\SliderTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Button\TestButton.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble4x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\NativeArraySortPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\UIBehaviourExtensions.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Toggle\ToggleGroupTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_DynamicFontAssetUtilities.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Asset.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Dropdown.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeReference.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint4x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\TestMath2.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\GenericContext.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool2x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat2x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint4x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\TestCompilerAttribute.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestAffineTransform.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\AddDynamicOffMeshLinkWorks.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\DataStreamExtensions.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble2x4.gen.cs" />
     <Compile Include="Assets\Scripts\Friends\Player2.cs" />
-    <Compile Include="Assets\Scripts\Home\MenuPrincipal.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SubMesh.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SpriteAnimator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextUtilities.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint2x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\ConcurrentMask.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeQueue.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceModifierVolumeTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeParallelHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.CodeGen\JobsILPostProcessor.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\StreamCompressionModel.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt2x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\PointerEnterCallbackCheck.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringInternalMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\AssemblyInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat3x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.CodeGen\UserError.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble4x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\BenchmarkGenerator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Jobs\RegisterGenericJobTypeAttribute.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\xxHash3.AVX2.cs" />
     <Compile Include="Assets\Scripts\Shared\Parallax.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint2x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat4x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Jobs\IJobFilter.cs" />
     <Compile Include="Assets\Scripts\Shared\Move.cs" />
-    <Compile Include="Assets\Scripts\Friends\FirebaseManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollBar\ScrollBarTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\PointerClickCallbackCheck.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestPlane.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Jobs\EarlyInitHelpers.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint4x3.gen.cs" />
     <Compile Include="Assets\Scripts\Shared\ContagemPontos.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeParallelHashSet.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_FontAssetCommon.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeParallelHashMapExtensions.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\FontFeatureCommonGPOS.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\NoActiveCameraInSceneDoesNotCrashEditor.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeRingQueue.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool3x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\MouseUpdate.cs" />
     <Compile Include="Assets\Scripts\Simgle\Spawner.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\MaskTests.cs" />
     <Compile Include="Assets\Scripts\Shared\Sair.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ColorGradient.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.Editor\JobsMenu.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SelectionCaret.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringAppendMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceModifierTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\TestRandom.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt3x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeText.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\TrackAssetExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\AspectRatioFitterTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_MeshInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_FontAsset.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.Editor\CLILeakDetectionSwitcher.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\ParallelHashSetPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt2x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool4x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\TimelineEditorExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Character.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble3x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\SiblingOrderChangesLayout.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\InputField\FakeInputModule.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_CoroutineTween.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Toggle\ToggleTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\NestedCanvasMaintainsCorrectSize.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\DocCodeSamples.Tests\CollectionsExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble4x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Jobs\IJobParallelForDefer.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeUtilityEx.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CheckMeshColorsAndColors32Match.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_UpdateRegistery.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\MarkdownBuilder.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollBar\ScrollBarClamp.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBitmanipulation.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CanvasSizeCorrectInAwakeAndStart.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\AgentCustomLinkMovement.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUtils.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\RectangleContainsScreenPointTest.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\FontFeatureCommon.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\BurstILPostProcessor.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\DebugView.cs" />
+    <Compile Include="Assets\Scripts\Friends\SpawnerMulti.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\BitField.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollRect\ScrollRectClamp.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\PhysicsRaycasterTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\ILPostProcessingLegacy.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint2x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\TextEditor\TextEditorTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\HashMapPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ObjectPool.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\RaycastSortingTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_FontAssetUtilities.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\RectMask2DReparentedToDifferentCanvas.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\ITextPreProcessor.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\AllocatorManager.cs" />
+    <Compile Include="Assets\My project\Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextProcessingCommon.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceBuildFromAwake.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeQueue.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\HelpUrls.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMPro_MeshUtilities.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint3x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeSort.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat4x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\BenchmarkContainer.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\NavMeshModifierVolume.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SpriteCharacter.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool4x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\GraphicRaycasterTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\CurrentNextOffMeshLinkData.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\GridLayoutGroupTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestMath.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestMath.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeParallelHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Image\ImageFilledGenerateWork.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble2x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestQuaternion.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\NavMeshSurface.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\NavMeshLink.deprecated.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool3x4.gen.cs" />
+    <Compile Include="Assets\Scripts\Home\MudoSom.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CoroutineWorksIfUIObjectIsAttached.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshLinkTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeScratchAllocator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\ConcreteGraphic.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\AgentVelocityTestAfterOffMeshLink.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\BenchmarkContainerParallel.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\NavMeshModifier.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\BenchmarkAttributes.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\AssemblyInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\QueuePerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextProcessingStack.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\ILPostProcessing.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeAppendBuffer.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_InputValidator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\AutoFreeAllocator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\MarkerEditorExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Compatibility.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CanvasScalerWithChildTextObjectDoesNotCrash.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\ArrayPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt4x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SubMeshUI.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_DefaultControls.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeParallelMultiHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\ToggleTestImageHook.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\UnsafeStreamPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\SceneSetup\SimpleScene2PlanesNavigationSetup.cs" />
+    <Compile Include="Assets\Scripts\Cutscene\PularCena.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringParseMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_RichTextTagsCommon.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestSvd.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\GenerateTestsForBurstCompatibilityAttribute.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestMinMaxAABB.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeNotBurstCompatible.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Image\TestableImage.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SpriteAssetImportFormats.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\ListExtensions.cs" />
+    <Compile Include="Assets\Scripts\Shared\ParallaxChao.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\GraphicTestHelper.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Text.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\AssemblyResolver.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\InputField\GenericInputFieldTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool2x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\ActionExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\RectTransformValidAfterEnable.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt3x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeStream.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_PackageResourceImporter.cs" />
+    <Compile Include="Assets\Scripts\Friends\GameManengerMult.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeAtomicCounter.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\GraphicTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble3x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\GraphicRaycasterWorldSpaceCanvasTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\ContentSizeFitterTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\InputField\TouchInputFieldTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\SceneSetup\PrebuiltSceneSetup.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeHashSet.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\NestedLayout\SceneWithNestedLayoutElementsLoadScript.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\BenchmarkReportData.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Toggle\TestableToggleGroup.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_MaterialManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_LineInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_UpdateManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Settings.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\RewindableAllocator.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeList.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\OffMeshLinkMultipleAddComponent.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\FastAction.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt2x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeArrayExtensions.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeHashSet.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\RingQueuePerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\FakeBaseInput.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\CecilExtensions.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.CodeGen\CecilExtensionMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeList.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringFormat.gen.cs" />
+    <Compile Include="Assets\Scripts\Home\MenuPrincipal.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_InputField.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Jobs\IJobParallelForBatch.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Image\ImageTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\HorizonalLayoutGroupTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceLinkTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CanvasSizeCorrectInAwakeAndStartScript.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\RectMask2DWithNestedCanvasCullsUsingCorrectCanvasRect.cs" />
+    <Compile Include="Assets\Scripts\Friends\FirebaseManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_SpriteGlyph.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\ParallelHashMapPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CanvasGroupInheritedAlpha.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\ImageHook.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollRect\ScrollRectStableLayout.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Dropdown\DropdownTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ListPool.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt4x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\SelectableTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\Physics2DRaycasterTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.Tests.Playmode\FixedListPlaymodeTests.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextParsingUtilities.cs" />
     <Compile Include="Assets\Scripts\Cutscene\VideoPlayerScript.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\InputField\InputFieldTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Util\PrivateFieldSetter.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextElement_Legacy.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\NavigationTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\LayoutGroup\LayoutGroupArrangement.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedString.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeParallelHashSetExtensions.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat2x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble3x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\NestedCanvas.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Sprite.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeHashMap.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint3x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Unicode.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\ScrollRect\ScrollRectTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\HashSetPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\QueueParallelPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringFormatMethods.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UIntFloat.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_TextElement.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\xxHash3.StreamingState.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_StyleSheet.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ShaderUtilities.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_FontFeaturesCommon.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_Style.cs" />
     <Compile Include="Assets\Scripts\Friends\Player1.cs" />
     <Compile Include="Assets\Scripts\Simgle\GameManenger.cs" />
-    <Compile Include="Assets\Scripts\Friends\SpawnerMulti.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\NavMeshLink.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeParallelHashSetExtensions.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.CodeGen\JobReflectionDataPostProcessor.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_ResourcesManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeBitArray.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\NestedLayout\SceneWithNestedLayoutElementsLoads.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\OffMeshLinkGetSetNavMeshArea.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\RawImageTestHook.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeText.gen.cs" />
     <Compile Include="Assets\Scripts\Friends\LobbyController.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMPro_EventManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat3x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\TimelineAttributesExamples.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\RewindableAllocatorPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\OffMeshLinkTestBase.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool2x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMPro_ExtensionMethods.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedStringUtils.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestRigidTransform.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestInt3x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\MaskClipping\RectMask2DClipping.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\SceneSetup\CurrentNextOffMeshLinkDataSetUp.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Layout\VerticalLayoutGroupTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\EventSystem\InputModuleTests\PointerExitCallbackCheck.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\FunctionPointerInvokeTransform.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestHalf.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\UnsafeRingQueue.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\NativeBitArray.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.PerformanceTesting.Benchmark\BenchmarkMeasure.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Canvas\CreateSceneUtility.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool4x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\FixedList.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestBool3x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\AssemblyInfo.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TMP_FontFeatureTable.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat3x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\TextContainer.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\MaterialReferenceManager.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\UnsafeListPerformanceTests.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestUint3x4.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\Graphic\RawImageTest.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\xxHash3.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestDouble2x2.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Tests\Shared\TestFloat2x3.gen.cs" />
+    <Compile Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\NavMeshSurfaceAgentTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.Cecil.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections\Unity.Collections.asmdef" />
     <None Include="Assets\Firebase\Plugins\Firebase.Analytics.dll" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppDatabase.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.render-pipelines.core\Shaders\CoreCopy.shader" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.CodeGen.asmdef" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Analytics.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ugui\Editor Resources\Shaders\TMP_SDF_SSD.cginc" />
     <None Include="Assets\Firebase\Plugins\Firebase.App.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.Mdb.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.Pdb.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.CodeGen\Unity.Collections.CodeGen.asmdef" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAnalytics.dll" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppAuth.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.Editor\Unity.Collections.Editor.asmdef" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ugui\Runtime\TMP\Unity.TextMeshPro.asmdef" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ext.nunit\net40\unity-custom\nunit.framework.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.TaskExtension.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ugui\Editor Resources\Shaders\TMP_Properties.cginc" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.timeline\DocCodeExamples\DocCodeExamples.asmdef" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-app-unity\maven-metadata.xml" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\DocCodeSamples.Tests\DocCodeSamples.Tests.asmdef" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.Unsafe.xml" />
     <None Include="Assets\Firebase\Plugins\Firebase.Auth.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\OffMeshLinkTests\Unity.AI.Navigation.LegacyOffMeshLink.Tests.asmdef" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.mathematics\Tests\Unity.Mathematics.Tests.asmdef" />
     <None Include="Assets\Firebase\Plugins\Firebase.Database.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Tests\Runtime\Unity.AI.Navigation.Tests.asmdef" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-analytics-unity\maven-metadata.xml" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ai.navigation\Runtime\Unity.AI.Navigation.asmdef" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-auth-unity\maven-metadata.xml" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.PerformanceTests\Unity.Collections.PerformanceTests.asmdef" />
+    <None Include="Assets\Cloud Repositories\CapaCity\ProjectSettings\ProjectVersion.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Auth.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ugui\Editor Resources\Shaders\TMP_SDF Internal Editor.shader" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.Cecil.Mdb.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.nuget.mono-cecil\Mono.Cecil.Rocks.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.Unsafe.dll" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.Database.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.Tests.Playmode\Unity.Collections.Tests.Playmode.asmdef" />
     <None Include="Assets\Firebase\Plugins\x86_64\FirebaseCppApp-12_9_0.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.Cecil.Pdb.dll" />
     <None Include="Assets\Firebase\Plugins\Firebase.Platform.dll" />
     <None Include="Assets\Firebase\m2repository\com\google\firebase\firebase-database-unity\maven-metadata.xml" />
     <None Include="Assets\Firebase\Plugins\Google.MiniJson.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.burst\Unity.Burst.CodeGen\Unity.Burst.Cecil.Rocks.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.collections\Unity.Collections.LowLevel.ILSupport\README.txt" />
     <None Include="Assets\Firebase\Plugins\iOS\Firebase.App.dll" />
+    <None Include="Assets\My project\Library\PackageCache\com.unity.ugui\Tests\Runtime\UGUI\UnityEngine.UI.Tests.asmdef" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -609,6 +992,10 @@
       <HintPath>Library\PackageCache\com.unity.analytics\AnalyticsStandardEvents\Unity.Analytics.StandardEvents.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Assets\My project\Library\PackageCache\com.unity.visualscripting\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Android.Types">
       <HintPath>I:\6000.0.32f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
       <Private>False</Private>
@@ -1105,24 +1492,8 @@
       <HintPath>I:\6000.0.32f1\Editor\Data\NetStandard\compat\2.1.0\shims\netfx\System.Xml.Serialization.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Notifications.iOS">
-      <HintPath>Library\ScriptAssemblies\Unity.Notifications.iOS.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements.Editor">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Rider.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing.Codeless">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
+    <Reference Include="Unity.AI.Navigation">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="PsdPlugin">
@@ -1137,24 +1508,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Common.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.2D.Common.Path.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Path.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.Purchasing">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Services.Analytics">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.2D.IK.Editor">
@@ -1165,32 +1520,12 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.IK.Runtime.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.SpriteShape.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Notifications.Unified">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.Unified.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Timeline.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Purchasing.Common">
       <HintPath>Library\ScriptAssemblies\Purchasing.Common.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Timeline">
-      <HintPath>Library\ScriptAssemblies\Unity.Timeline.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Notifications.Android">
@@ -1201,10 +1536,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.PlasticSCM.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.Purchasing">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.2D.Aseprite.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.2D.Aseprite.Editor.dll</HintPath>
       <Private>False</Private>
@@ -1213,28 +1544,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Services.Core.Components">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Components.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.Advertisements">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.AdaptivePerformance.Simulator.Extension">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Extension.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.AdaptivePerformance.Simulator.Google.Extension.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Google.Extension.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+    <Reference Include="Unity.AdaptivePerformance.Profiler.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Profiler.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.Mobile.AndroidLogcat.Editor">
@@ -1243,30 +1562,6 @@
     </Reference>
     <Reference Include="Unity.AdaptivePerformance.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.Animation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.AdaptivePerformance.Profiler.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Profiler.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Collections">
-      <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.InternalAPIEditorBridge.001">
-      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.PixelPerfect.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.InternalAPIEngineBridge.001">
@@ -1297,24 +1592,16 @@
       <HintPath>Library\ScriptAssemblies\Unity.Profiling.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Multiplayer.Center.Common">
-      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
+    <Reference Include="UnityEngine.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.AI.Navigation.Updater">
       <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Updater.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Notifications">
       <HintPath>Library\ScriptAssemblies\Unity.Notifications.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEngine.SpatialTracking">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.SpatialTracking.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.Purchasing.SecurityCore">
@@ -1325,10 +1612,6 @@
       <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.AdaptivePerformance.Simulator.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Services.Core.Analytics">
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Analytics.dll</HintPath>
       <Private>False</Private>
@@ -1337,28 +1620,128 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Common.Runtime">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Mathematics">
-      <HintPath>Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.AdaptivePerformance.Google.Android">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Google.Android.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
-      <HintPath>Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.AdaptivePerformance.UI.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.UI.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
+      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Notifications.iOS">
+      <HintPath>Library\ScriptAssemblies\Unity.Notifications.iOS.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.SpatialTracking">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.SysrootPackage.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements.Editor">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.UI">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Rider.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.Rider.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing.Codeless">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.Codeless.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Purchasing">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Purchasing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Services.Analytics">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Analytics.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Analytics.DataPrivacy">
+      <HintPath>Library\ScriptAssemblies\Unity.Analytics.DataPrivacy.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.SpriteShape.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.SpriteShape.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.Advertisements">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.Advertisements.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.Purchasing">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.Purchasing.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Components">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Components.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEditor.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEditor.XR.LegacyInputHelpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>Library\ScriptAssemblies\Unity.InternalAPIEditorBridge.001.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Animation.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Collections">
+      <HintPath>Library\ScriptAssemblies\Unity.Collections.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.PixelPerfect.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.XR.LegacyInputHelpers">
+      <HintPath>Library\ScriptAssemblies\UnityEngine.XR.LegacyInputHelpers.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Tilemap.Extras.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Tilemap.Extras.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Multiplayer.Center.Common">
+      <HintPath>Library\ScriptAssemblies\Unity.Multiplayer.Center.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.AdaptivePerformance.Simulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.AdaptivePerformance.Simulator.Editor.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>Library\ScriptAssemblies\Unity.2D.Common.Runtime.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Unity.Toolchain.Win-x86_64-Linux-x86_64">
+      <HintPath>Library\ScriptAssemblies\Unity.Toolchain.Win-x86_64-Linux-x86_64.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Analytics">
@@ -1373,28 +1756,8 @@
       <HintPath>Library\ScriptAssemblies\Unity.Services.Core.Environments.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.2D.Sprite.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Sprite.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.AI.Navigation.Editor.ConversionSystem">
-      <HintPath>Library\ScriptAssemblies\Unity.AI.Navigation.Editor.ConversionSystem.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
     <Reference Include="Unity.Sysroot.Linux_x86_64">
       <HintPath>Library\ScriptAssemblies\Unity.Sysroot.Linux_x86_64.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.2D.Psdimporter.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.TextMeshPro.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.Burst.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="UnityEngine.Purchasing.Stores">
@@ -1405,28 +1768,49 @@
       <HintPath>Library\ScriptAssemblies\Unity.2D.PixelPerfect.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Burst">
-      <HintPath>Library\ScriptAssemblies\Unity.Burst.dll</HintPath>
+    <Reference Include="Unity.Services.Core">
+      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.VisualStudio.Editor.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="Unity.Services.Core">
-      <HintPath>Library\ScriptAssemblies\Unity.Services.Core.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.SpatialTracking">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.SpatialTracking.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="Unity.SysrootPackage.Editor">
-      <HintPath>Library\ScriptAssemblies\Unity.SysrootPackage.Editor.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="Unity.VisualScripting.Flow.csproj" />
+    <ProjectReference Include="Unity.RenderPipeline.Universal.ShaderLibrary.csproj" />
+    <ProjectReference Include="Unity.Timeline.Editor.csproj" />
+    <ProjectReference Include="Unity.Timeline.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.csproj" />
+    <ProjectReference Include="Unity.Mathematics.Editor.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.Shared.Editor.csproj" />
+    <ProjectReference Include="Unity.Burst.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Universal.2D.Runtime.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.Core.Editor.csproj" />
+    <ProjectReference Include="Unity.TextMeshPro.Editor.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.Shared.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Core.Editor.csproj" />
+    <ProjectReference Include="Unity.Burst.Editor.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.Flow.Editor.csproj" />
+    <ProjectReference Include="Unity.AI.Navigation.Editor.csproj" />
+    <ProjectReference Include="Unity.ShaderGraph.Editor.csproj" />
+    <ProjectReference Include="Unity.Mathematics.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.SettingsProvider.Editor.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Core.ShaderLibrary.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.State.csproj" />
+    <ProjectReference Include="UnityEngine.UI.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Shaders.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.GPUDriven.Runtime.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Runtime.csproj" />
+    <ProjectReference Include="PPv2URPConverters.csproj" />
+    <ProjectReference Include="Unity.InputSystem.csproj" />
+    <ProjectReference Include="Unity.InputSystem.ForUI.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.Core.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.Shared.csproj" />
+    <ProjectReference Include="Unity.VisualScripting.State.Editor.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Core.Runtime.csproj" />
+    <ProjectReference Include="Unity.RenderPipelines.Universal.Editor.csproj" />
   </ItemGroup>
   <Import Project="Sdk.targets" Sdk="Microsoft.NET.Sdk" />
   <ItemGroup>

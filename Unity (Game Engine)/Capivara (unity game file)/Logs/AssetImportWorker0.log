@@ -15,7 +15,7 @@ I:/UNIP/Unity (Game Engine)/Capivara (unity game file)
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-53933
+64294
 -job-worker-count
 1
 -background-job-worker-count
@@ -59,14 +59,18 @@ I:/UNIP/Unity (Game Engine)/Capivara (unity game file)
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [19496]  Target information:
+Player connection [7068]  Target information:
 
-Player connection [19496]  * "[IP] 192.168.0.85 [Port] 0 [Flags] 2 [Guid] 3422079572 [EditorId] 3422079572 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [7068]  * "[IP] 192.168.0.85 [Port] 0 [Flags] 2 [Guid] 3141465350 [EditorId] 3141465350 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [19496]  * "[IP] 172.24.160.1 [Port] 0 [Flags] 2 [Guid] 3422079572 [EditorId] 3422079572 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+Player connection [7068]  * "[IP] 172.30.64.1 [Port] 0 [Flags] 2 [Guid] 3141465350 [EditorId] 3141465350 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
 
-Player connection [19496] Host joined multi-casting on [225.0.0.222:54997]...
-Player connection [19496] Host joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [7068]  * "[IP] 192.168.56.1 [Port] 0 [Flags] 2 [Guid] 3141465350 [EditorId] 3141465350 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [7068]  * "[IP] 172.26.48.1 [Port] 0 [Flags] 2 [Guid] 3141465350 [EditorId] 3141465350 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-RHP) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" 
+
+Player connection [7068] Host joined multi-casting on [225.0.0.222:54997]...
+Player connection [7068] Host joined alternative multi-casting on [225.0.0.222:34997]...
 JobSystem: Creating JobQueue using job-worker-count value 1
 [Physics::Module] Initialized fallback backend.
 [Physics::Module] Id: 0xdecafbad
@@ -77,67 +81,3 @@ Library Redirect Path: Library/
 [Physics::Module] SDK Version: 4.1.2
 [Physics::Module] Integration Version: 1.0.0
 [Physics::Module] Threading Mode: Multi-Threaded
-Refreshing native plugins compatible for Editor in 14772.73 ms, found 7 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 6000.0.32f1 (b2e806cf271c)
-[Subsystems] Discovering subsystems at path I:/6000.0.32f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path I:/UNIP/Unity (Game Engine)/Capivara (unity game file)/Assets
-GfxDevice: creating device client; kGfxThreadingModeNonThreaded
-Direct3D:
-    Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Intel(R) HD Graphics 5500 (ID=0x1616)
-    Vendor:   Intel
-    VRAM:     4035 MB
-    Driver:   20.19.15.5126
-Initialize mono
-Mono path[0] = 'I:/6000.0.32f1/Editor/Data/Managed'
-Mono path[1] = 'I:/6000.0.32f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'I:/6000.0.32f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56012
-Begin MonoManager ReloadAssembly
-Registering precompiled unity dll's ...
-Register platform support module: I:/6000.0.32f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
-Register platform support module: I:/6000.0.32f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Register platform support module: I:/6000.0.32f1/Editor/Data/PlaybackEngines/MetroSupport/UnityEditor.UWP.Extensions.dll
-Register platform support module: I:/6000.0.32f1/Editor/Data/PlaybackEngines/AndroidPlayer/UnityEditor.Android.Extensions.dll
-Registered in 0.987151 seconds.
-- Loaded All Assemblies, in 67.987 seconds
-Native extension for Android target not found
-Android Extension - Scanning For ADB Devices 79653 ms
-Native extension for UWP target not found
-Native extension for WindowsStandalone target not found
-Native extension for WebGL target not found
-Mono: successfully reloaded assembly
-- Finished resetting the current domain, in 117.694 seconds
-Domain Reload Profiling: 185677ms
-	BeginReloadAssembly (6593ms)
-		ExecutionOrderSort (0ms)
-		DisableScriptedObjects (0ms)
-		BackupInstance (0ms)
-		ReleaseScriptingObjects (0ms)
-		CreateAndSetChildDomain (3ms)
-	RebuildCommonClasses (990ms)
-	RebuildNativeTypeToScriptingClass (75ms)
-	initialDomainReloadingComplete (2729ms)
-	LoadAllAssembliesAndSetupDomain (57594ms)
-		LoadAssemblies (6589ms)
-		RebuildTransferFunctionScriptingTraits (0ms)
-		AnalyzeDomain (57552ms)
-			TypeCache.Refresh (57507ms)
-				TypeCache.ScanAssembly (57218ms)
-			BuildScriptInfoCaches (1ms)
-			ResolveRequiredComponents (38ms)
-	FinalizeReload (117696ms)
-		ReleaseScriptCaches (0ms)
-		RebuildScriptCaches (0ms)
-		SetupLoadedEditorAssemblies (116187ms)
-			LogAssemblyErrors (0ms)
-			InitializePlatformSupportModulesInManaged (113042ms)
-			SetLoadedEditorAssemblies (26ms)
-			BeforeProcessingInitializeOnLoad (293ms)
-			ProcessInitializeOnLoadAttributes (1230ms)
-			ProcessInitializeOnLoadMethodAttributes (1596ms)
-			AfterProcessingInitializeOnLoad (0ms)
-			EditorAssembliesLoaded (1ms)
-		ExecutionOrderSort2 (0ms)
-		AwakeInstancesAfterBackupRestoration (0ms)
