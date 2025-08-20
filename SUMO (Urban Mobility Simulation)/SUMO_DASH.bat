@@ -1,12 +1,23 @@
 @echo off
-REM --- ATENCAO: Este script contem um caminho fixo para o projeto.
-REM --- Se o projeto for movido, ajuste 'C:\Users\RoHenPer\Desktop\TR\sumo_ark'
-REM --- na linha 'set "PROJECT_DIR=..."' abaixo.
+setlocal
 
-REM Define o caminho fixo do projeto.
-set "PROJECT_DIR=I:\SUMO\TR\SUMO_ARK"
+REM --- CONFIGURACAO ---
+set "PROJECT_DIR=I:\UNIP\TCC\SUMO"
 
-color 0A
+REM --- VERIFICACAO DO AMBIENTE ---
+if not exist "%PROJECT_DIR%" (
+    echo ERRO: O diretorio do projeto nao foi encontrado: %PROJECT_DIR%
+    pause
+    exit /b 1
+)
+cd /d "%PROJECT_DIR%"
+
+if defined SUMO_HOME (
+    set "PATH=%SUMO_HOME%\bin;%PATH%"
+    echo SUMO_HOME encontrado. Adicionando '%SUMO_HOME%\bin' ao PATH.
+) else (
+    echo AVISO: Variavel de ambiente SUMO_HOME nao definida. A execucao pode falhar.
+)
 
 :MAIN_MENU
 cls
@@ -14,124 +25,101 @@ echo =======================================================
 echo              MENU PRINCIPAL DO PROJETO SUMO
 echo =======================================================
 echo.
-echo Escolha uma opcao:
-echo.
-echo   [1] Iniciar Simulacao SUMO e Dashboard
-echo   [2] Iniciar Somente Simulacao SUMO
-echo   [3] Iniciar Somente Dashboard
-echo   [4] Sair do Programa
+echo   [1] Iniciar Simulacao DINAMICA (Modo Interativo)
+echo   [2] Iniciar Simulacao CONVENCIONAL (Modo Interativo)
+echo   [3] Apenas Gerar Dashboard (com ultimos dados salvos)
+echo   [4] Abrir Editor de Malha (Netedit)
+echo   [5] Sair
 echo.
 echo =======================================================
 set /p "CHOICE=Digite o numero da opcao e pressione Enter: "
 
-if "%CHOICE%"=="1" ( goto RUN_SUMO_AND_DASH_FLOW )
-if "%CHOICE%"=="2" ( goto RUN_SUMO_ONLY_FLOW )
-if "%CHOICE%"=="3" ( goto RUN_DASH_ONLY_FLOW )
-if "%CHOICE%"=="4" ( goto EXIT_PROGRAM )
+if "%CHOICE%"=="1" goto RUN_DYNAMIC
+if "%CHOICE%"=="2" goto RUN_CONVENTIONAL
+if "%CHOICE%"=="3" goto RUN_DASH_ONLY
+if "%CHOICE%"=="4" goto OPEN_NETEDIT
+if "%CHOICE%"=="5" goto EXIT_PROGRAM
 
 echo.
-echo Opcao invalida. Digite 1, 2, 3 ou 4.
-pause
+echo Opcao invalida. Pressione qualquer tecla para tentar novamente.
+pause >nul
 goto MAIN_MENU
 
-:RUN_SUMO_AND_DASH_FLOW
+:RUN_DYNAMIC
+call :RUN_SIMULATION --mode dynamic
+goto AFTER_SIMULATION
+
+:RUN_CONVENTIONAL
+call :RUN_SIMULATION --mode conventional
+goto AFTER_SIMULATION
+
+:RUN_SIMULATION
 cls
 echo =======================================================
-echo              INICIANDO FLUXO COMPLETO
+echo       INICIANDO SIMULACAO SUMO (Modo: %2)
 echo =======================================================
 echo.
-echo Iniciando Simulacao SUMO...
-echo Apos o termino digite (s/n) para continuar:
-cd "%PROJECT_DIR%" || (echo ERRO: Falha ao acessar diretorio. & pause & exit /b 1)
-
-REM Redireciona a saida do console de controle_semaforo.py para um arquivo de log.
-python controle_semaforo.py > sumo_simulation.log 2>&1
-
+echo A simulacao ira rodar em blocos de 01 minutos.
+echo Voce sera perguntado se deseja continuar no final de cada bloco.
 echo.
-echo Simulacao SUMO concluida. REMOVENDO A MENSAGEM 'Simulacao SUMO concluida.' PARA AQUI.
-echo (Detalhes da execucao em sumo_simulation.log no diretorio do projeto)
-echo.
-goto COMMON_DASHBOARD_FLOW
+pause
 
-:RUN_SUMO_ONLY_FLOW
-cls
-echo =======================================================
-echo              INICIANDO SOMENTE SIMULACAO SUMO
-echo =======================================================
-echo.
-echo Iniciando Simulacao SUMO...
-echo Apos o termino digite (s/n) para continuar:
-cd "%PROJECT_DIR%" || (echo ERRO: Falha ao acessar diretorio. & pause & exit /b 1)
-
-REM Redireciona a saida do console de controle_semaforo.py para um arquivo de log.
-python controle_semaforo.py > sumo_simulation.log 2>&1
-
-echo.
-echo Simulacao SUMO concluida. REMOVENDO A MENSAGEM 'Simulacao SUMO concluida.' PARA AQUI.
-echo (Detalhes em sumo_simulation.log no diretorio do projeto)
-echo.
-goto ASK_RETURN_TO_MENU
-
-:RUN_DASH_ONLY_FLOW
-cls
-echo =======================================================
-echo              INICIANDO SOMENTE DASHBOARD
-echo =======================================================
-echo.
-echo Pulando execucao da simulacao.
-echo.
-goto COMMON_DASHBOARD_FLOW
-
-:COMMON_DASHBOARD_FLOW
-title Dashboard de Trafego
-echo.
-echo Preparando ambiente e iniciando Dashboard...
-cd /d "%PROJECT_DIR%" || (echo ERRO: Falha ao acessar diretorio. & pause & exit /b 1)
-
-echo Verificando ambiente virtual...
-if not exist "venv\" (
-    echo Criando ambiente virtual...
-    python -m venv venv || (echo ERRO: Falha ao criar venv. & pause & exit /b 1)
+if exist "venv\Scripts\activate.bat" (
+    call "venv\Scripts\activate.bat"
 )
-call .\venv\Scripts\activate.bat || (echo ERRO: Falha ao ativar venv. & pause & exit /b 1)
-echo venv ativado.
 
-echo Atualizando pip e instalando dependencias...
-python -m pip install --upgrade pip >nul 2>&1
-pip install dash plotly pandas lxml >nul 2>&1
-echo Dependencias OK.
+python controle_semaforo.py %1 %2
+goto :eof
 
+:AFTER_SIMULATION
+cls
 echo.
-echo Verificando arquivos de dados para o Dashboard...
-if not exist "dashboard_output\simulation_dashboard_data.json" (echo AVISO: Dados JSON nao encontrados!)
-if not exist "emission.xml" (echo AVISO: emission.xml nao encontrado!)
-if not exist "tripinfo.xml" (echo AVISO: tripinfo.xml nao encontrado!)
-
+echo Simulacao finalizada pelo usuario.
 echo.
-echo Iniciando Dashboard (porta 8050)...
-echo O Dashboard deve abrir no seu navegador.
-echo Se nao abrir, acesse manualmente: http://localhost:8050
-echo.
+set /p "DASH_CHOICE=Deseja gerar e abrir o dashboard com os resultados? (s/n): "
+if /i "%DASH_CHOICE%"=="s" (
+    goto RUN_DASH_ONLY
+) else (
+    goto ASK_RETURN_TO_MENU
+)
 
+:RUN_DASH_ONLY
+cls
+echo =======================================================
+echo              GERANDO O DASHBOARD
+echo =======================================================
+echo.
+if not exist "dashboard_output\simulation_dashboard_data.json" (
+    echo ERRO: Arquivo 'simulation_dashboard_data.json' nao encontrado.
+    goto ASK_RETURN_TO_MENU
+)
+
+echo Iniciando o script do dashboard...
 python dashboard.py
 
-echo.
-echo Dashboard encerrado.
 goto ASK_RETURN_TO_MENU
 
-:ASK_RETURN_TO_MENU
-echo =======================================================
-echo                  PROCESSO CONCLUIDO
-echo =======================================================
-echo.
-set /p "RETURN_CHOICE=Voltar ao Menu Principal? (S/N): "
+:OPEN_NETEDIT
+cls
+echo Abrindo o Netedit...
+if defined SUMO_HOME (
+    start "" "%SUMO_HOME%\bin\netedit.exe"
+) else (
+    echo ERRO: Nao foi possivel encontrar o Netedit. Defina a variavel SUMO_HOME.
+)
+goto MAIN_MENU
 
-if /I "%RETURN_CHOICE%"=="S" ( goto MAIN_MENU )
+:ASK_RETURN_TO_MENU
+echo.
+echo =======================================================
+echo Tarefa concluida.
+echo.
+set /p "RETURN_CHOICE=Pressione 'M' para voltar ao menu ou outra tecla para sair: "
+if /i "%RETURN_CHOICE%"=="m" goto MAIN_MENU
 goto EXIT_PROGRAM
 
 :EXIT_PROGRAM
-echo.
-echo Encerrando o programa.
-echo.
-pause
+cls
+echo Encerrando...
+endlocal
 exit /b 0

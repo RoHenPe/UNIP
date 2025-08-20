@@ -1,0 +1,12 @@
+<sumoConfiguration>
+    <input>
+        <net-file value="scenario.net.xml"/>
+        <route-files value="scenario.rou.xml"/>
+        </input>
+    <time>
+        <begin value="0"/>
+    </time>
+    <traci_server>
+        <remote-port value="58409"/>
+    </traci_server>
+</sumoConfiguration>
