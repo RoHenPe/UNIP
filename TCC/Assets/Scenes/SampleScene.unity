@@ -148,7 +148,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0011f3b8ca6b7d74abb0f42f8456e20c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  coordinationInterval: 5
+  trafficLights: []
+  yoloCameras: []
+  updateFrequency: 1
+  isDynamicMode: 1
 --- !u!4 &150842981
 Transform:
   m_ObjectHideFlags: 0
@@ -881,15 +884,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: e91e9df5271605f43845818dd6ba3794, type: 3}
       propertyPath: m_LocalScale.x
-      value: 5
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e91e9df5271605f43845818dd6ba3794, type: 3}
       propertyPath: m_LocalScale.y
-      value: 5
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e91e9df5271605f43845818dd6ba3794, type: 3}
       propertyPath: m_LocalScale.z
-      value: 5
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: e91e9df5271605f43845818dd6ba3794, type: 3}
       propertyPath: m_LocalPosition.x

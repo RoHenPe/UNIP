@@ -56,5 +56,10 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "TCC.sln"
+    "dotnet.defaultSolution": "TCC.sln",
+    "python.analysis.typeCheckingMode": "off",
+    "python.analysis.extraPaths": [
+        "./SUMO/SUMO_Raiz/tools",
+        "./SUMO/SUMO_Raiz/tools/build/lib"
+    ]
 }

@@ -1,4 +1,0 @@
-SUMO_HOME configurado: C:\Users\RoHenPer\Desktop\SUMO\
-Iniciando sistema de controle de tráfego inteligente no modo DINÂMICO
-Iniciando simulação com comando: sumo-gui -c grid.sumocfg --quit-on-end
-ERRO inesperado na simulação: 'TrafficLightDomain' object has no attribute 'getAccumulatedWaitingTime'

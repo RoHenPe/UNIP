@@ -17,3 +17,10 @@
 
 # OS metadata
 .DS_Store
+
+# Python Virtual Environments
+venv/
+.venv/
+env/
+.env/
+TCC/SUMO/venv_sumo/
