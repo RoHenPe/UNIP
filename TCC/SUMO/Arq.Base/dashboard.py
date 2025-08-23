@@ -801,12 +801,6 @@ def main():
         )
         charts_relative_paths.update(regional_charts)
         
-        # Combinar métricas para o dashboard
-        combined_metrics = {
-            "dynamic": metrics_dynamic,
-            "conservative": metrics_conservative
-        }
-        
         # Gerar dashboard de comparação
         generate_dashboard_html_from_template(combined_metrics, charts_relative_paths, OUTPUT_DIR, "comparison")
         
