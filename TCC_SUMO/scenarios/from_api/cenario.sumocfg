@@ -1,0 +1,6 @@
+<configuration>
+    <input>
+        <net-file value="api.net.xml"/>
+        <route-files value="traffic/api.rou.xml"/>
+    </input>
+</configuration>

@@ -1,0 +1,13 @@
+<configuration>
+    <input>
+        <net-file value="osm.net.xml"/>
+        <route-files value="osm.passenger.trips.xml,osm.motorcycle.trips.xml,osm.truck.trips.xml,osm.bus.trips.xml,osm.pedestrian.trips.xml,osm_pt.rou.xml"/>
+        <additional-files value="osm.poly.xml,osm_stops.add.xml,osm_ptlines.xml"/>
+    </input>
+    <time>
+        <begin value="0"/>
+    </time>
+    <processing>
+        <ignore-route-errors value="true"/>
+    </processing>
+</configuration>

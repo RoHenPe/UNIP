@@ -1,0 +1,40 @@
+# ==============================================================================
+#         ARQUIVO DE CONFIGURAÇÃO DE PARÂMETROS DA SIMULAÇÃO
+# ==============================================================================
+sumo_executable: "sumo-gui"
+traci_port: 8813
+
+scenarios:
+  osm: "scenarios/from_osm/osm.sumocfg"
+  api: "scenarios/from_api/cenario.sumocfg"
+
+output_paths:
+  logs: "logs"
+  reports: "reports"
+
+traffic_lights:
+  - id: "1219"
+    lanes:
+      # Vias da fase 0 (Norte-Sul)
+      - "1152923703630104071_0"
+      - "1152923703630104100_0"
+      # Vias da fase 2 (Leste-Oeste)
+      - "1157428402769103298_0"
+      - "1159680202582788537_0"
+    phases:
+      # Fase 0: Verde para Norte-Sul
+      - duration: 30
+        min_duration: 15
+        max_duration: 45
+        state: "GGrr"
+      # Fase 1: Amarelo para Norte-Sul
+      - duration: 4
+        state: "yyrr"
+      # Fase 2: Verde para Leste-Oeste
+      - duration: 25
+        min_duration: 10
+        max_duration: 40
+        state: "rrGG"
+      # Fase 3: Amarelo para Leste-Oeste
+      - duration: 4
+        state: "rryy"
