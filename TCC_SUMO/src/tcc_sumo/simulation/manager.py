@@ -1,3 +1,6 @@
+#arquivo: TCC_SUMO/src/tcc_sumo/simulation/manager.py
+"""Gerencia a simulação SUMO via TraCI."""
+
 import traci
 import os
 import sys

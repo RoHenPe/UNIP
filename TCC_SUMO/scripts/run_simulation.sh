@@ -23,7 +23,8 @@ show_menu() {
     echo
     echo "  Outras Opções:"
     echo "    6. Limpar Arquivos de Log"
-    echo "    7. Sair"
+    echo "    7. Gerar e Abrir Dashboard de Logs"
+    echo "    8. Sair"
     echo "================================================================"
 }
 
@@ -47,13 +48,13 @@ while true; do
         2) run_simulation "ADAPTIVE" 5000 "osm" ;;
         3) python3 "$SRC_DIR/tcc_sumo/tools/scenario_generator.py" && read -p "Pressione [Enter] para continuar..." ;;
         
-        # --- CORREÇÃO AQUI ---
         # Padronizado para usar "api" como a chave do cenário
         4) run_simulation "STATIC" 5000 "api" ;;
         5) run_simulation "ADAPTIVE" 5000 "api" ;;
 
         6) rm -f "$PROJECT_ROOT/logs/"*.log && echo "Arquivos de log limpos." && sleep 2 ;;
-        7) break ;;
+        7) python3 "$SRC_DIR/tcc_sumo/tools/dashboard_generator.py" && xdg-open "$PROJECT_ROOT/logs/dashboard.html" && read -p "Pressione [Enter] para continuar..." ;;
+        8) break ;;
         *) echo "Opção inválida. Tente novamente." && sleep 2 ;;
     esac
 done
