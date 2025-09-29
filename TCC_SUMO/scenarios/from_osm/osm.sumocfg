@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-09-11 00:25:56 by Eclipse SUMO sumo Version 1.24.0
--->
-
 <sumoConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/sumoConfiguration.xsd">
 
     <input>
@@ -10,12 +7,6 @@
         <route-files value="osm.passenger.trips.xml,osm.motorcycle.trips.xml,osm.truck.trips.xml,osm.bus.trips.xml,osm.pedestrian.trips.xml"/>
         <additional-files value="osm_stops.add.xml,osm_ptlines.xml"/>
     </input>
-
-    <output>
-        <tripinfo-output value="tripinfos.xml"/>
-        <stop-output value="stopinfos.xml"/>
-        <statistic-output value="stats.xml"/>
-    </output>
 
     <processing>
         <ignore-route-errors value="true"/>
