@@ -1,167 +1,79 @@
-# arquivo: TCC_SUMO/src/tcc_sumo/tools/log_analyzer.py
-# Ferramenta para analisar arquivos de log gerados pela simulação SUMO e outras partes do sistema.
-# Gera uma Dashboard em HTML que consolida e apresenta os logs de forma organizada.
-# A Dashboard é salva na pasta 'logs/dashboard_output/' e aberta automaticamente no navegador padrão.
-
-import os
-import re
-import webbrowser
+import pandas as pd
+import xml.etree.ElementTree as ET
+from pathlib import Path
+import json
 from datetime import datetime
-from collections import Counter
-from jinja2 import Environment, FileSystemLoader
 
-# --- Configurações de Caminho ---
-# BASE_DIR aponta para a raiz do projeto (TCC_SUMO/)
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..'))
-LOG_DIR = os.path.join(BASE_DIR, 'logs')
+import sys, os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
 
-# Pasta de saída dentro de 'logs', conforme solicitado
-OUTPUT_SUB_DIR_NAME = 'dashboard_output'
-OUTPUT_DIR = os.path.join(LOG_DIR, OUTPUT_SUB_DIR_NAME) 
+from tcc_sumo.utils.helpers import get_logger, PROJECT_ROOT
 
-# O template deve estar em TCC_SUMO/templates/
-TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+logger = get_logger("LogAnalyzer")
+LOGS_DIR = PROJECT_ROOT / "logs"
 
-def parse_log_line(line):
-    """Tenta extrair timestamp, nível, fonte e mensagem de uma linha de log."""
-    # Regex para logs com timestamp e nível (e.g., de bibliotecas Python)
-    match = re.match(r'(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2},\d{3}) \| (\w+) \| (.*)', line)
-    
-    if match:
-        timestamp_str, level, message = match.groups()
+class LogAnalyzer:
+    def __init__(self, trip_info_path, emission_path=None):
+        self.trip_info_path = Path(trip_info_path)
+        self.emission_path = Path(emission_path) if emission_path else None
+        self.consolidated_data = {}
+
+        if not self.trip_info_path.is_file():
+            raise FileNotFoundError(f"Ficheiro tripinfo não encontrado: {self.trip_info_path}")
+
+    def _parse_xml_to_dataframe(self, xml_path, element_tag):
         try:
-            timestamp = datetime.strptime(timestamp_str, '%Y-%m-%d %H:%M:%S,%f')
-        except ValueError:
-            timestamp = timestamp_str
-        return {'timestamp': timestamp, 'level': level, 'message': message.strip(), 'raw_line': line.strip()}
-    
-    # Tentativa de inferir o nível para logs não padronizados (e.g., saída direta do SUMO)
-    if line.strip():
-        upper_line = line.upper()
-        level = 'UNKNOWN'
-        if 'ERROR' in upper_line:
-            level = 'ERROR'
-        elif 'WARNING' in upper_line or 'AVISO' in upper_line:
-            level = 'WARNING'
-        elif 'INFO' in upper_line:
-            level = 'INFO'
-        return {'timestamp': 'N/A', 'level': level, 'message': line.strip(), 'raw_line': line.strip()}
-    return None
+            tree = ET.parse(xml_path)
+            root = tree.getroot()
+            data = [child.attrib for child in root.findall(element_tag)]
+            return pd.DataFrame(data)
+        except (ET.ParseError, FileNotFoundError) as e:
+            logger.error(f"Erro ao processar o ficheiro {xml_path.name}: {e}")
+            return pd.DataFrame()
 
-def find_all_logs():
-    """Retorna uma lista de todos os arquivos de log que devem ser incluídos na Dash."""
-    # CORREÇÃO: Incluir todos os arquivos .log, exceto se for o .pyc ou report.json
-    logs = [f for f in os.listdir(LOG_DIR) if f.endswith('.log') and 'report_' not in f]
-    return logs
-
-def analyze_logs(log_files):
-    """Lê e analisa múltiplos arquivos de log do diretório LOG_DIR."""
-    all_logs = []
-    
-    for filename in log_files:
-        filepath = os.path.join(LOG_DIR, filename)
-        if not os.path.exists(filepath):
-            continue
-
-        with open(filepath, 'r', encoding='utf-8') as f:
-            for line in f:
-                parsed = parse_log_line(line)
-                if parsed:
-                    parsed['source_file'] = filename
-                    all_logs.append(parsed)
-
-    log_levels = [log['level'] for log in all_logs if log['level'] != 'UNKNOWN']
-    level_counts = Counter(log_levels)
-    
-    # Prepara os dados para o template
-    logs_for_template = [
-        {
-            'timestamp': log['timestamp'].strftime('%Y-%m-%d %H:%M:%S') if isinstance(log['timestamp'], datetime) else log['timestamp'],
-            'level': log['level'],
-            'message': log['message'],
-            'source_file': log['source_file']
+    def _calculate_trip_metrics(self, df):
+        if df.empty: return {}
+        
+        calculated_metrics = {"Veículos que Concluíram a Viagem": int(len(df))}
+        
+        metric_cols = {
+            'duration': 'Tempo Médio de Viagem (s)',
+            'waitTime': 'Tempo Médio de Parada (s)',
+            'timeLoss': 'Tempo Médio Perdido (s)'
         }
-        for log in all_logs
-    ]
-    
-    return logs_for_template, dict(level_counts)
 
-def generate_log_dashboard(logs_data, stats_data, all_source_logs, output_filename='log_dashboard.html', template_filename='log_dashboard.html'):
-    """Gera a Dashboard de Logs em HTML."""
-    
-    # 1. Cria diretórios (Garante que as pastas existam)
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    os.makedirs(TEMPLATE_DIR, exist_ok=True)
+        for col, name in metric_cols.items():
+            if col in df.columns:
+                numeric_series = pd.to_numeric(df[col], errors='coerce')
+                calculated_metrics[name] = round(numeric_series.mean(), 2)
+            else:
+                calculated_metrics[name] = 0
 
-    # 2. Configura o ambiente Jinja2
-    env = Environment(loader=FileSystemLoader(TEMPLATE_DIR))
-    try:
-        template = env.get_template(template_filename)
-    except Exception as e:
-        print(f"ERRO: Não foi possível carregar o template {template_filename}. Erro: {e}")
-        return None
+        return calculated_metrics
 
-    # 3. Renderiza o template com a lista de todos os arquivos de log
-    rendered_html = template.render(
-        timestamp_geracao=datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-        logs=logs_data,
-        stats=stats_data,
-        total_logs=len(logs_data),
-        # Passa a lista de todos os arquivos de log para o menu da Dash
-        all_source_logs=all_source_logs 
-    )
+    def _calculate_pollution_metrics(self, df):
+        if df.empty: return {}
+        if 'CO2' not in df.columns: return {}
 
-    # 4. Salva o arquivo HTML
-    output_path = os.path.join(OUTPUT_DIR, output_filename)
-    with open(output_path, 'w', encoding='utf-8') as f:
-        f.write(rendered_html)
+        df['CO2_kg'] = pd.to_numeric(df['CO2'], errors='coerce') / 1_000_000
+        df['vehicle_type'] = df['id'].apply(lambda x: x.split('_')[0])
+        
+        pollution_by_type = df.groupby('vehicle_type')['CO2_kg'].sum().round(2).to_dict()
+        
+        return {f"Emissão Total de CO2 ({v_type})": f"{total_kg} kg" for v_type, total_kg in pollution_by_type.items()}
 
-    return output_path
-
-
-def generate_and_open_log_dashboard():
-    """
-    Função principal que executa a análise, checklist, geração e abertura do Dashboard.
-    """
-    print("\n--- Analisador de Logs SUMO ---")
-    
-    # Passo 1: Encontrar logs
-    print(" [ ] Passo 1: Localizando arquivos de Log relevantes...")
-    all_source_logs = find_all_logs()
-    
-    if not all_source_logs:
-        print(" [X] FALHA: Nenhum arquivo de log (.log) encontrado na pasta 'logs/'.")
-        print("            Execute a Opção 1 antes de gerar a Dashboard.")
-        return
-    print(f" [✓] Passo 1: {len(all_source_logs)} arquivo(s) de log encontrado(s).")
-    
-    # Passo 2: Analisar Logs
-    print(" [ ] Passo 2: Analisando e consolidando dados de Log...")
-    logs_data, stats_data = analyze_logs(all_source_logs)
-    
-    if not logs_data:
-        print(" [X] FALHA: Nenhum dado de log válido para processamento.")
-        return
-    print(f" [✓] Passo 2: Análise concluída. {len(logs_data)} entradas consolidadas.")
-
-    # Passo 3: Gerar e salvar a Dashboard
-    print(" [ ] Passo 3: Gerando e salvando o arquivo HTML da Dashboard...")
-    output_path = generate_log_dashboard(logs_data, stats_data, all_source_logs)
-    
-    if not output_path:
-        print(" [X] FALHA: Não foi possível gerar o arquivo HTML. Verifique o template.")
-        return
-    
-    # Confirma a padronização na estrutura de saída
-    print(f" [✓] Passo 3: Arquivo salvo em: {os.path.join('logs', OUTPUT_SUB_DIR_NAME, os.path.basename(output_path))}")
-    
-    # Passo 4: Abrir no Navegador
-    print(" [ ] Passo 4: Abrindo Dashboard no navegador padrão...")
-    url = 'file://' + os.path.abspath(output_path)
-    webbrowser.open(url)
-    print(" [✓] Passo 4: Dashboard Aberta com Sucesso.")
-    print("\n--- Processo Concluído ---")
-    
-
-if __name__ == '__main__':
-    generate_and_open_log_dashboard()
+    def run_analysis(self, simulation_metadata):
+        trip_df = self._parse_xml_to_dataframe(self.trip_info_path, ".//tripinfo")
+        self.consolidated_data["metrics"] = self._calculate_trip_metrics(trip_df)
+        
+        if self.emission_path and self.emission_path.exists():
+            emission_df = self._parse_xml_to_dataframe(self.emission_path, ".//vehicle")
+            self.consolidated_data["pollution"] = self._calculate_pollution_metrics(emission_df)
+        
+        json_path = LOGS_DIR / "consolidated_data.json"
+        with open(json_path, 'w', encoding='utf-8') as f:
+            self.consolidated_data.update(simulation_metadata)
+            self.consolidated_data["analysis_timestamp"] = datetime.now().isoformat()
+            json.dump(self.consolidated_data, f, indent=4)
+        
+        return self.consolidated_data

@@ -1,40 +1,44 @@
 # ==============================================================================
 #         ARQUIVO DE CONFIGURAÇÃO DE PARÂMETROS DA SIMULAÇÃO
 # ==============================================================================
+# Parâmetros são externalizados para facilitar a manutenção sem alterar o código.
+
+# Executável do SUMO a ser usado ('sumo' para linha de comando, 'sumo-gui' para visual).
 sumo_executable: "sumo-gui"
+
+# Porta de conexão para o TraCI, evitando conflitos com outras aplicações.
 traci_port: 8813
 
+# Mapeamento de nomes de cenários para seus respectivos arquivos de configuração.
+# Permite trocar de cenário facilmente via argumento de linha de comando.
 scenarios:
   osm: "scenarios/from_osm/osm.sumocfg"
   api: "scenarios/from_api/cenario.sumocfg"
 
+# Centraliza todos os caminhos de saída para manter o projeto organizado.
 output_paths:
   logs: "logs"
-  reports: "reports"
+  dashboards: "output"
+  # Nome do arquivo de relatório gerencial com as médias.
+  report_file: "simulation_report.log"
+  # Nome do arquivo de dados estruturados para consumo por outras ferramentas.
+  consolidated_data: "consolidated_data.json"
 
+# Configurações para o controlador de tráfego adaptativo.
+# Exemplo de como estruturar parâmetros complexos.
 traffic_lights:
-  - id: "1219"
-    lanes:
-      # Vias da fase 0 (Norte-Sul)
-      - "1152923703630104071_0"
-      - "1152923703630104100_0"
-      # Vias da fase 2 (Leste-Oeste)
-      - "1157428402769103298_0"
-      - "1159680202582788537_0"
+  - id: "J1" # ID do semáforo no arquivo .net.xml
     phases:
-      # Fase 0: Verde para Norte-Sul
+      # A estrutura de fases permite configurar o comportamento de cada semáforo.
       - duration: 30
         min_duration: 15
         max_duration: 45
-        state: "GGrr"
-      # Fase 1: Amarelo para Norte-Sul
+        state: "GGrrGGrr"
       - duration: 4
-        state: "yyrr"
-      # Fase 2: Verde para Leste-Oeste
-      - duration: 25
-        min_duration: 10
-        max_duration: 40
-        state: "rrGG"
-      # Fase 3: Amarelo para Leste-Oeste
+        state: "yyrryyrr"
+      - duration: 30
+        min_duration: 15
+        max_duration: 45
+        state: "rrGGrrGG"
       - duration: 4
-        state: "rryy"
+        state: "rryyrryy"
