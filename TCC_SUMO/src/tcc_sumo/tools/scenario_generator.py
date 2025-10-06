@@ -7,178 +7,148 @@ import argparse
 import shutil
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[2]))
-
 from tcc_sumo.utils.helpers import get_logger, setup_logging, ensure_sumo_home, PROJECT_ROOT
 
 setup_logging()
 logger = get_logger("ScenarioGenerator")
 
-def run_command(command):
-    """Executa um comando no shell, garantindo a execução no diretório raiz do projeto."""
+def run_simple_command(command):
     cmd_str_list = [str(item) for item in command]
-    logger.info(f"Executando comando: {' '.join(cmd_str_list)}")
+    cmd_str = ' '.join(cmd_str_list)
+    logger.info(f"Executando sub-comando: {cmd_str}")
+    
+    # CORREÇÃO: Captura a saída do subprocesso para garantir a estabilidade do logging
     try:
-        result = subprocess.run(
-            cmd_str_list, capture_output=True, text=True, check=True, 
-            encoding='utf-8', cwd=PROJECT_ROOT
-        )
-        if result.stderr: logger.warning(f"Saída de aviso do comando '{command[0]}':\n{result.stderr}")
+        # Executa o comando, captura STDOUT e STDERR.
+        result = subprocess.run(cmd_str_list, 
+                                cwd=PROJECT_ROOT, 
+                                check=True, 
+                                capture_output=True, 
+                                text=True,
+                                encoding='utf-8')
+        
+        # Loga a saída capturada (ex: warnings do netconvert/randomTrips) usando DEBUG
+        if result.stdout and result.stdout.strip():
+            logger.debug(f"Saída STDOUT do comando:\n{result.stdout.strip()}")
+        if result.stderr and result.stderr.strip():
+            logger.debug(f"Saída STDERR do comando:\n{result.stderr.strip()}")
+            
+        logger.info("Comando externo concluído com sucesso.")
+        
     except subprocess.CalledProcessError as e:
-        logger.error(f"Comando falhou: {e.stderr}")
-        raise
+        logger.error(f"Comando falhou com código {e.returncode}: {e.cmd}")
+        if e.stdout and e.stdout.strip():
+            logger.error(f"Saída STDOUT do erro:\n{e.stdout.strip()}")
+        if e.stderr and e.stderr.strip():
+            logger.error(f"Saída STDERR do erro:\n{e.stderr.strip()}")
+        raise 
 
-def generate_api_scenario(base_file_path: Path):
-    """Gera o cenário completo a partir do JSON da API."""
-    print("\n--- INICIANDO GERAÇÃO DO CENÁRIO 'API' ---")
-    
-    output_dir = PROJECT_ROOT / "scenarios" / "from_api"
+def generate_scenario(scenario_type: str, base_file_path: Path):
+    output_dir = PROJECT_ROOT / "scenarios" / f"from_{scenario_type}"
     if output_dir.exists(): shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True)
-    print("  [✓] Diretório de saída limpo e recriado.")
-
-    nodes_file = output_dir / "api.nod.xml"
-    edges_file = output_dir / "api.edg.xml"
-    net_file = output_dir / "api.net.xml"
-
-    print("  [ ] Lendo arquivo JSON base e criando arquivos de rede...")
-    with open(base_file_path, "r", encoding='utf-8') as f: data = json.load(f)
-    valid_node_ids = set()
-    with open(nodes_file, "w", encoding='utf-8') as f:
-        f.write("<nodes>\n")
-        for node in data["nodes"]:
-            prop = node.get('properties', {})
-            if "lon" in prop and "lat" in prop:
-                node_type = "traffic_light" if prop.get("highway") == "traffic_signals" else "priority"
-                f.write(f'    <node id="{node["id"]}" x="{prop["lon"]}" y="{prop["lat"]}" type="{node_type}"/>\n')
-                valid_node_ids.add(str(node["id"]))
-        f.write("</nodes>")
-    with open(edges_file, "w", encoding='utf-8') as f:
-        f.write("<edges>\n")
-        for edge in data.get("relationships", []):
-            if str(edge.get('startNodeId')) in valid_node_ids and str(edge.get('endNodeId')) in valid_node_ids:
-                f.write(f'    <edge id="{edge["id"]}" from="{edge["startNodeId"]}" to="{edge["endNodeId"]}" numLanes="1" speed="13.89"/>\n')
-        f.write("</edges>")
-    print("  [✓] Arquivos de nós e arestas criados.")
-
-    print("  [ ] Gerando malha viária final...")
-    run_command([
-        Path(os.environ["SUMO_HOME"]) / 'bin' / 'netconvert', 
-        '--node-files', nodes_file.relative_to(PROJECT_ROOT), 
-        '--edge-files', edges_file.relative_to(PROJECT_ROOT), 
-        '-o', net_file.relative_to(PROJECT_ROOT)
-    ])
-    print("  [✓] Malha viária gerada.")
+    logger.info(f"Diretório de saída para {scenario_type.upper()} limpo e recriado em '{output_dir}'.")
     
-    generate_common_files(output_dir, net_file, "api")
-    print("--- GERAÇÃO DO CENÁRIO 'API' CONCLUÍDA ---")
-
-
-def generate_osm_scenario(base_file_path: Path):
-    """Gera o cenário completo a partir de um arquivo .osm.xml."""
-    print("\n--- INICIANDO GERAÇÃO DO CENÁRIO 'OSM' ---")
+    net_file = output_dir / f"{scenario_type}.net.xml"
     
-    output_dir = PROJECT_ROOT / "scenarios" / "from_osm"
-    if output_dir.exists(): shutil.rmtree(output_dir)
-    output_dir.mkdir(parents=True)
-    print("  [✓] Diretório de saída limpo e recriado.")
+    if scenario_type == 'osm':
+        run_simple_command([
+            Path(os.environ["SUMO_HOME"]) / 'bin' / 'netconvert',
+            '--osm-files', base_file_path.relative_to(PROJECT_ROOT),
+            '-o', net_file.relative_to(PROJECT_ROOT), 
+            '--geometry.remove'
+        ])
+    elif scenario_type == 'api':
+        nodes_file, edges_file = output_dir/"api.nod.xml", output_dir/"api.edg.xml"
+        
+        logger.info(f"Lendo dados da API de: {base_file_path.name}")
+        with open(base_file_path, "r", encoding='utf-8') as f: data = json.load(f)
+        
+        valid_node_ids = set()
+        with open(nodes_file, "w", encoding='utf-8') as f:
+            f.write('<nodes>\n')
+            for node in data.get("nodes",[]):
+                prop = node.get('properties',{})
+                if "lon" in prop and "lat" in prop: # Lógica de Lon/Lat preservada
+                    node_type = "traffic_light" if prop.get("highway")=="traffic_signals" else "priority"
+                    f.write(f'    <node id="{node["id"]}" x="{prop["lon"]}" y="{prop["lat"]}" type="{node_type}"/>\n')
+                    valid_node_ids.add(str(node["id"]))
+            f.write('</nodes>')
+        logger.debug(f"Ficheiro 'nod.xml' criado com {len(valid_node_ids)} nós.")
+        
+        with open(edges_file, "w", encoding='utf-8') as f:
+            f.write('<edges>\n')
+            for edge in data.get("relationships",[]):
+                if str(edge.get('startNodeId')) in valid_node_ids and str(edge.get('endNodeId')) in valid_node_ids:
+                    f.write(f'    <edge id="{edge["id"]}" from="{edge["startNodeId"]}" to="{edge["endNodeId"]}" numLanes="1" speed="13.89"/>\n')
+            f.write('</edges>')
+        logger.debug(f"Ficheiro 'edg.xml' criado.")
+        
+        # Correção Crítica do NETCONVERT para a API para evitar teletransporte e falhas de malha
+        run_simple_command([
+            Path(os.environ["SUMO_HOME"]) / 'bin' / 'netconvert',
+            '--node-files', nodes_file.relative_to(PROJECT_ROOT),
+            '--edge-files', edges_file.relative_to(PROJECT_ROOT),
+            '-o', net_file.relative_to(PROJECT_ROOT), 
+            '--geometry.remove',
+            '--proj.utm', # Essencial para lon/lat
+            '--roundabouts.guess', 
+            '--junctions.join', 
+            '--no-turnarounds' 
+        ])
 
-    net_file = output_dir / "osm.net.xml"
-
-    print("  [ ] Gerando malha viária a partir do arquivo OSM...")
-    run_command([
-        Path(os.environ["SUMO_HOME"]) / 'bin' / 'netconvert', 
-        '--osm-files', base_file_path.relative_to(PROJECT_ROOT), 
-        '-o', net_file.relative_to(PROJECT_ROOT)
-    ])
-    print("  [✓] Malha viária gerada.")
-
-    generate_common_files(output_dir, net_file, "osm")
-    print("--- GERAÇÃO DO CENÁRIO 'OSM' CONCLUÍDA ---")
-
+    generate_common_files(output_dir, net_file, scenario_type)
 
 def generate_common_files(output_dir: Path, net_file: Path, scenario_name: str):
-    """Gera arquivos comuns a ambos os cenários, com autovalidação e autocorreção."""
-    routes_file = output_dir / f"{scenario_name}.rou.xml"
-    trips_file = output_dir / f"{scenario_name}.trips.xml"
-    emergency_routes_file = output_dir / "emergency.rou.xml"
-    emergency_trips_file = output_dir / "emergency.trips.xml"
-    emergency_vtype_file = output_dir / "emergency_vtype.add.xml"
-    config_file = output_dir / f"{scenario_name}.sumocfg"
-    sumo_tools_path = Path(os.environ["SUMO_HOME"]) / "tools"
+    routes_file, trips_file, config_file = (output_dir/f"{scenario_name}.rou.xml", output_dir/f"{scenario_name}.trips.xml", output_dir/f"{scenario_name}.sumocfg")
+    
+    num_vehicles = os.environ.get('VEHICLE_COUNT', '50000') # Usa 50k como fallback
+    
+    # --- CÁLCULO DE PERÍODO OTIMIZADO ---
+    insertion_duration = 3600 
+    if int(num_vehicles) > 100000:
+        insertion_duration = 7200 
+    
+    period = insertion_duration / int(num_vehicles) if int(num_vehicles) > 0 else 1
+    period = max(0.05, period) 
 
-    print("  [ ] Gerando rotas de tráfego normal...")
-    num_vehicles, period = ("5000", "1.8") if scenario_name == 'osm' else ("2500", "2.0")
-    run_command([
-        "python3", sumo_tools_path/'randomTrips.py', "-n", net_file.relative_to(PROJECT_ROOT),
-        "-r", routes_file.relative_to(PROJECT_ROOT), "-o", trips_file.relative_to(PROJECT_ROOT),
-        "-e", num_vehicles, "--period", period, "--validate"
+    logger.info(f"Gerando {num_vehicles} veículos para o cenário '{scenario_name}' com período de inserção ~{period:.3f}s.")
+    
+    run_simple_command([
+        "python3", Path(os.environ["SUMO_HOME"])/"tools"/'randomTrips.py',
+        "-n", net_file.relative_to(PROJECT_ROOT),
+        "-r", routes_file.relative_to(PROJECT_ROOT),
+        "-o", trips_file.relative_to(PROJECT_ROOT),
+        "-e", str(num_vehicles),
+        "--period", f"{period:.3f}",
+        "--fringe-factor", "10", 
+        "--validate",
     ])
-    print("  [✓] Rotas normais geradas.")
+    
+    if trips_file.exists():
+        os.remove(trips_file); logger.debug(f"Ficheiro de trips intermediário '{trips_file}' removido.")
 
-    print("  [ ] Criando arquivos adicionais...")
-    vtype_content = f"""<additional><vType id="emergency" vClass="emergency" guiShape="emergency" color="1,0,0" speedFactor="2.0"><param key="has.bluelight.device" value="true"/></vType></additional>"""
-    with open(emergency_vtype_file, 'w', encoding='utf-8') as f: f.write(vtype_content)
-    print("  [✓] Definição de veículo de emergência criada.")
-
-    print("  [ ] Gerando rotas de emergência...")
-    num_vehicles_em, period_em = ("15", "600") if scenario_name == 'osm' else ("8", "800")
-    run_command([
-        "python3", sumo_tools_path/'randomTrips.py', "-n", net_file.relative_to(PROJECT_ROOT),
-        "-r", emergency_routes_file.relative_to(PROJECT_ROOT), "-o", emergency_trips_file.relative_to(PROJECT_ROOT),
-        "-e", num_vehicles_em, "--period", period_em, "--validate",
-        "--prefix", "em", "--vtype", "emergency"
-    ])
-    print("  [✓] Rotas de emergência geradas.")
-
-    print("  [ ] Validando e corrigindo caminhos dos arquivos gerados...")
-    rogue_emergency_file = PROJECT_ROOT / "emergency"
-
-    if not emergency_routes_file.exists() and rogue_emergency_file.exists():
-        logger.warning(f"Arquivo problemático '{rogue_emergency_file.name}' encontrado na raiz. Movendo e renomeando para o destino correto: '{emergency_routes_file}'")
-        shutil.move(str(rogue_emergency_file), str(emergency_routes_file))
-        print(f"  [✓] Arquivo '{rogue_emergency_file.name}' foi corrigido.")
-    elif not emergency_routes_file.exists():
-        logger.critical(f"VALIDAÇÃO FALHOU: O arquivo de rotas de emergência não foi gerado em '{emergency_routes_file}'. A geração falhou.")
-        raise FileNotFoundError(f"Geração de rotas de emergência falhou.")
-    elif rogue_emergency_file.exists():
-         logger.warning(f"Arquivo problemático '{rogue_emergency_file.name}' encontrado na raiz, mas o arquivo de destino já existe. Removendo arquivo problemático.")
-         os.remove(rogue_emergency_file)
-         print(f"  [✓] Arquivo '{rogue_emergency_file.name}' duplicado foi removido.")
-    else:
-        print("  [✓] Arquivos validados com sucesso.")
-
-    print("  [ ] Criando arquivo de configuração final...")
     config_content = f"""<configuration>
-    <input><net-file value="{net_file.name}"/><route-files value="{routes_file.name},{emergency_routes_file.name}"/><additional-files value="{emergency_vtype_file.name}"/></input>
+    <input><net-file value="{net_file.name}"/><route-files value="{routes_file.name}"/></input>
     <output><tripinfo-output value="tripinfo.xml"/><emission-output value="emissions.xml"/><queue-output value="queueinfo.xml"/></output>
 </configuration>"""
     with open(config_file, 'w', encoding='utf-8') as f: f.write(config_content)
-    print("  [✓] Arquivo de configuração final criado.")
-
-    print("  [ ] Removendo arquivos de 'trips' intermediários...")
-    try:
-        if trips_file.exists(): os.remove(trips_file)
-        if emergency_trips_file.exists(): os.remove(emergency_trips_file)
-        print("  [✓] Arquivos intermediários removidos.")
-    except OSError as e:
-        logger.warning(f"Não foi possível remover arquivos de trips intermediários: {e}")
+    logger.info(f"Ficheiro de configuração '{config_file}' criado.")
 
 if __name__ == "__main__":
-    parser = argparse.ArgumentParser(description="Gerenciador de Cenários para Simulação de Tráfego SUMO.")
-    parser.add_argument("--type", type=str, required=True, choices=['osm', 'api'], help="Tipo de cenário a ser gerado.")
-    parser.add_argument("--input", type=str, required=True, help="Nome do arquivo base (ex: 'osm_bbox.osm.xml' ou 'dados_api.json').")
+    parser = argparse.ArgumentParser(description="Gerador de Cenários para Simulação de Tráfego SUMO.")
+    parser.add_argument("--type", type=str, required=True, choices=['osm', 'api'])
+    parser.add_argument("--input", type=str, required=True)
     args = parser.parse_args()
-
     try:
         ensure_sumo_home()
-        base_file = PROJECT_ROOT / "scenarios" / "base_files" / args.input
-        
-        if args.type == 'osm':
-            generate_osm_scenario(base_file)
-        elif args.type == 'api':
-            generate_api_scenario(base_file)
-
+        # Garante a hierarquia de caminho correta: TCC_SUMO/scenarios/base_files/nome_do_arquivo
+        base_file_name = Path(args.input).name
+        base_file = PROJECT_ROOT / "scenarios" / "base_files" / base_file_name
+        logger.info(f"Iniciando geração de cenário do tipo '{args.type}' com o ficheiro de entrada '{args.input}'.")
+        if not base_file.exists():
+            logger.critical(f"O ficheiro de entrada '{base_file}' não foi encontrado."); sys.exit(1)
+        generate_scenario(args.type, base_file)
+        logger.info(f"Geração do cenário '{args.type}' concluída com sucesso.")
     except Exception as e:
-        logger.critical(f"Erro crítico no pipeline de geração: {e}", exc_info=True)
-        print(f"\n[✗] FALHA INESPERADA. Verifique 'logs/simulation.log' para detalhes.")
-        sys.exit(1)
+        logger.critical(f"Erro no pipeline de geração: {e}", exc_info=True); sys.exit(1)

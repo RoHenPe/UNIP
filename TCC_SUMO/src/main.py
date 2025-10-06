@@ -13,26 +13,20 @@ import yaml
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '.')))
 
 from tcc_sumo.simulation.manager import SimulationManager
-from tcc_sumo.utils.helpers import task_start, task_success, task_fail
+from tcc_sumo.utils.helpers import task_start, task_success, task_fail, setup_logging
 
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-def setup_logging(config_path: str = 'config/logging_config.json'):
-    """Configura o sistema de logging a partir de um arquivo JSON."""
-    path = os.path.join(PROJECT_ROOT, config_path)
-    if os.path.exists(path):
-        with open(path, 'rt', encoding='utf-8') as f:
-            config = json.load(f)
-        logging.config.dictConfig(config)
-    else:
-        # Fallback caso o arquivo de config não exista.
-        logging.basicConfig(level=logging.DEBUG, filename='logs/fallback_simulation.log')
-
 def main():
-    """Função principal que orquestra a execução da simulação."""
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--scenario', type=str, required=True, choices=['osm', 'api'])
-    parser.add_argument('--mode', type=str, required=True, choices=['STATIC', 'ADAPTIVE'])
+    """
+    Função principal que orquestra a execução da simulação.
+    Lê os argumentos da linha de comando, carrega as configurações
+    e inicia o gerenciador de simulação.
+    """
+    parser = argparse.ArgumentParser(description="Executa uma simulação de tráfego com SUMO.")
+    parser.add_argument('--scenario', type=str, required=True, choices=['osm', 'api'], help="Cenário a ser executado.")
+    # CORREÇÃO DE ERRO: Incluindo os nomes antigos ('CONSERVATIVE', 'DYNAMIC') para aceitação de argumentos
+    parser.add_argument('--mode', type=str, required=True, choices=['STATIC', 'ADAPTIVE', 'CONSERVATIVE', 'DYNAMIC'], help="Modo de controle dos semáforos.")
     args = parser.parse_args()
 
     os.chdir(PROJECT_ROOT)
@@ -40,17 +34,26 @@ def main():
     logger = logging.getLogger(__name__)
 
     try:
-        task_start("Carregando configurações")
-        with open('config/config.yaml', 'r', encoding='utf-8') as f:
+        task_start("Carregando configurações do projeto")
+        # Assume que config.yaml está na raiz do projeto (PROJECT_ROOT) ou em config/
+        config_path = os.path.join(PROJECT_ROOT, 'config/config.yaml')
+        if not os.path.exists(config_path):
+             config_path = os.path.join(PROJECT_ROOT, 'config.yaml')
+
+        with open(config_path, 'r', encoding='utf-8') as f:
             config = yaml.safe_load(f)
-        task_success("Configurações carregadas")
-        logger.info("Configurações carregadas com sucesso.")
+        task_success("Configurações carregadas com sucesso")
+        logger.info("Configurações do arquivo 'config.yaml' carregadas.")
     except Exception as e:
         task_fail("Falha ao carregar 'config.yaml'")
-        logger.critical(f"Falha ao carregar config.yaml: {e}", exc_info=True)
+        logger.critical(f"Não foi possível ler o arquivo de configuração: {e}", exc_info=True)
         return
 
-    manager = SimulationManager(config=config, scenario_name=args.scenario, mode_name=args.mode)
+    # CORREÇÃO DE ERRO: Mapeia os modos antigos para os novos antes de iniciar o Manager
+    mode_map = {'CONSERVATIVE': 'STATIC', 'DYNAMIC': 'ADAPTIVE'}
+    final_mode = mode_map.get(args.mode, args.mode)
+
+    manager = SimulationManager(config=config, scenario_name=args.scenario, mode_name=final_mode)
     manager.run()
 
 if __name__ == "__main__":

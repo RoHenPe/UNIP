@@ -1,155 +1,191 @@
-# -*- coding: utf-8 -*-
-"""Módulo para o gerenciamento do ciclo de vida da simulação."""
-
 import logging
 import os
 import sys
 from pathlib import Path
-from datetime import timedelta
-
-if 'SUMO_HOME' in os.environ:
-    tools = os.path.join(os.environ['SUMO_HOME'], 'tools')
-    sys.path.append(tools)
-else:
-    sys.exit("ERRO CRÍTICO: A variável de ambiente 'SUMO_HOME' não está definida.")
-
 import traci
 from traci.exceptions import TraCIException, FatalTraCIError
+import pandas as pd
+
+if 'SUMO_HOME' in os.environ:
+    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
+else:
+    sys.exit("ERRO: 'SUMO_HOME' não definida.")
 
 from tcc_sumo.simulation.traci_connection import TraciConnection
 from tcc_sumo.tools.log_analyzer import LogAnalyzer
-from tcc_sumo.utils.helpers import task_start, task_success, task_fail, PROJECT_ROOT, format_seconds_to_ms
+from tcc_sumo.utils.helpers import task_start, task_success, task_fail, PROJECT_ROOT, format_time
+from tcc_sumo.traffic_logic.controllers import StaticController, AdaptiveController
 
 logger = logging.getLogger(__name__)
 
 class SimulationManager:
-    """Orquestra a simulação, gerenciando conexão, loop e relatórios."""
-
     def __init__(self, config: dict, scenario_name: str, mode_name: str):
-        self.config = config
-        self.scenario_name = scenario_name
-        self.mode_name = mode_name
+        self.config, self.scenario_name, self.mode_name = config, scenario_name, mode_name.upper()
+        self.step = 0
+        logger.debug(f"Iniciando SimulationManager com cenário='{scenario_name}' e modo='{mode_name}'.")
         self.traci_connection = TraciConnection(
             config.get('sumo_executable', 'sumo-gui'),
             config['scenarios'][scenario_name],
             config.get('traci_port', 8813)
         )
+        self.controller = AdaptiveController() if self.mode_name == 'ADAPTIVE' else StaticController()
         task_success(f"Sistema inicializado em modo '{self.mode_name}'")
-        logger.info(f"Controlador do tipo '{self.mode_name}' foi inicializado.")
 
     def run(self):
-        """Inicia a conexão e executa a simulação."""
-        simulation_step_count = 0
         try:
-            task_start("Conectando ao simulador SUMO")
+            task_start("Conectando ao SUMO")
             self.traci_connection.start()
-            task_success("Conectado ao simulador SUMO")
-            logger.info("Conexão com o SUMO estabelecida.")
-            simulation_step_count = self._simulation_loop()
+            task_success("Conectado ao SUMO")
+            self._simulation_loop()
         except KeyboardInterrupt:
-            # Captura a interrupção do usuário para uma saída limpa
-            task_fail("Simulação interrompida pelo usuário")
-            logger.warning("Execução interrompida pelo usuário via teclado.")
+            task_fail("Simulação interrompida pelo teclado")
+            logger.warning("Simulação interrompida pelo usuário via CTRL+C.")
+        except (FatalTraCIError, TraCIException) as e:
+            task_success("Simulação encerrada pelo usuário (janela fechada)")
+            logger.info(f"A simulação foi encerrada via TraCI: {e}")
         except Exception as e:
-            task_fail("Ocorreu um erro crítico inesperado")
+            task_fail("Erro crítico inesperado")
             logger.critical("Erro não tratado no manager.run", exc_info=True)
         finally:
-            task_start("Encerrando conexão")
-            self.traci_connection.close()
-            task_success("Conexão encerrada")
-            logger.info("Conexão com o SUMO encerrada.")
+            self._cleanup()
             
-            # Só analisa se a simulação rodou por pelo menos um passo
-            if simulation_step_count > 0:
-                task_start("Analisando resultados e gerando relatórios")
-                self._analyze_and_report(simulation_step_count)
-
-    def _analyze_and_report(self, step_count):
-        """Chama o LogAnalyzer para processar os arquivos de saída do SUMO."""
-        try:
-            scenario_config_path = Path(self.config['scenarios'][self.scenario_name])
-            output_dir = scenario_config_path.parent
-
-            trip_info_path = output_dir / "tripinfo.xml"
-            emission_path = output_dir / "emissions.xml"
-            queue_info_path = output_dir / "queueinfo.xml"
-
-            analyzer = LogAnalyzer(
-                trip_info_path=str(trip_info_path),
-                emission_path=str(emission_path),
-                queue_info_path=str(queue_info_path)
-            )
-            
-            simulation_metadata = {"scenario": self.scenario_name, "mode": self.mode_name}
-            consolidated_data = analyzer.run_analysis(simulation_metadata, simulation_duration_seconds=step_count)
-            
-            self._generate_text_report(consolidated_data)
-            task_success("Análise concluída e relatórios gerados")
-            logger.info("Relatórios gerados com sucesso.")
-
-        except FileNotFoundError as e:
-            task_fail(f"Arquivos de output do SUMO não encontrados: {e}")
-            logger.error("Certifique-se de que o cenário está configurado para gerar os outputs necessários.")
-        except Exception as e:
-            task_fail("Falha ao analisar resultados")
-            logger.critical(f"Falha ao gerar relatórios: {e}", exc_info=True)
-
-    def _generate_text_report(self, data: dict):
-        """Gera o relatório de texto a partir dos dados consolidados."""
-        report_path = PROJECT_ROOT / self.config['output_paths']['logs'] / "simulation_report.log"
-        metrics = data.get("metrics", {})
-        pollution = data.get("pollution", {})
-        queue_metrics = data.get("queue_metrics", {})
-
-        total_vehicles = metrics.get('Veículos Processados (Entraram na Malha)', 0)
-        completed_vehicles = metrics.get('Veículos que Concluíram a Viagem', 0)
-        completion_rate = (completed_vehicles / total_vehicles * 100) if total_vehicles > 0 else 0
-        
-        avg_queue_vehicles = queue_metrics.get('Tamanho Médio da Fila (veículos)', 0)
-        avg_car_length_m = 7.5
-        avg_queue_km = (avg_queue_vehicles * avg_car_length_m) / 1000
-
-        report_template = f"""
-=================================================================
-             RELATÓRIO DE SIMULAÇÃO DE TRÁFEGO
-=================================================================
-- Data da Análise: {data.get('analysis_timestamp')}
-- Cenário: {data.get('scenario')}
-- Modo: {data.get('mode')}
-
---- MÉTRICAS DE FLUXO E EFICIÊNCIA ---
-- Veículos Processados (Entraram na Malha): {total_vehicles}
-- Veículos que Concluíram a Viagem: {completed_vehicles}
-- Taxa de Conclusão: {completion_rate:.2f}%
-- Tempo de simulação: {format_seconds_to_ms(metrics.get('simulation_duration_seconds', 0))}
-- Velocidade Média Geral: {metrics.get('Velocidade Média Geral (km/h)', 0):.2f} km/h
-- Tempo Médio de Viagem: {format_seconds_to_ms(metrics.get('Tempo Médio de Viagem (s)', 0))}
-- Tempo Médio Perdido: {format_seconds_to_ms(metrics.get('Tempo Médio Perdido (s)', 0))}
-
---- MÉTRICAS DE CONGESTIONAMENTO ---
-- Tamanho Médio da Fila: {avg_queue_vehicles:.2f} veículos
-- Extensão Média da Fila: {avg_queue_km:.3f} km
-- Tempo Máximo de Espera: {format_seconds_to_ms(queue_metrics.get('Tempo Máximo de Espera (s)', 0))}
-
---- MÉTRICAS DE POLUIÇÃO ---
-- Consumo Total de Combustível: {pollution.get('Total de fuel', '0.00 L')}
-- Emissão Total de CO2: {pollution.get('Total de CO2', '0.00 kg')}
-- Emissão Total de NOx: {pollution.get('Total de NOx', '0.00 kg')}
-- Emissão Total de PMx: {pollution.get('Total de PMx', '0.00 kg')}
-=================================================================
-"""
-        with open(report_path, 'a', encoding='utf-8') as f:
-            f.write(report_template)
-
     def _simulation_loop(self):
-        """Contém o loop principal da simulação e retorna o número de passos."""
-        step = 0
+        task_start(f"Simulação iniciada em modo '{self.mode_name}'...")
+        logger.info(f"Loop de simulação iniciado. Modo: {self.mode_name}.")
         while True:
-            try:
-                traci.simulationStep()
-                step += 1
-            except (TraCIException, FatalTraCIError):
-                task_success(f"Simulação interrompida pelo usuário no passo {step}")
-                logger.warning(f"Simulação encerrada no passo {step} (conexão perdida).")
-                break
-        return step
+            traci.simulationStep()
+            logger.debug(f"Passo {self.step}: Executando simulationStep.")
+            self.controller.manage_traffic_lights(self.step)
+            if self.step % 100 == 0: self._log_progress()
+            self.step += 1
+
+    def _log_progress(self):
+        try:
+            active = traci.vehicle.getIDCount(); arrived = traci.simulation.getArrivedNumber()
+            logger.info(f"Progresso - Passo: {self.step} ({format_time(self.step)}) | Ativos: {active} | Chegaram: {arrived}")
+        except traci.TraCIException as e:
+            logger.warning(f"Não foi possível obter dados de progresso no passo {self.step}: {e}")
+
+    def _cleanup(self):
+        task_start("Encerrando conexão"); self.traci_connection.close(); task_success("Conexão encerrada")
+        if self.step > 0:
+            task_start("Analisando resultados"); self._analyze_and_report()
+        else:
+            logger.warning("Nenhum passo de simulação executado. Análise ignorada.")
+
+    def _analyze_and_report(self):
+        try:
+            logger.info("Iniciando fase de análise e geração de relatórios.")
+            output_dir = Path(self.config['scenarios'][self.scenario_name]).parent
+            analyzer = LogAnalyzer(
+                trip_info_path=str(output_dir / "tripinfo.xml"),
+                emission_path=str(output_dir / "emissions.xml"),
+                queue_info_path=str(output_dir / "queueinfo.xml")
+            )
+            data = analyzer.run_analysis({"scenario": self.scenario_name, "mode": self.mode_name}, self.step)
+            self.generate_reports(data); self._display_summary_labels(data)
+            task_success("Análise e relatórios concluídos")
+        except Exception as e:
+            task_fail("Falha na análise dos resultados")
+            logger.critical(f"Erro na fase de análise: {e}", exc_info=True)
+
+    def generate_reports(self, data: dict):
+        json_path = PROJECT_ROOT / "logs" / "consolidated_data.json"
+        if json_path.exists():
+            logger.info(f"Dados estruturados para base de dados disponíveis em '{json_path}'.")
+        else:
+            logger.error("Ficheiro JSON consolidado não foi gerado.")
+            
+        report_ticket_path = PROJECT_ROOT / "logs" / "human_analysis_report.log"
+        metrics, pollution, queue = data.get("metrics",{}), data.get("pollution",{}), data.get("queue_metrics",{})
+        total, completed, removed = metrics.get('Veículos Processados (Entraram na Malha)',0), metrics.get('Veículos que Concluíram a Viagem',0), metrics.get('Veículos Removidos (Não Concluídos)', 0) # Usa o novo campo
+        rate = (completed / total * 100) if total > 0 else 0
+
+        summary_text = "Análise concluída com sucesso."
+        if removed > total * 0.05 and total > 0:
+            summary_text = "A simulação indicou ALTOS NÍVEIS DE CONGESTIONAMENTO, com um número significativo de veículos removidos (não concluídos)."
+        elif removed > 0:
+            summary_text = "A simulação indicou FOCOS DE CONGESTIONAMENTO MODERADO, resultando em alguns veículos removidos (não concluídos)."
+        else:
+            summary_text = "A simulação demonstrou um FLUXO DE TRÁFEGO ESTÁVEL, com congestionamentos mínimos ou inexistentes."
+
+        # ATUALIZAÇÃO NO TEMPLATE HUMANIZADO: Substitui Teletransporte por Veículos Removidos
+        ticket_template = f"""
+#########################################################################
+#                                                                       #
+#              TICKET DE ANÁLISE DE SIMULAÇÃO DE TRÁFEGO                #
+#                                                                       #
+#########################################################################
+
+ID DO RELATÓRIO: SIM-{pd.Timestamp(data.get('analysis_timestamp')).strftime('%Y%m%d-%H%M%S')}
+DATA DA ANÁLISE: {pd.Timestamp(data.get('analysis_timestamp')).strftime('%d/%m/%Y %H:%M:%S')}
+
+CENÁRIO ANALISADO...: {data.get('scenario', 'N/A').upper()}
+MODO DE OPERAÇÃO....: {data.get('mode', 'N/A').upper()}
+DURAÇÃO DA SIMULAÇÃO: {format_time(metrics.get('simulation_duration_seconds', 0))}
+
+-------------------------------------------------------------------------
+                           SUMÁRIO EXECUTIVO
+-------------------------------------------------------------------------
+
+{summary_text}
+
+-------------------------------------------------------------------------
+                      INDICADORES CHAVE DE PERFORMANCE (KPIs)
+-------------------------------------------------------------------------
+
+  - EFICIÊNCIA DE FLUXO (VIAGENS CONCLUÍDAS)......: {completed} de {total} ({rate:.2f}%)
+  - NÍVEL DE CONGESTIONAMENTO (VEÍCULOS REMOVIDOS): {removed}
+  - VELOCIDADE MÉDIA GERAL......................: {metrics.get('Velocidade Média Geral (km/h)', 0):.2f} km/h
+
+-------------------------------------------------------------------------
+                       ANÁLISE DETALHADA DE PERFORMANCE
+-------------------------------------------------------------------------
+
+  [+] EFICIÊNCIA DA VIAGEM:
+      - Tempo Médio de Viagem...................: {format_time(metrics.get('Tempo Médio de Viagem (s)', 0))}
+      - Deste tempo, em média:
+          -> {format_time(metrics.get('Tempo Médio Perdido (s)', 0))} foram perdidos em congestionamento ({metrics.get('Percentual de Tempo Perdido', 0):.2f}%)
+          -> {format_time(metrics.get('Tempo Médio de Espera (s)', 0))} foram em espera nos semáforos ({metrics.get('Percentual de Tempo de Espera', 0):.2f}%)
+
+  [+] PONTOS DE CONGESTIONAMENTO:
+      - Tamanho Médio da Fila nos Semáforos.....: {queue.get('Tamanho Médio da Fila (veículos)', 0):.2f} veículos
+      - Pico de Tempo de Espera numa Fila.......: {format_time(queue.get('Tempo Máximo de Espera (s)', 0))}
+
+-------------------------------------------------------------------------
+                          ANÁLISE DE IMPACTO AMBIENTAL
+-------------------------------------------------------------------------
+
+  - Consumo Total de Combustível..: {pollution.get('Total de fuel', '0.00 L')}
+  - Emissão Total de CO2..........: {pollution.get('Total de CO2', '0.00 kg')}
+  - Emissão Total de NOx..........: {pollution.get('Total de NOx', '0.00 kg')}
+
+#########################################################################
+#                         FIM DO RELATÓRIO                              #
+#########################################################################
+"""
+        with open(report_ticket_path, 'a', encoding='utf-8') as f: f.write(ticket_template)
+        logger.info(f"Relatório de análise humana (ticket) salvo em '{report_ticket_path}'.")
+
+    def _display_summary_labels(self, data: dict):
+        metrics = data.get("metrics", {})
+        total, completed, removed = metrics.get('Veículos Processados (Entraram na Malha)',0), metrics.get('Veículos que Concluíram a Viagem',0), metrics.get('Veículos Removidos (Não Concluídos)', 0) # Usa o novo campo
+        rate = (completed / total * 100) if total > 0 else 0
+        RED, ENDC = '\033[91m', '\033[0m'
+        removed_str = f"{RED}{removed}{ENDC}"
+        summary = f"""
++-----------------------------------------------------+
+|              RESUMO DA SIMULAÇÃO                    |
++-----------------------------------------------------+
+| Cenário: {data.get('scenario', 'N/A'):<15} | Modo: {data.get('mode', 'N/A'):<16} |
+| Duração: {format_time(metrics.get('simulation_duration_seconds', 0)):<15} |
++-----------------------------------------------------+
+| Veículos na Malha: {total:<26} |
+| Viagens Concluídas: {completed:<24} |
+| Taxa de Conclusão: {rate:<7.2f}%{'' :<25} |
+| Veículos Removidos: {removed_str:<35} |
+| Velocidade Média: {metrics.get('Velocidade Média Geral (km/h)', 0):<7.2f} km/h{'' :<20} |
+| Tempo Médio Viagem: {format_time(metrics.get('Tempo Médio de Viagem (s)', 0)):<22} |
++-----------------------------------------------------+
+"""
+        print(summary)

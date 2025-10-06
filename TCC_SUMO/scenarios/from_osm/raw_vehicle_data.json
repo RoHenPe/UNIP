@@ -1,0 +1,3957 @@
+[
+    {
+        "id": "51",
+        "depart": "37.00",
+        "departLane": "-160287939#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.28",
+        "arrival": "96.00",
+        "arrivalLane": "-945598230_0",
+        "arrivalPos": "14.53",
+        "arrivalSpeed": "11.29",
+        "duration": 59.0,
+        "routeLength": 579.03,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 21.34,
+        "rerouteNo": "0",
+        "devices": "tripinfo_51 emissions_51",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.17",
+        "vaporized": "",
+        "speed_mps": 9.81406779661017,
+        "status": "completed"
+    },
+    {
+        "id": "2",
+        "depart": "2.00",
+        "departLane": "173159456_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.56",
+        "arrival": "110.00",
+        "arrivalLane": "173085075#0_0",
+        "arrivalPos": "44.22",
+        "arrivalSpeed": "15.30",
+        "duration": 108.0,
+        "routeLength": 1195.67,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 21.3,
+        "rerouteNo": "0",
+        "devices": "tripinfo_2 emissions_2",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 11.07101851851852,
+        "status": "completed"
+    },
+    {
+        "id": "36",
+        "depart": "26.00",
+        "departLane": "173082202_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.08",
+        "arrival": "113.00",
+        "arrivalLane": "-546132097_0",
+        "arrivalPos": "30.97",
+        "arrivalSpeed": "12.09",
+        "duration": 87.0,
+        "routeLength": 887.91,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 18.76,
+        "rerouteNo": "0",
+        "devices": "tripinfo_36 emissions_36",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.97",
+        "vaporized": "",
+        "speed_mps": 10.205862068965518,
+        "status": "completed"
+    },
+    {
+        "id": "14",
+        "depart": "11.00",
+        "departLane": "197423567#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.92",
+        "arrival": "118.00",
+        "arrivalLane": "173163400#3_0",
+        "arrivalPos": "54.70",
+        "arrivalSpeed": "13.68",
+        "duration": 107.0,
+        "routeLength": 1129.29,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 13.6,
+        "rerouteNo": "0",
+        "devices": "tripinfo_14 emissions_14",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.99",
+        "vaporized": "",
+        "speed_mps": 10.55411214953271,
+        "status": "completed"
+    },
+    {
+        "id": "31",
+        "depart": "23.00",
+        "departLane": "332465801#29_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.68",
+        "arrival": "121.00",
+        "arrivalLane": "196885601#11_0",
+        "arrivalPos": "58.17",
+        "arrivalSpeed": "15.07",
+        "duration": 98.0,
+        "routeLength": 1523.71,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 33.41,
+        "rerouteNo": "0",
+        "devices": "tripinfo_31 emissions_31",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.15",
+        "vaporized": "",
+        "speed_mps": 15.548061224489796,
+        "status": "completed"
+    },
+    {
+        "id": "57",
+        "depart": "42.00",
+        "departLane": "182105811#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "126.00",
+        "arrivalLane": "160056786#10_0",
+        "arrivalPos": "55.15",
+        "arrivalSpeed": "15.44",
+        "duration": 84.0,
+        "routeLength": 926.33,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 20.92,
+        "rerouteNo": "0",
+        "devices": "tripinfo_57 emissions_57",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.14",
+        "vaporized": "",
+        "speed_mps": 11.027738095238096,
+        "status": "completed"
+    },
+    {
+        "id": "46",
+        "depart": "34.00",
+        "departLane": "967728692#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.88",
+        "arrival": "127.00",
+        "arrivalLane": "159758967#1_0",
+        "arrivalPos": "19.02",
+        "arrivalSpeed": "12.08",
+        "duration": 93.0,
+        "routeLength": 982.91,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 24.05,
+        "rerouteNo": "0",
+        "devices": "tripinfo_46 emissions_46",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 10.568924731182795,
+        "status": "completed"
+    },
+    {
+        "id": "44",
+        "depart": "32.00",
+        "departLane": "187735567_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.32",
+        "arrival": "128.00",
+        "arrivalLane": "-866928905#0_0",
+        "arrivalPos": "34.57",
+        "arrivalSpeed": "22.89",
+        "duration": 96.0,
+        "routeLength": 1428.71,
+        "waitingTime": 2.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 33.35,
+        "rerouteNo": "0",
+        "devices": "tripinfo_44 emissions_44",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.04",
+        "vaporized": "",
+        "speed_mps": 14.882395833333334,
+        "status": "completed"
+    },
+    {
+        "id": "12",
+        "depart": "9.00",
+        "departLane": "-160056863#8_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.36",
+        "arrival": "138.00",
+        "arrivalLane": "-160060835_0",
+        "arrivalPos": "106.15",
+        "arrivalSpeed": "13.79",
+        "duration": 129.0,
+        "routeLength": 1210.96,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 19.62,
+        "rerouteNo": "0",
+        "devices": "tripinfo_12 emissions_12",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.05",
+        "vaporized": "",
+        "speed_mps": 9.387286821705427,
+        "status": "completed"
+    },
+    {
+        "id": "106",
+        "depart": "77.00",
+        "departLane": "-173075623_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.68",
+        "arrival": "142.00",
+        "arrivalLane": "-187735558_0",
+        "arrivalPos": "30.94",
+        "arrivalSpeed": "12.02",
+        "duration": 65.0,
+        "routeLength": 777.76,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 21.82,
+        "rerouteNo": "0",
+        "devices": "tripinfo_106 emissions_106",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 11.965538461538461,
+        "status": "completed"
+    },
+    {
+        "id": "76",
+        "depart": "55.00",
+        "departLane": "-173157382#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.28",
+        "arrival": "148.00",
+        "arrivalLane": "-173157406#8_0",
+        "arrivalPos": "96.58",
+        "arrivalSpeed": "19.03",
+        "duration": 93.0,
+        "routeLength": 1182.9,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 22.79,
+        "rerouteNo": "0",
+        "devices": "tripinfo_76 emissions_76",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 12.719354838709679,
+        "status": "completed"
+    },
+    {
+        "id": "121",
+        "depart": "88.00",
+        "departLane": "173085038_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.88",
+        "arrival": "151.00",
+        "arrivalLane": "-188825472_0",
+        "arrivalPos": "41.75",
+        "arrivalSpeed": "15.15",
+        "duration": 63.0,
+        "routeLength": 740.24,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 12.13,
+        "rerouteNo": "0",
+        "devices": "tripinfo_121 emissions_121",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.10",
+        "vaporized": "",
+        "speed_mps": 11.74984126984127,
+        "status": "completed"
+    },
+    {
+        "id": "15",
+        "depart": "11.00",
+        "departLane": "159758947#3_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.20",
+        "arrival": "155.00",
+        "arrivalLane": "932918003_0",
+        "arrivalPos": "42.42",
+        "arrivalSpeed": "6.78",
+        "duration": 144.0,
+        "routeLength": 1957.55,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 34.67,
+        "rerouteNo": "0",
+        "devices": "tripinfo_15 emissions_15",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.93",
+        "vaporized": "",
+        "speed_mps": 13.594097222222222,
+        "status": "completed"
+    },
+    {
+        "id": "78",
+        "depart": "57.00",
+        "departLane": "-173157370#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.84",
+        "arrival": "155.00",
+        "arrivalLane": "546860537#2_0",
+        "arrivalPos": "32.50",
+        "arrivalSpeed": "12.70",
+        "duration": 98.0,
+        "routeLength": 1165.21,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 13.13,
+        "rerouteNo": "0",
+        "devices": "tripinfo_78 emissions_78",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 11.889897959183674,
+        "status": "completed"
+    },
+    {
+        "id": "23",
+        "depart": "17.00",
+        "departLane": "173075652#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.44",
+        "arrival": "159.00",
+        "arrivalLane": "-520721251#1_0",
+        "arrivalPos": "0.12",
+        "arrivalSpeed": "4.83",
+        "duration": 142.0,
+        "routeLength": 1982.25,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 32.74,
+        "rerouteNo": "0",
+        "devices": "tripinfo_23 emissions_23",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.89",
+        "vaporized": "",
+        "speed_mps": 13.959507042253522,
+        "status": "completed"
+    },
+    {
+        "id": "130",
+        "depart": "94.00",
+        "departLane": "163294295#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.40",
+        "arrival": "183.00",
+        "arrivalLane": "945299996_0",
+        "arrivalPos": "180.96",
+        "arrivalSpeed": "14.19",
+        "duration": 89.0,
+        "routeLength": 1318.54,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 23.02,
+        "rerouteNo": "0",
+        "devices": "tripinfo_130 emissions_130",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 14.815056179775281,
+        "status": "completed"
+    },
+    {
+        "id": "73",
+        "depart": "53.00",
+        "departLane": "-932630551#6_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.44",
+        "arrival": "184.00",
+        "arrivalLane": "159607463_0",
+        "arrivalPos": "122.37",
+        "arrivalSpeed": "14.25",
+        "duration": 131.0,
+        "routeLength": 1651.35,
+        "waitingTime": 29.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 58.29,
+        "rerouteNo": "0",
+        "devices": "tripinfo_73 emissions_73",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.06",
+        "vaporized": "",
+        "speed_mps": 12.605725190839694,
+        "status": "completed"
+    },
+    {
+        "id": "20",
+        "depart": "15.00",
+        "departLane": "-173157363#7_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.60",
+        "arrival": "185.00",
+        "arrivalLane": "-185327117_0",
+        "arrivalPos": "57.73",
+        "arrivalSpeed": "13.72",
+        "duration": 170.0,
+        "routeLength": 2149.83,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 35.82,
+        "rerouteNo": "0",
+        "devices": "tripinfo_20 emissions_20",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.02",
+        "vaporized": "",
+        "speed_mps": 12.646058823529412,
+        "status": "completed"
+    },
+    {
+        "id": "79",
+        "depart": "57.00",
+        "departLane": "410045890#7_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.12",
+        "arrival": "189.00",
+        "arrivalLane": "-160056774#0_0",
+        "arrivalPos": "96.44",
+        "arrivalSpeed": "14.50",
+        "duration": 132.0,
+        "routeLength": 983.07,
+        "waitingTime": 48.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 68.47,
+        "rerouteNo": "0",
+        "devices": "tripinfo_79 emissions_79",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.09",
+        "vaporized": "",
+        "speed_mps": 7.447500000000001,
+        "status": "completed"
+    },
+    {
+        "id": "38",
+        "depart": "28.00",
+        "departLane": "-173163551#3_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.64",
+        "arrival": "201.00",
+        "arrivalLane": "-173163407#0_0",
+        "arrivalPos": "48.62",
+        "arrivalSpeed": "15.15",
+        "duration": 173.0,
+        "routeLength": 1625.17,
+        "waitingTime": 36.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 71.43,
+        "rerouteNo": "0",
+        "devices": "tripinfo_38 emissions_38",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.10",
+        "vaporized": "",
+        "speed_mps": 9.394046242774566,
+        "status": "completed"
+    },
+    {
+        "id": "45",
+        "depart": "33.00",
+        "departLane": "-159667519_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.60",
+        "arrival": "204.00",
+        "arrivalLane": "-537568170_0",
+        "arrivalPos": "109.63",
+        "arrivalSpeed": "13.89",
+        "duration": 171.0,
+        "routeLength": 2327.19,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 40.31,
+        "rerouteNo": "0",
+        "devices": "tripinfo_45 emissions_45",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.09",
+        "vaporized": "",
+        "speed_mps": 13.609298245614035,
+        "status": "completed"
+    },
+    {
+        "id": "203",
+        "depart": "147.00",
+        "departLane": "-652919170_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.84",
+        "arrival": "205.00",
+        "arrivalLane": "173075651#16_0",
+        "arrivalPos": "10.35",
+        "arrivalSpeed": "17.83",
+        "duration": 58.0,
+        "routeLength": 632.85,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 17.32,
+        "rerouteNo": "0",
+        "devices": "tripinfo_203 emissions_203",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.11",
+        "vaporized": "",
+        "speed_mps": 10.911206896551725,
+        "status": "completed"
+    },
+    {
+        "id": "109",
+        "depart": "79.00",
+        "departLane": "-159598312#6_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.52",
+        "arrival": "208.00",
+        "arrivalLane": "160289194_0",
+        "arrivalPos": "81.55",
+        "arrivalSpeed": "12.33",
+        "duration": 129.0,
+        "routeLength": 1413.38,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 20.58,
+        "rerouteNo": "0",
+        "devices": "tripinfo_109 emissions_109",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.96",
+        "vaporized": "",
+        "speed_mps": 10.956434108527132,
+        "status": "completed"
+    },
+    {
+        "id": "163",
+        "depart": "118.00",
+        "departLane": "520721251#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.64",
+        "arrival": "209.00",
+        "arrivalLane": "532714427#0_0",
+        "arrivalPos": "35.80",
+        "arrivalSpeed": "13.45",
+        "duration": 91.0,
+        "routeLength": 1200.45,
+        "waitingTime": 2.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 32.28,
+        "rerouteNo": "0",
+        "devices": "tripinfo_163 emissions_163",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.13",
+        "vaporized": "",
+        "speed_mps": 13.191758241758242,
+        "status": "completed"
+    },
+    {
+        "id": "136",
+        "depart": "98.00",
+        "departLane": "-182105804#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.08",
+        "arrival": "213.00",
+        "arrivalLane": "163335438#4_0",
+        "arrivalPos": "10.28",
+        "arrivalSpeed": "13.21",
+        "duration": 115.0,
+        "routeLength": 1237.35,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 28.88,
+        "rerouteNo": "0",
+        "devices": "tripinfo_136 emissions_136",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.12",
+        "vaporized": "",
+        "speed_mps": 10.759565217391303,
+        "status": "completed"
+    },
+    {
+        "id": "138",
+        "depart": "100.00",
+        "departLane": "173075651#14_0",
+        "departPos": "0.26",
+        "departSpeed": "0.00",
+        "departDelay": "0.64",
+        "arrival": "213.00",
+        "arrivalLane": "-173869738#0_0",
+        "arrivalPos": "48.88",
+        "arrivalSpeed": "13.13",
+        "duration": 113.0,
+        "routeLength": 1585.91,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 46.26,
+        "rerouteNo": "0",
+        "devices": "tripinfo_138 emissions_138",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 14.034601769911506,
+        "status": "completed"
+    },
+    {
+        "id": "62",
+        "depart": "45.00",
+        "departLane": "-208937196#2_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.36",
+        "arrival": "217.00",
+        "arrivalLane": "-159607450_0",
+        "arrivalPos": "87.45",
+        "arrivalSpeed": "12.81",
+        "duration": 172.0,
+        "routeLength": 1700.54,
+        "waitingTime": 42.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 82.12,
+        "rerouteNo": "0",
+        "devices": "tripinfo_62 emissions_62",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.02",
+        "vaporized": "",
+        "speed_mps": 9.886860465116278,
+        "status": "completed"
+    },
+    {
+        "id": "84",
+        "depart": "61.00",
+        "departLane": "197423567#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.52",
+        "arrival": "218.00",
+        "arrivalLane": "-173102111#1_0",
+        "arrivalPos": "32.55",
+        "arrivalSpeed": "13.82",
+        "duration": 157.0,
+        "routeLength": 2028.41,
+        "waitingTime": 30.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 71.08,
+        "rerouteNo": "0",
+        "devices": "tripinfo_84 emissions_84",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.15",
+        "vaporized": "",
+        "speed_mps": 12.919808917197452,
+        "status": "completed"
+    },
+    {
+        "id": "4",
+        "depart": "3.00",
+        "departLane": "-657337395_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.12",
+        "arrival": "222.00",
+        "arrivalLane": "-157940059#6_0",
+        "arrivalPos": "87.02",
+        "arrivalSpeed": "14.01",
+        "duration": 219.0,
+        "routeLength": 2726.09,
+        "waitingTime": 2.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 60.08,
+        "rerouteNo": "0",
+        "devices": "tripinfo_4 emissions_4",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 12.447899543378997,
+        "status": "completed"
+    },
+    {
+        "id": "107",
+        "depart": "78.00",
+        "departLane": "932552022_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "227.00",
+        "arrivalLane": "160287960#0_0",
+        "arrivalPos": "16.70",
+        "arrivalSpeed": "10.42",
+        "duration": 149.0,
+        "routeLength": 2631.02,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 34.0,
+        "rerouteNo": "0",
+        "devices": "tripinfo_107 emissions_107",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 17.657852348993288,
+        "status": "completed"
+    },
+    {
+        "id": "50",
+        "depart": "36.00",
+        "departLane": "-173163574#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.00",
+        "arrival": "230.00",
+        "arrivalLane": "173075802_0",
+        "arrivalPos": "83.36",
+        "arrivalSpeed": "11.69",
+        "duration": 194.0,
+        "routeLength": 2303.93,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 39.5,
+        "rerouteNo": "0",
+        "devices": "tripinfo_50 emissions_50",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.85",
+        "vaporized": "",
+        "speed_mps": 11.875927835051545,
+        "status": "completed"
+    },
+    {
+        "id": "140",
+        "depart": "101.00",
+        "departLane": "334682518_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.20",
+        "arrival": "231.00",
+        "arrivalLane": "-160056863#10_0",
+        "arrivalPos": "205.83",
+        "arrivalSpeed": "11.56",
+        "duration": 130.0,
+        "routeLength": 1476.33,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 20.96,
+        "rerouteNo": "0",
+        "devices": "tripinfo_140 emissions_140",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.11",
+        "vaporized": "",
+        "speed_mps": 11.356384615384615,
+        "status": "completed"
+    },
+    {
+        "id": "55",
+        "depart": "40.00",
+        "departLane": "-196932504_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.40",
+        "arrival": "234.00",
+        "arrivalLane": "173075773_0",
+        "arrivalPos": "156.29",
+        "arrivalSpeed": "13.05",
+        "duration": 194.0,
+        "routeLength": 2773.28,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 51.02,
+        "rerouteNo": "0",
+        "devices": "tripinfo_55 emissions_55",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 14.295257731958763,
+        "status": "completed"
+    },
+    {
+        "id": "118",
+        "depart": "85.00",
+        "departLane": "159598306#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.04",
+        "arrival": "235.00",
+        "arrivalLane": "654320593#5_0",
+        "arrivalPos": "76.75",
+        "arrivalSpeed": "10.43",
+        "duration": 150.0,
+        "routeLength": 1894.43,
+        "waitingTime": 7.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 37.68,
+        "rerouteNo": "0",
+        "devices": "tripinfo_118 emissions_118",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.99",
+        "vaporized": "",
+        "speed_mps": 12.629533333333335,
+        "status": "completed"
+    },
+    {
+        "id": "13",
+        "depart": "10.00",
+        "departLane": "353547031#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.64",
+        "arrival": "239.00",
+        "arrivalLane": "163335433#11_0",
+        "arrivalPos": "11.12",
+        "arrivalSpeed": "15.58",
+        "duration": 229.0,
+        "routeLength": 3115.23,
+        "waitingTime": 1.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 69.41,
+        "rerouteNo": "0",
+        "devices": "tripinfo_13 emissions_13",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.12",
+        "vaporized": "",
+        "speed_mps": 13.603624454148472,
+        "status": "completed"
+    },
+    {
+        "id": "26",
+        "depart": "19.00",
+        "departLane": "173075865#0_0",
+        "departPos": "1.06",
+        "departSpeed": "0.00",
+        "departDelay": "0.28",
+        "arrival": "239.00",
+        "arrivalLane": "173070186#2_0",
+        "arrivalPos": "14.57",
+        "arrivalSpeed": "11.89",
+        "duration": 220.0,
+        "routeLength": 1670.17,
+        "waitingTime": 78.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 113.02,
+        "rerouteNo": "0",
+        "devices": "tripinfo_26 emissions_26",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.92",
+        "vaporized": "",
+        "speed_mps": 7.591681818181819,
+        "status": "completed"
+    },
+    {
+        "id": "81",
+        "depart": "59.00",
+        "departLane": "-173157283#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.68",
+        "arrival": "239.00",
+        "arrivalLane": "-163335438#0_0",
+        "arrivalPos": "5.24",
+        "arrivalSpeed": "12.99",
+        "duration": 180.0,
+        "routeLength": 2248.57,
+        "waitingTime": 1.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 38.15,
+        "rerouteNo": "0",
+        "devices": "tripinfo_81 emissions_81",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 12.492055555555556,
+        "status": "completed"
+    },
+    {
+        "id": "71",
+        "depart": "52.00",
+        "departLane": "-173085052#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.88",
+        "arrival": "241.00",
+        "arrivalLane": "-197423567#0_0",
+        "arrivalPos": "22.20",
+        "arrivalSpeed": "12.28",
+        "duration": 189.0,
+        "routeLength": 2719.9,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 53.95,
+        "rerouteNo": "0",
+        "devices": "tripinfo_71 emissions_71",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.97",
+        "vaporized": "",
+        "speed_mps": 14.39100529100529,
+        "status": "completed"
+    },
+    {
+        "id": "229",
+        "depart": "165.00",
+        "departLane": "-654022533_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.12",
+        "arrival": "242.00",
+        "arrivalLane": "-173157345_0",
+        "arrivalPos": "172.10",
+        "arrivalSpeed": "13.12",
+        "duration": 77.0,
+        "routeLength": 775.36,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 16.92,
+        "rerouteNo": "0",
+        "devices": "tripinfo_229 emissions_229",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.99",
+        "vaporized": "",
+        "speed_mps": 10.06961038961039,
+        "status": "completed"
+    },
+    {
+        "id": "165",
+        "depart": "119.00",
+        "departLane": "1163037322#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.20",
+        "arrival": "243.00",
+        "arrivalLane": "-196932514#1_0",
+        "arrivalPos": "45.73",
+        "arrivalSpeed": "12.25",
+        "duration": 124.0,
+        "routeLength": 1533.97,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 25.05,
+        "rerouteNo": "0",
+        "devices": "tripinfo_165 emissions_165",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.91",
+        "vaporized": "",
+        "speed_mps": 12.370725806451613,
+        "status": "completed"
+    },
+    {
+        "id": "134",
+        "depart": "97.00",
+        "departLane": "-163335426#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.52",
+        "arrival": "247.00",
+        "arrivalLane": "-160289210#0_0",
+        "arrivalPos": "27.82",
+        "arrivalSpeed": "12.65",
+        "duration": 150.0,
+        "routeLength": 1900.99,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 29.0,
+        "rerouteNo": "0",
+        "devices": "tripinfo_134 emissions_134",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.23",
+        "vaporized": "",
+        "speed_mps": 12.673266666666667,
+        "status": "completed"
+    },
+    {
+        "id": "102",
+        "depart": "74.00",
+        "departLane": "-173163552#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.56",
+        "arrival": "248.00",
+        "arrivalLane": "197203911#5_0",
+        "arrivalPos": "18.84",
+        "arrivalSpeed": "13.44",
+        "duration": 174.0,
+        "routeLength": 2255.93,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 37.35,
+        "rerouteNo": "0",
+        "devices": "tripinfo_102 emissions_102",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.97",
+        "vaporized": "",
+        "speed_mps": 12.965114942528734,
+        "status": "completed"
+    },
+    {
+        "id": "210",
+        "depart": "152.00",
+        "departLane": "159598289#2_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.80",
+        "arrival": "253.00",
+        "arrivalLane": "-159598297_0",
+        "arrivalPos": "171.03",
+        "arrivalSpeed": "14.70",
+        "duration": 101.0,
+        "routeLength": 1261.21,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 32.96,
+        "rerouteNo": "0",
+        "devices": "tripinfo_210 emissions_210",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.10",
+        "vaporized": "",
+        "speed_mps": 12.487227722772278,
+        "status": "completed"
+    },
+    {
+        "id": "0",
+        "depart": "0.00",
+        "departLane": "173075668#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.00",
+        "arrival": "259.00",
+        "arrivalLane": "-157161074#7_0",
+        "arrivalPos": "131.11",
+        "arrivalSpeed": "14.37",
+        "duration": 259.0,
+        "routeLength": 3576.64,
+        "waitingTime": 33.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 83.88,
+        "rerouteNo": "0",
+        "devices": "tripinfo_0 emissions_0",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.06",
+        "vaporized": "",
+        "speed_mps": 13.80942084942085,
+        "status": "completed"
+    },
+    {
+        "id": "5",
+        "depart": "4.00",
+        "departLane": "-173157323#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.40",
+        "arrival": "261.00",
+        "arrivalLane": "159598275#1_0",
+        "arrivalPos": "38.85",
+        "arrivalSpeed": "11.48",
+        "duration": 257.0,
+        "routeLength": 3623.95,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 41.54,
+        "rerouteNo": "0",
+        "devices": "tripinfo_5 emissions_5",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.83",
+        "vaporized": "",
+        "speed_mps": 14.100972762645913,
+        "status": "completed"
+    },
+    {
+        "id": "150",
+        "depart": "108.00",
+        "departLane": "196885601#6_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.00",
+        "arrival": "263.00",
+        "arrivalLane": "533142955_0",
+        "arrivalPos": "42.70",
+        "arrivalSpeed": "13.22",
+        "duration": 155.0,
+        "routeLength": 2186.32,
+        "waitingTime": 2.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 39.25,
+        "rerouteNo": "0",
+        "devices": "tripinfo_150 emissions_150",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.96",
+        "vaporized": "",
+        "speed_mps": 14.105290322580647,
+        "status": "completed"
+    },
+    {
+        "id": "87",
+        "depart": "63.00",
+        "departLane": "173159430#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.36",
+        "arrival": "264.00",
+        "arrivalLane": "173085046_0",
+        "arrivalPos": "39.71",
+        "arrivalSpeed": "12.58",
+        "duration": 201.0,
+        "routeLength": 2545.06,
+        "waitingTime": 2.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 45.34,
+        "rerouteNo": "0",
+        "devices": "tripinfo_87 emissions_87",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.04",
+        "vaporized": "",
+        "speed_mps": 12.661990049751244,
+        "status": "completed"
+    },
+    {
+        "id": "295",
+        "depart": "213.00",
+        "departLane": "159607481#6_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.60",
+        "arrival": "265.00",
+        "arrivalLane": "-924643997#0_0",
+        "arrivalPos": "4.65",
+        "arrivalSpeed": "5.93",
+        "duration": 52.0,
+        "routeLength": 553.03,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 15.45,
+        "rerouteNo": "0",
+        "devices": "tripinfo_295 emissions_295",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.96",
+        "vaporized": "",
+        "speed_mps": 10.635192307692307,
+        "status": "completed"
+    },
+    {
+        "id": "168",
+        "depart": "121.00",
+        "departLane": "-385949107_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.04",
+        "arrival": "266.00",
+        "arrivalLane": "533828802#1_0",
+        "arrivalPos": "67.84",
+        "arrivalSpeed": "21.27",
+        "duration": 145.0,
+        "routeLength": 2044.51,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 20.13,
+        "rerouteNo": "0",
+        "devices": "tripinfo_168 emissions_168",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.98",
+        "vaporized": "",
+        "speed_mps": 14.100068965517242,
+        "status": "completed"
+    },
+    {
+        "id": "124",
+        "depart": "90.00",
+        "departLane": "971029276#8_0",
+        "departPos": "2.69",
+        "departSpeed": "0.00",
+        "departDelay": "0.72",
+        "arrival": "267.00",
+        "arrivalLane": "970011737_0",
+        "arrivalPos": "0.20",
+        "arrivalSpeed": "3.05",
+        "duration": 177.0,
+        "routeLength": 2792.73,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 31.81,
+        "rerouteNo": "0",
+        "devices": "tripinfo_124 emissions_124",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.06",
+        "vaporized": "",
+        "speed_mps": 15.77813559322034,
+        "status": "completed"
+    },
+    {
+        "id": "119",
+        "depart": "86.00",
+        "departLane": "-173085075#6_0",
+        "departPos": "4.67",
+        "departSpeed": "0.00",
+        "departDelay": "0.32",
+        "arrival": "269.00",
+        "arrivalLane": "173159372_0",
+        "arrivalPos": "37.74",
+        "arrivalSpeed": "14.77",
+        "duration": 183.0,
+        "routeLength": 2288.43,
+        "waitingTime": 6.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 40.08,
+        "rerouteNo": "0",
+        "devices": "tripinfo_119 emissions_119",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.07",
+        "vaporized": "",
+        "speed_mps": 12.505081967213114,
+        "status": "completed"
+    },
+    {
+        "id": "166",
+        "depart": "120.00",
+        "departLane": "196885601#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.48",
+        "arrival": "275.00",
+        "arrivalLane": "-173159369_0",
+        "arrivalPos": "60.43",
+        "arrivalSpeed": "13.02",
+        "duration": 155.0,
+        "routeLength": 1887.89,
+        "waitingTime": 4.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 35.42,
+        "rerouteNo": "0",
+        "devices": "tripinfo_166 emissions_166",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 12.179935483870969,
+        "status": "completed"
+    },
+    {
+        "id": "187",
+        "depart": "135.00",
+        "departLane": "-547781599#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.36",
+        "arrival": "279.00",
+        "arrivalLane": "-187678120_0",
+        "arrivalPos": "149.99",
+        "arrivalSpeed": "11.64",
+        "duration": 144.0,
+        "routeLength": 1668.04,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 27.54,
+        "rerouteNo": "0",
+        "devices": "tripinfo_187 emissions_187",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.89",
+        "vaporized": "",
+        "speed_mps": 11.58361111111111,
+        "status": "completed"
+    },
+    {
+        "id": "259",
+        "depart": "187.00",
+        "departLane": "-173075760#2_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.52",
+        "arrival": "279.00",
+        "arrivalLane": "173070107#4_0",
+        "arrivalPos": "63.14",
+        "arrivalSpeed": "11.38",
+        "duration": 92.0,
+        "routeLength": 814.02,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 15.55,
+        "rerouteNo": "0",
+        "devices": "tripinfo_259 emissions_259",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.84",
+        "vaporized": "",
+        "speed_mps": 8.84804347826087,
+        "status": "completed"
+    },
+    {
+        "id": "82",
+        "depart": "60.00",
+        "departLane": "652483193#2_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "280.00",
+        "arrivalLane": "160177513#0_1",
+        "arrivalPos": "102.21",
+        "arrivalSpeed": "10.55",
+        "duration": 220.0,
+        "routeLength": 2500.21,
+        "waitingTime": 36.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 89.93,
+        "rerouteNo": "0",
+        "devices": "tripinfo_82 emissions_82",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.02",
+        "vaporized": "",
+        "speed_mps": 11.364590909090909,
+        "status": "completed"
+    },
+    {
+        "id": "151",
+        "depart": "109.00",
+        "departLane": "539082005#0_0",
+        "departPos": "0.20",
+        "departSpeed": "0.00",
+        "departDelay": "0.28",
+        "arrival": "281.00",
+        "arrivalLane": "-173157362#7_0",
+        "arrivalPos": "35.74",
+        "arrivalSpeed": "12.84",
+        "duration": 172.0,
+        "routeLength": 2063.08,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 38.33,
+        "rerouteNo": "0",
+        "devices": "tripinfo_151 emissions_151",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.00",
+        "vaporized": "",
+        "speed_mps": 11.994651162790698,
+        "status": "completed"
+    },
+    {
+        "id": "208",
+        "depart": "150.00",
+        "departLane": "-160177503#2_0",
+        "departPos": "1.06",
+        "departSpeed": "0.00",
+        "departDelay": "0.24",
+        "arrival": "282.00",
+        "arrivalLane": "-924626944#5_0",
+        "arrivalPos": "39.05",
+        "arrivalSpeed": "26.59",
+        "duration": 132.0,
+        "routeLength": 847.55,
+        "waitingTime": 43.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 63.26,
+        "rerouteNo": "0",
+        "devices": "tripinfo_208 emissions_208",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.96",
+        "vaporized": "",
+        "speed_mps": 6.420833333333333,
+        "status": "completed"
+    },
+    {
+        "id": "164",
+        "depart": "119.00",
+        "departLane": "-173157344#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.92",
+        "arrival": "283.00",
+        "arrivalLane": "385949109_0",
+        "arrivalPos": "96.99",
+        "arrivalSpeed": "14.17",
+        "duration": 164.0,
+        "routeLength": 1503.08,
+        "waitingTime": 30.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 69.98,
+        "rerouteNo": "0",
+        "devices": "tripinfo_164 emissions_164",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.05",
+        "vaporized": "",
+        "speed_mps": 9.165121951219511,
+        "status": "completed"
+    },
+    {
+        "id": "61",
+        "depart": "44.00",
+        "departLane": "532700406_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.08",
+        "arrival": "285.00",
+        "arrivalLane": "470655937#0_0",
+        "arrivalPos": "166.95",
+        "arrivalSpeed": "15.17",
+        "duration": 241.0,
+        "routeLength": 3458.89,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 37.16,
+        "rerouteNo": "0",
+        "devices": "tripinfo_61 emissions_61",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.12",
+        "vaporized": "",
+        "speed_mps": 14.352240663900414,
+        "status": "completed"
+    },
+    {
+        "id": "80",
+        "depart": "58.00",
+        "departLane": "-173159359#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.40",
+        "arrival": "285.00",
+        "arrivalLane": "173082282#0_0",
+        "arrivalPos": "23.14",
+        "arrivalSpeed": "14.92",
+        "duration": 227.0,
+        "routeLength": 3270.34,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 41.93,
+        "rerouteNo": "0",
+        "devices": "tripinfo_80 emissions_80",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 14.406784140969163,
+        "status": "completed"
+    },
+    {
+        "id": "1",
+        "depart": "1.00",
+        "departLane": "-182105822#1_0",
+        "departPos": "4.87",
+        "departSpeed": "0.00",
+        "departDelay": "0.28",
+        "arrival": "287.00",
+        "arrivalLane": "-173159354#1_0",
+        "arrivalPos": "0.20",
+        "arrivalSpeed": "3.22",
+        "duration": 286.0,
+        "routeLength": 3468.42,
+        "waitingTime": 15.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 74.82,
+        "rerouteNo": "0",
+        "devices": "tripinfo_1 emissions_1",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.94",
+        "vaporized": "",
+        "speed_mps": 12.127342657342657,
+        "status": "completed"
+    },
+    {
+        "id": "319",
+        "depart": "230.00",
+        "departLane": "952474636_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.32",
+        "arrival": "288.00",
+        "arrivalLane": "-160289231#0_0",
+        "arrivalPos": "9.27",
+        "arrivalSpeed": "15.24",
+        "duration": 58.0,
+        "routeLength": 619.35,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 16.18,
+        "rerouteNo": "0",
+        "devices": "tripinfo_319 emissions_319",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.13",
+        "vaporized": "",
+        "speed_mps": 10.678448275862069,
+        "status": "completed"
+    },
+    {
+        "id": "27",
+        "depart": "20.00",
+        "departLane": "-173075823_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.56",
+        "arrival": "291.00",
+        "arrivalLane": "173163399#3_0",
+        "arrivalPos": "176.33",
+        "arrivalSpeed": "6.71",
+        "duration": 271.0,
+        "routeLength": 3338.61,
+        "waitingTime": 9.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 59.44,
+        "rerouteNo": "0",
+        "devices": "tripinfo_27 emissions_27",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.95",
+        "vaporized": "",
+        "speed_mps": 12.31959409594096,
+        "status": "completed"
+    },
+    {
+        "id": "155",
+        "depart": "112.00",
+        "departLane": "-173075614_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.40",
+        "arrival": "292.00",
+        "arrivalLane": "654022533_0",
+        "arrivalPos": "25.76",
+        "arrivalSpeed": "10.82",
+        "duration": 180.0,
+        "routeLength": 2540.71,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 41.85,
+        "rerouteNo": "0",
+        "devices": "tripinfo_155 emissions_155",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.12",
+        "vaporized": "",
+        "speed_mps": 14.115055555555555,
+        "status": "completed"
+    },
+    {
+        "id": "39",
+        "depart": "29.00",
+        "departLane": "160177505#0_0",
+        "departPos": "4.91",
+        "departSpeed": "0.00",
+        "departDelay": "0.92",
+        "arrival": "294.00",
+        "arrivalLane": "544163220_0",
+        "arrivalPos": "59.04",
+        "arrivalSpeed": "11.49",
+        "duration": 265.0,
+        "routeLength": 2540.6,
+        "waitingTime": 33.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 72.84,
+        "rerouteNo": "0",
+        "devices": "tripinfo_39 emissions_39",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.90",
+        "vaporized": "",
+        "speed_mps": 9.587169811320754,
+        "status": "completed"
+    },
+    {
+        "id": "93",
+        "depart": "67.00",
+        "departLane": "-173163393#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.04",
+        "arrival": "295.00",
+        "arrivalLane": "647523017#0_0",
+        "arrivalPos": "0.20",
+        "arrivalSpeed": "6.37",
+        "duration": 228.0,
+        "routeLength": 2673.5,
+        "waitingTime": 36.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 66.61,
+        "rerouteNo": "0",
+        "devices": "tripinfo_93 emissions_93",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.92",
+        "vaporized": "",
+        "speed_mps": 11.725877192982455,
+        "status": "completed"
+    },
+    {
+        "id": "157",
+        "depart": "114.00",
+        "departLane": "208865753_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "296.00",
+        "arrivalLane": "539082005#0_0",
+        "arrivalPos": "0.20",
+        "arrivalSpeed": "5.10",
+        "duration": 182.0,
+        "routeLength": 2112.99,
+        "waitingTime": 24.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 80.53,
+        "rerouteNo": "0",
+        "devices": "tripinfo_157 emissions_157",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.08",
+        "vaporized": "",
+        "speed_mps": 11.609835164835163,
+        "status": "completed"
+    },
+    {
+        "id": "348",
+        "depart": "251.00",
+        "departLane": "720036802#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.44",
+        "arrival": "300.00",
+        "arrivalLane": "971835855_0",
+        "arrivalPos": "27.48",
+        "arrivalSpeed": "12.56",
+        "duration": 49.0,
+        "routeLength": 442.88,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 18.17,
+        "rerouteNo": "0",
+        "devices": "tripinfo_348 emissions_348",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.13",
+        "vaporized": "",
+        "speed_mps": 9.038367346938776,
+        "status": "completed"
+    },
+    {
+        "id": "258",
+        "depart": "186.00",
+        "departLane": "173157362#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.24",
+        "arrival": "302.00",
+        "arrivalLane": "185327112#1_0",
+        "arrivalPos": "59.88",
+        "arrivalSpeed": "12.95",
+        "duration": 116.0,
+        "routeLength": 1809.39,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 21.6,
+        "rerouteNo": "0",
+        "devices": "tripinfo_258 emissions_258",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 15.598189655172416,
+        "status": "completed"
+    },
+    {
+        "id": "114",
+        "depart": "83.00",
+        "departLane": "-173157407#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.92",
+        "arrival": "304.00",
+        "arrivalLane": "-160289250#3_0",
+        "arrivalPos": "142.51",
+        "arrivalSpeed": "14.83",
+        "duration": 221.0,
+        "routeLength": 2434.45,
+        "waitingTime": 4.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 67.61,
+        "rerouteNo": "0",
+        "devices": "tripinfo_114 emissions_114",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.10",
+        "vaporized": "",
+        "speed_mps": 11.015610859728506,
+        "status": "completed"
+    },
+    {
+        "id": "75",
+        "depart": "54.00",
+        "departLane": "-385949145#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.00",
+        "arrival": "306.00",
+        "arrivalLane": "160289228#2_0",
+        "arrivalPos": "20.89",
+        "arrivalSpeed": "12.49",
+        "duration": 252.0,
+        "routeLength": 3216.86,
+        "waitingTime": 7.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 53.54,
+        "rerouteNo": "0",
+        "devices": "tripinfo_75 emissions_75",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.98",
+        "vaporized": "",
+        "speed_mps": 12.76531746031746,
+        "status": "completed"
+    },
+    {
+        "id": "85",
+        "depart": "62.00",
+        "departLane": "-160060783_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.80",
+        "arrival": "306.00",
+        "arrivalLane": "-932924806#4_0",
+        "arrivalPos": "20.79",
+        "arrivalSpeed": "12.44",
+        "duration": 244.0,
+        "routeLength": 2983.9,
+        "waitingTime": 39.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 87.08,
+        "rerouteNo": "0",
+        "devices": "tripinfo_85 emissions_85",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.98",
+        "vaporized": "",
+        "speed_mps": 12.229098360655739,
+        "status": "completed"
+    },
+    {
+        "id": "211",
+        "depart": "152.00",
+        "departLane": "-173159458#1_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.08",
+        "arrival": "308.00",
+        "arrivalLane": "520721251#1_0",
+        "arrivalPos": "0.12",
+        "arrivalSpeed": "7.01",
+        "duration": 156.0,
+        "routeLength": 2089.34,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 32.89,
+        "rerouteNo": "0",
+        "devices": "tripinfo_211 emissions_211",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.04",
+        "vaporized": "",
+        "speed_mps": 13.393205128205128,
+        "status": "completed"
+    },
+    {
+        "id": "237",
+        "depart": "171.00",
+        "departLane": "-173157329#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.36",
+        "arrival": "309.00",
+        "arrivalLane": "-173157406#0_0",
+        "arrivalPos": "160.18",
+        "arrivalSpeed": "24.02",
+        "duration": 138.0,
+        "routeLength": 1076.57,
+        "waitingTime": 37.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 56.28,
+        "rerouteNo": "0",
+        "devices": "tripinfo_237 emissions_237",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.88",
+        "vaporized": "",
+        "speed_mps": 7.80123188405797,
+        "status": "completed"
+    },
+    {
+        "id": "63",
+        "depart": "46.00",
+        "departLane": "532700403_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.64",
+        "arrival": "310.00",
+        "arrivalLane": "780558587_0",
+        "arrivalPos": "48.92",
+        "arrivalSpeed": "21.50",
+        "duration": 264.0,
+        "routeLength": 2926.94,
+        "waitingTime": 5.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 73.62,
+        "rerouteNo": "0",
+        "devices": "tripinfo_63 emissions_63",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.99",
+        "vaporized": "",
+        "speed_mps": 11.08689393939394,
+        "status": "completed"
+    },
+    {
+        "id": "40",
+        "depart": "29.00",
+        "departLane": "-546320792#9_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.20",
+        "arrival": "312.00",
+        "arrivalLane": "-173157405#2_0",
+        "arrivalPos": "0.34",
+        "arrivalSpeed": "4.66",
+        "duration": 283.0,
+        "routeLength": 3256.95,
+        "waitingTime": 59.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 115.1,
+        "rerouteNo": "0",
+        "devices": "tripinfo_40 emissions_40",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.03",
+        "vaporized": "",
+        "speed_mps": 11.508657243816254,
+        "status": "completed"
+    },
+    {
+        "id": "67",
+        "depart": "49.00",
+        "departLane": "1426337575_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.76",
+        "arrival": "313.00",
+        "arrivalLane": "160056852#2_0",
+        "arrivalPos": "117.95",
+        "arrivalSpeed": "19.92",
+        "duration": 264.0,
+        "routeLength": 2859.98,
+        "waitingTime": 58.0,
+        "waitingCount": "3",
+        "stopTime": "0.00",
+        "timeLoss": 115.22,
+        "rerouteNo": "0",
+        "devices": "tripinfo_67 emissions_67",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.91",
+        "vaporized": "",
+        "speed_mps": 10.833257575757576,
+        "status": "completed"
+    },
+    {
+        "id": "42",
+        "depart": "31.00",
+        "departLane": "-160056859#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.76",
+        "arrival": "319.00",
+        "arrivalLane": "-159598275#3_0",
+        "arrivalPos": "99.70",
+        "arrivalSpeed": "14.60",
+        "duration": 288.0,
+        "routeLength": 4255.63,
+        "waitingTime": 38.0,
+        "waitingCount": "1",
+        "stopTime": "0.00",
+        "timeLoss": 85.65,
+        "rerouteNo": "0",
+        "devices": "tripinfo_42 emissions_42",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.09",
+        "vaporized": "",
+        "speed_mps": 14.776493055555555,
+        "status": "completed"
+    },
+    {
+        "id": "32",
+        "depart": "24.00",
+        "departLane": "-173157371_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "320.00",
+        "arrivalLane": "-158257407_0",
+        "arrivalPos": "99.25",
+        "arrivalSpeed": "13.40",
+        "duration": 296.0,
+        "routeLength": 3508.66,
+        "waitingTime": 18.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 91.21,
+        "rerouteNo": "0",
+        "devices": "tripinfo_32 emissions_32",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 11.85358108108108,
+        "status": "completed"
+    },
+    {
+        "id": "217",
+        "depart": "157.00",
+        "departLane": "226640219#3_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.76",
+        "arrival": "321.00",
+        "arrivalLane": "160056838#0_0",
+        "arrivalPos": "45.05",
+        "arrivalSpeed": "14.00",
+        "duration": 164.0,
+        "routeLength": 2100.3,
+        "waitingTime": 19.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 68.32,
+        "rerouteNo": "0",
+        "devices": "tripinfo_217 emissions_217",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.07",
+        "vaporized": "",
+        "speed_mps": 12.806707317073172,
+        "status": "completed"
+    },
+    {
+        "id": "332",
+        "depart": "240.00",
+        "departLane": "-173157396#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.96",
+        "arrival": "322.00",
+        "arrivalLane": "173157392#0_0",
+        "arrivalPos": "8.32",
+        "arrivalSpeed": "12.97",
+        "duration": 82.0,
+        "routeLength": 560.73,
+        "waitingTime": 19.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 53.84,
+        "rerouteNo": "0",
+        "devices": "tripinfo_332 emissions_332",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.01",
+        "vaporized": "",
+        "speed_mps": 6.838170731707318,
+        "status": "completed"
+    },
+    {
+        "id": "53",
+        "depart": "39.00",
+        "departLane": "158257418#0_0",
+        "departPos": "5.10",
+        "departSpeed": "0.00",
+        "departDelay": "0.84",
+        "arrival": "326.00",
+        "arrivalLane": "-173082281_0",
+        "arrivalPos": "155.88",
+        "arrivalSpeed": "14.22",
+        "duration": 287.0,
+        "routeLength": 4274.86,
+        "waitingTime": 0.0,
+        "waitingCount": "0",
+        "stopTime": "0.00",
+        "timeLoss": 81.69,
+        "rerouteNo": "0",
+        "devices": "tripinfo_53 emissions_53",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.10",
+        "vaporized": "",
+        "speed_mps": 14.894982578397212,
+        "status": "completed"
+    },
+    {
+        "id": "8",
+        "depart": "6.00",
+        "departLane": "-173157328#3_0",
+        "departPos": "0.20",
+        "departSpeed": "0.00",
+        "departDelay": "0.24",
+        "arrival": "327.00",
+        "arrivalLane": "160289250#0_0",
+        "arrivalPos": "82.98",
+        "arrivalSpeed": "12.91",
+        "duration": 321.0,
+        "routeLength": 3837.01,
+        "waitingTime": 48.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 98.77,
+        "rerouteNo": "0",
+        "devices": "tripinfo_8 emissions_8",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "0.94",
+        "vaporized": "",
+        "speed_mps": 11.953302180685359,
+        "status": "completed"
+    },
+    {
+        "id": "33",
+        "depart": "24.00",
+        "departLane": "-315961605#0_0",
+        "departPos": "0.20",
+        "departSpeed": "0.00",
+        "departDelay": "0.24",
+        "arrival": "328.00",
+        "arrivalLane": "-182105811#0_0",
+        "arrivalPos": "24.62",
+        "arrivalSpeed": "13.11",
+        "duration": 304.0,
+        "routeLength": 2521.01,
+        "waitingTime": 108.0,
+        "waitingCount": "2",
+        "stopTime": "0.00",
+        "timeLoss": 143.61,
+        "rerouteNo": "0",
+        "devices": "tripinfo_33 emissions_33",
+        "vType": "DEFAULT_VEHTYPE",
+        "speedFactor": "1.17",
+        "vaporized": "",
+        "speed_mps": 8.29279605263158,
+        "status": "completed"
+    },
+    {
+        "id": "10",
+        "duration": 320.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "100",
+        "duration": 256.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "101",
+        "duration": 255.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "103",
+        "duration": 253.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "104",
+        "duration": 253.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "105",
+        "duration": 252.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "108",
+        "duration": 250.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "11",
+        "duration": 320.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "110",
+        "duration": 248.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "111",
+        "duration": 248.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "112",
+        "duration": 247.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "113",
+        "duration": 246.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "115",
+        "duration": 245.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "116",
+        "duration": 244.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "117",
+        "duration": 243.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "120",
+        "duration": 241.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "122",
+        "duration": 240.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "123",
+        "duration": 239.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "125",
+        "duration": 238.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "126",
+        "duration": 237.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "127",
+        "duration": 236.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "128",
+        "duration": 235.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "129",
+        "duration": 235.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "131",
+        "duration": 233.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "132",
+        "duration": 232.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "133",
+        "duration": 232.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "135",
+        "duration": 230.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "137",
+        "duration": 229.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "139",
+        "duration": 227.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "141",
+        "duration": 226.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "142",
+        "duration": 225.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "143",
+        "duration": 225.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "144",
+        "duration": 224.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "145",
+        "duration": 223.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "146",
+        "duration": 222.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "147",
+        "duration": 222.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "148",
+        "duration": 221.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "149",
+        "duration": 220.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "152",
+        "duration": 218.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "153",
+        "duration": 217.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "154",
+        "duration": 217.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "156",
+        "duration": 215.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "158",
+        "duration": 214.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "159",
+        "duration": 213.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "16",
+        "duration": 316.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "160",
+        "duration": 212.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "161",
+        "duration": 212.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "162",
+        "duration": 211.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "167",
+        "duration": 207.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "169",
+        "duration": 206.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "17",
+        "duration": 315.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "170",
+        "duration": 205.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "171",
+        "duration": 204.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "172",
+        "duration": 204.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "173",
+        "duration": 203.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "174",
+        "duration": 202.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "175",
+        "duration": 202.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "176",
+        "duration": 201.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "177",
+        "duration": 200.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "178",
+        "duration": 199.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "179",
+        "duration": 199.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "18",
+        "duration": 315.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "180",
+        "duration": 198.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "181",
+        "duration": 197.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "182",
+        "duration": 196.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "183",
+        "duration": 196.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "184",
+        "duration": 195.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "185",
+        "duration": 194.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "186",
+        "duration": 194.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "188",
+        "duration": 192.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "189",
+        "duration": 191.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "19",
+        "duration": 314.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "190",
+        "duration": 191.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "191",
+        "duration": 190.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "192",
+        "duration": 189.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "193",
+        "duration": 189.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "194",
+        "duration": 188.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "195",
+        "duration": 187.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "196",
+        "duration": 186.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "197",
+        "duration": 186.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "198",
+        "duration": 185.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "199",
+        "duration": 184.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "200",
+        "duration": 184.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "201",
+        "duration": 183.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "202",
+        "duration": 182.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "204",
+        "duration": 181.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "205",
+        "duration": 180.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "206",
+        "duration": 179.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "207",
+        "duration": 178.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "209",
+        "duration": 177.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "21",
+        "duration": 312.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "212",
+        "duration": 175.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "213",
+        "duration": 174.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "214",
+        "duration": 173.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "215",
+        "duration": 173.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "216",
+        "duration": 172.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "218",
+        "duration": 171.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "219",
+        "duration": 170.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "22",
+        "duration": 312.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "220",
+        "duration": 169.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "221",
+        "duration": 168.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "222",
+        "duration": 168.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "223",
+        "duration": 167.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "224",
+        "duration": 166.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "225",
+        "duration": 166.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "226",
+        "duration": 165.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "227",
+        "duration": 164.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "228",
+        "duration": 163.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "230",
+        "duration": 162.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "231",
+        "duration": 161.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "232",
+        "duration": 160.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "233",
+        "duration": 160.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "234",
+        "duration": 159.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "235",
+        "duration": 158.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "236",
+        "duration": 158.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "238",
+        "duration": 156.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "239",
+        "duration": 155.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "24",
+        "duration": 310.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "240",
+        "duration": 155.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "241",
+        "duration": 154.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "242",
+        "duration": 153.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "243",
+        "duration": 153.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "244",
+        "duration": 152.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "245",
+        "duration": 151.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "246",
+        "duration": 150.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "247",
+        "duration": 150.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "248",
+        "duration": 149.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "249",
+        "duration": 148.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "25",
+        "duration": 310.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "250",
+        "duration": 148.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "251",
+        "duration": 147.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "252",
+        "duration": 146.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "253",
+        "duration": 145.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "254",
+        "duration": 145.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "255",
+        "duration": 144.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "256",
+        "duration": 141.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "257",
+        "duration": 142.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "260",
+        "duration": 140.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "261",
+        "duration": 140.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "262",
+        "duration": 139.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "263",
+        "duration": 138.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "264",
+        "duration": 137.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "265",
+        "duration": 137.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "266",
+        "duration": 136.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "267",
+        "duration": 135.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "268",
+        "duration": 135.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "269",
+        "duration": 134.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "270",
+        "duration": 133.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "271",
+        "duration": 132.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "272",
+        "duration": 132.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "273",
+        "duration": 131.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "274",
+        "duration": 130.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "275",
+        "duration": 130.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "276",
+        "duration": 129.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "277",
+        "duration": 128.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "278",
+        "duration": 127.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "279",
+        "duration": 127.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "28",
+        "duration": 307.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "280",
+        "duration": 126.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "281",
+        "duration": 121.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "282",
+        "duration": 124.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "283",
+        "duration": 122.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "284",
+        "duration": 123.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "285",
+        "duration": 122.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "286",
+        "duration": 122.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "287",
+        "duration": 121.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "288",
+        "duration": 120.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "289",
+        "duration": 119.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "29",
+        "duration": 307.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "290",
+        "duration": 119.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "291",
+        "duration": 118.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "292",
+        "duration": 117.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "293",
+        "duration": 117.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "294",
+        "duration": 116.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "296",
+        "duration": 114.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "297",
+        "duration": 114.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "298",
+        "duration": 113.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "299",
+        "duration": 112.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "3",
+        "duration": 325.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "30",
+        "duration": 306.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "300",
+        "duration": 112.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "301",
+        "duration": 111.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "302",
+        "duration": 110.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "303",
+        "duration": 109.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "304",
+        "duration": 109.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "305",
+        "duration": 108.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "306",
+        "duration": 107.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "307",
+        "duration": 106.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "308",
+        "duration": 106.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "309",
+        "duration": 105.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "310",
+        "duration": 104.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "311",
+        "duration": 104.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "312",
+        "duration": 103.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "313",
+        "duration": 102.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "314",
+        "duration": 101.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "315",
+        "duration": 101.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "316",
+        "duration": 100.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "317",
+        "duration": 99.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "318",
+        "duration": 99.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "320",
+        "duration": 97.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "321",
+        "duration": 96.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "322",
+        "duration": 96.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "323",
+        "duration": 95.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "324",
+        "duration": 94.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "325",
+        "duration": 94.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "326",
+        "duration": 93.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "327",
+        "duration": 92.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "328",
+        "duration": 91.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "329",
+        "duration": 91.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "330",
+        "duration": 90.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "331",
+        "duration": 89.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "333",
+        "duration": 88.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "334",
+        "duration": 87.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "335",
+        "duration": 86.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "336",
+        "duration": 86.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "337",
+        "duration": 85.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "338",
+        "duration": 84.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "339",
+        "duration": 83.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "34",
+        "duration": 303.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "340",
+        "duration": 83.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "341",
+        "duration": 82.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "342",
+        "duration": 81.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "343",
+        "duration": 81.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "344",
+        "duration": 80.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "345",
+        "duration": 79.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "346",
+        "duration": 76.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "347",
+        "duration": 78.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "349",
+        "duration": 75.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "35",
+        "duration": 302.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "350",
+        "duration": 76.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "351",
+        "duration": 75.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "352",
+        "duration": 74.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "353",
+        "duration": 73.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "354",
+        "duration": 73.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "355",
+        "duration": 72.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "356",
+        "duration": 71.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "357",
+        "duration": 70.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "358",
+        "duration": 70.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "359",
+        "duration": 69.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "360",
+        "duration": 68.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "361",
+        "duration": 68.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "362",
+        "duration": 67.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "363",
+        "duration": 66.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "364",
+        "duration": 65.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "365",
+        "duration": 65.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "366",
+        "duration": 64.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "367",
+        "duration": 63.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "368",
+        "duration": 63.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "369",
+        "duration": 62.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "37",
+        "duration": 301.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "370",
+        "duration": 59.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "371",
+        "duration": 60.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "372",
+        "duration": 60.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "373",
+        "duration": 59.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "374",
+        "duration": 58.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "375",
+        "duration": 58.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "376",
+        "duration": 57.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "377",
+        "duration": 56.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "378",
+        "duration": 55.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "379",
+        "duration": 55.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "380",
+        "duration": 54.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "381",
+        "duration": 53.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "382",
+        "duration": 52.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "383",
+        "duration": 52.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "384",
+        "duration": 51.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "385",
+        "duration": 50.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "386",
+        "duration": 50.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "387",
+        "duration": 48.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "388",
+        "duration": 48.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "389",
+        "duration": 47.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "390",
+        "duration": 47.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "391",
+        "duration": 46.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "392",
+        "duration": 45.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "393",
+        "duration": 45.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "394",
+        "duration": 44.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "395",
+        "duration": 43.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "396",
+        "duration": 42.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "397",
+        "duration": 42.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "398",
+        "duration": 41.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "399",
+        "duration": 40.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "400",
+        "duration": 40.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "401",
+        "duration": 39.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "402",
+        "duration": 38.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "403",
+        "duration": 37.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "404",
+        "duration": 37.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "405",
+        "duration": 36.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "406",
+        "duration": 35.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "407",
+        "duration": 34.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "408",
+        "duration": 34.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "409",
+        "duration": 33.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "41",
+        "duration": 298.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "410",
+        "duration": 32.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "411",
+        "duration": 32.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "412",
+        "duration": 31.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "413",
+        "duration": 30.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "414",
+        "duration": 29.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "415",
+        "duration": 29.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "416",
+        "duration": 28.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "417",
+        "duration": 27.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "418",
+        "duration": 27.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "419",
+        "duration": 26.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "420",
+        "duration": 25.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "421",
+        "duration": 24.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "422",
+        "duration": 24.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "423",
+        "duration": 23.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "424",
+        "duration": 22.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "425",
+        "duration": 22.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "426",
+        "duration": 21.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "427",
+        "duration": 20.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "428",
+        "duration": 19.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "429",
+        "duration": 19.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "43",
+        "duration": 297.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "430",
+        "duration": 18.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "431",
+        "duration": 17.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "432",
+        "duration": 16.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "433",
+        "duration": 16.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "434",
+        "duration": 15.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "435",
+        "duration": 14.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "436",
+        "duration": 14.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "437",
+        "duration": 13.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "438",
+        "duration": 12.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "439",
+        "duration": 11.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "440",
+        "duration": 11.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "441",
+        "duration": 10.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "442",
+        "duration": 9.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "443",
+        "duration": 9.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "444",
+        "duration": 8.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "445",
+        "duration": 5.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "446",
+        "duration": 6.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "447",
+        "duration": 6.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "448",
+        "duration": 5.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "449",
+        "duration": 4.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "450",
+        "duration": 4.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "451",
+        "duration": 3.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "453",
+        "duration": 1.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "454",
+        "duration": 1.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "455",
+        "duration": 0.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "47",
+        "duration": 294.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "48",
+        "duration": 293.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "49",
+        "duration": 292.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "52",
+        "duration": 290.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "54",
+        "duration": 289.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "56",
+        "duration": 287.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "58",
+        "duration": 286.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "59",
+        "duration": 285.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "6",
+        "duration": 323.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "60",
+        "duration": 284.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "64",
+        "duration": 281.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "65",
+        "duration": 281.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "66",
+        "duration": 280.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "68",
+        "duration": 276.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "69",
+        "duration": 278.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "7",
+        "duration": 322.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "70",
+        "duration": 277.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "72",
+        "duration": 276.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "74",
+        "duration": 274.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "77",
+        "duration": 272.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "83",
+        "duration": 268.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "86",
+        "duration": 266.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "88",
+        "duration": 264.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "89",
+        "duration": 263.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "9",
+        "duration": 321.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "90",
+        "duration": 263.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "91",
+        "duration": 262.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "92",
+        "duration": 261.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "94",
+        "duration": 260.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "95",
+        "duration": 259.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "96",
+        "duration": 258.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "97",
+        "duration": 257.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "98",
+        "duration": 257.0,
+        "status": "unfinished"
+    },
+    {
+        "id": "99",
+        "duration": 256.0,
+        "status": "unfinished"
+    }
+]

@@ -1,12 +1,10 @@
-# -*- coding: utf-8 -*-
-"""Módulo para abstrair e gerenciar a conexão com o simulador SUMO via TraCI."""
-
 import logging
 import subprocess
 import time
 import traci
 import sys
 import os
+from typing import Optional
 
 logger = logging.getLogger(__name__)
 
@@ -17,63 +15,57 @@ class TraciConnection:
         self.sumo_executable = sumo_executable
         self.config_file = config_file
         self.port = port
-        self.sumo_process = None
+        self.sumo_process: Optional[subprocess.Popen] = None
         self.is_connected = False
 
-    def start(self):
-        """Inicia o processo do SUMO e estabelece a conexão TraCI."""
-        logger.info(f"Iniciando processo do SUMO com o arquivo: {self.config_file}")
+    def start(self) -> None:
+        """Inicia o processo do SUMO e estabelece a conexão TraCI com múltiplas tentativas."""
+        logger.info(f"Iniciando processo do SUMO: {self.config_file}")
         
         sumo_command = [
             self.sumo_executable,
             "-c", self.config_file,
-            "--remote-port", str(self.port)
+            "--remote-port", str(self.port),
+            "--log", "logs/sumo_simulation.log", # Log dedicado do SUMO
+            "--time-to-teleport", "-1" # CORREÇÃO: Desabilita o teletransporte (simulação real)
         ]
         
-        log_file_handle = open("logs/simulation.log", "a")
+        os.makedirs("logs", exist_ok=True)
+        
         self.sumo_process = subprocess.Popen(
             sumo_command,
-            stdout=subprocess.DEVNULL,
-            stderr=log_file_handle
+            stdout=sys.stdout,
+            stderr=sys.stderr
         )
         
-        max_retries = 10
+        max_retries = 15
         for i in range(max_retries):
             try:
-                # Bloco seguro para silenciar a saída do TraCI
-                original_stdout = sys.stdout
-                sys.stdout = open(os.devnull, 'w')
-                try:
-                    traci.init(self.port)
-                finally:
-                    # Garante que a saída do terminal seja sempre restaurada
-                    if not sys.stdout.closed:
-                        sys.stdout.close()
-                    sys.stdout = original_stdout
-
+                traci.init(self.port)
                 self.is_connected = True
-                logger.info(f"Conexão TraCI estabelecida com sucesso na porta {self.port}.")
+                logger.info(f"Conexão TraCI estabelecida na porta {self.port}.")
                 return
             except traci.TraCIException:
-                logger.debug(f"Aguardando o SUMO... (tentativa {i + 1}/{max_retries})")
-                time.sleep(1)
-            except KeyboardInterrupt:
-                # Permite que a interrupção do usuário pare o processo de forma limpa
-                logger.warning("Conexão com o SUMO interrompida pelo usuário.")
-                self.close()
-                raise
+                logger.debug(f"Aguardando SUMO... (tentativa {i + 1}/{max_retries})")
+                time.sleep(2)
         
-        raise Exception("Não foi possível estabelecer a conexão com o SUMO/TraCI.")
+        raise ConnectionError("Não foi possível conectar ao SUMO/TraCI.")
 
-    def close(self):
-        """Encerra a conexão TraCI e o processo do SUMO de forma segura."""
+    def close(self) -> None:
+        """Encerra a conexão TraCI e o processo do SUMO."""
         if self.is_connected:
             try:
                 traci.close()
                 logger.info("Conexão TraCI encerrada.")
+                self.is_connected = False
             except (traci.TraCIException, AttributeError):
-                logger.warning("Não foi possível fechar a conexão TraCI. Pode já estar encerrada.")
+                logger.warning("Conexão TraCI já estava encerrada.")
         
-        if self.sumo_process:
-            self.sumo_process.terminate()
-            logger.info("Processo do SUMO finalizado.")
+        if self.sumo_process and self.sumo_process.poll() is None:
+            try:
+                self.sumo_process.terminate()
+                self.sumo_process.wait(timeout=5)
+                logger.info("Processo do SUMO finalizado.")
+            except subprocess.TimeoutExpired:
+                self.sumo_process.kill()
+                logger.warning("Processo do SUMO forçado a fechar (kill).")

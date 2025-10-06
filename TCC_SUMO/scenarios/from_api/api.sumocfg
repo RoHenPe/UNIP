@@ -1,4 +1,0 @@
-<configuration>
-    <input><net-file value="api.net.xml"/><route-files value="api.rou.xml,emergency.rou.xml"/><additional-files value="emergency_vtype.add.xml"/></input>
-    <output><tripinfo-output value="tripinfo.xml"/><emission-output value="emissions.xml"/><queue-output value="queueinfo.xml"/></output>
-</configuration>

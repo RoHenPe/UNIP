@@ -10,7 +10,6 @@ sumo_executable: "sumo-gui"
 traci_port: 8813
 
 # Mapeamento de nomes de cenários para seus respectivos arquivos de configuração.
-# Permite trocar de cenário facilmente via argumento de linha de comando.
 scenarios:
   osm: "scenarios/from_osm/osm.sumocfg"
   api: "scenarios/from_api/api.sumocfg"

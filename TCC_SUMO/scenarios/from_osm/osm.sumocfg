@@ -1,4 +1,4 @@
 <configuration>
-    <input><net-file value="osm.net.xml"/><route-files value="osm.rou.xml,emergency.rou.xml"/><additional-files value="emergency_vtype.add.xml"/></input>
+    <input><net-file value="osm.net.xml"/><route-files value="osm.rou.xml"/></input>
     <output><tripinfo-output value="tripinfo.xml"/><emission-output value="emissions.xml"/><queue-output value="queueinfo.xml"/></output>
 </configuration>
