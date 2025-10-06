@@ -13,7 +13,7 @@ traci_port: 8813
 # Permite trocar de cenário facilmente via argumento de linha de comando.
 scenarios:
   osm: "scenarios/from_osm/osm.sumocfg"
-  api: "scenarios/from_api/cenario.sumocfg"
+  api: "scenarios/from_api/api.sumocfg"
 
 # Centraliza todos os caminhos de saída para manter o projeto organizado.
 output_paths:

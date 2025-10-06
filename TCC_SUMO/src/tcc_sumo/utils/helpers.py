@@ -26,6 +26,13 @@ def task_fail(message: str):
     print(f"[✗] {message}")
 # --- FIM DO CHECKLIST ---
 
+def format_seconds_to_ms(seconds):
+    """Converte segundos para uma string formatada em minutos e segundos."""
+    if seconds is None or not isinstance(seconds, (int, float)):
+        return "00m 00s"
+    minutes, seconds = divmod(int(seconds), 60)
+    return f"{minutes:02d}m {seconds:02d}s"
+
 def get_project_root():
     """Retorna a raiz do projeto."""
     return PROJECT_ROOT

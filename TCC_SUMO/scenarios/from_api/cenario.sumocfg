@@ -1,9 +1,0 @@
-<configuration>
-    <input>
-        <net-file value="api.net.xml"/>
-        <route-files value="traffic/api.rou.xml"/>
-    </input>
-    <output>
-        <emission-output value="api.emissions.xml"/>
-    </output>
-</configuration>

@@ -4,12 +4,8 @@
 # ==============================================================================
 #
 #   Este script fornece um menu interativo para o usuário, simplificando a
-#   execução da simulação, geração de cenários, análise de dados e limpeza
-#   de logs.
+#   geração de cenários, execução da simulação, análise de dados e limpeza.
 #
-
-# --- Navega para o diretório raiz do projeto ---
-cd "$(dirname "$0")/.."
 
 # --- Ativa o Ambiente Virtual, se existir ---
 VENV_PATH=".venv/bin/activate"
@@ -22,7 +18,6 @@ run_python_simulation() {
     local scenario="$1"
     local mode="$2"
     
-    # Registra o início da simulação no arquivo de log
     echo "[$(date +'%d/%m/%Y - %H:%M:%S')] [INFO    ] [run_simulation.sh      ] : Iniciando simulação: Cenário=$scenario, Modo=$mode" >> logs/simulation.log
     
     python3 src/main.py --scenario "$scenario" --mode "$mode"
@@ -34,47 +29,53 @@ while true; do
     echo "================================================================"
     echo "      TCC - SIMULADOR DE TRÁFEGO URBANO COM SUMO"
     echo "================================================================"
-    echo " Cenário OpenStreetMap (OSM):"
-    echo "   1. Simular Modo Estático       - OSM"
-    echo "   2. Simular Modo Adaptativo     - OSM"
+    echo " Geração de Cenários:"
+    echo "   1. Gerar/Recriar Cenário OpenStreetMap (OSM)"
+    echo "   2. Gerar/Recriar Cenário via API"
     echo
-    echo " Cenário Gerado via API:"
-    echo "   3. Gerar Novo Cenário via API"
-    echo "   4. Simular Modo Estático       - API"
-    echo "   5. Simular Modo Adaptativo     - API"
+    echo " Simulação - Cenário OSM:"
+    echo "   3. Simular Modo Estático       - OSM"
+    echo "   4. Simular Modo Adaptativo     - OSM"
+    echo
+    echo " Simulação - Cenário API:"
+    echo "   5. Simular Modo Estático       - API"
+    echo "   6. Simular Modo Adaptativo     - API"
     echo
     echo " Análise de Resultados:"
-    echo "   6. Gerar Dashboard de Logs (analisa simulation.log)"
-    echo "   7. Gerar Dashboard de Tráfego (analisa consolidated_data.json)"
+    echo "   7. Gerar Dashboard de Logs"
+    echo "   8. Gerar Dashboard de Tráfego"
     echo
     echo " Outras Opções:"
-    echo "   8. Limpar Arquivos de Log e Dados"
+    echo "   9. Limpar Arquivos de Log e Dados"
     echo "   0. Sair"
     echo "================================================================"
     
     read -p "Selecione uma opção: " choice
     
     case $choice in
-        1) run_python_simulation "osm" "STATIC" ;;
-        2) run_python_simulation "osm" "ADAPTIVE" ;;
-        3)
-            echo "Executando o gerador de cenário via API..."
-            python3 src/tcc_sumo/tools/scenario_generator.py
+        1)
+            python3 src/tcc_sumo/tools/scenario_generator.py --type osm --input "osm_bbox.osm.xml"
             ;;
-        4) run_python_simulation "api" "STATIC" ;;
-        5) run_python_simulation "api" "ADAPTIVE" ;;
-        6)
+        2)
+            python3 src/tcc_sumo/tools/scenario_generator.py --type api --input "dados_api.json"
+            ;;
+        3) run_python_simulation "osm" "STATIC" ;;
+        4) run_python_simulation "osm" "ADAPTIVE" ;;
+        5) run_python_simulation "api" "STATIC" ;;
+        6) run_python_simulation "api" "ADAPTIVE" ;;
+        7)
             echo "Gerando Dashboard de Logs..."
             python3 src/tcc_sumo/tools/traffic_analyzer.py --source logs
             ;;
-        7)
+        8)
             echo "Gerando Dashboard de Tráfego..."
             python3 src/tcc_sumo/tools/traffic_analyzer.py --source traffic
             ;;
-        8)
+        9)
             echo "Limpando arquivos de log e dados..."
-            rm -f logs/simulation.log logs/simulation_report.log output/consolidated_data.json output/*.html
-            echo "Arquivos de log, relatórios e dashboards foram removidos."
+            rm -f logs/*.log output/*.json output/*.html
+            rm -rf scenarios/from_api/* scenarios/from_osm/*
+            echo "Arquivos de log, relatórios, dashboards e cenários gerados foram removidos."
             ;;
         0)
             echo "Encerrando o simulador."

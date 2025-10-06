@@ -30,10 +30,7 @@ class TraciConnection:
             "--remote-port", str(self.port)
         ]
         
-        # Abre o arquivo de log no modo de anexar ('a')
         log_file_handle = open("logs/simulation.log", "a")
-
-        # Inicia o processo do SUMO, redirecionando a saída de erro para o arquivo de log
         self.sumo_process = subprocess.Popen(
             sumo_command,
             stdout=subprocess.DEVNULL,
@@ -43,14 +40,15 @@ class TraciConnection:
         max_retries = 10
         for i in range(max_retries):
             try:
-                # Silencia a saída do terminal de forma segura
+                # Bloco seguro para silenciar a saída do TraCI
                 original_stdout = sys.stdout
                 sys.stdout = open(os.devnull, 'w')
                 try:
                     traci.init(self.port)
                 finally:
-                    # Garante que a saída do terminal seja restaurada
-                    sys.stdout.close()
+                    # Garante que a saída do terminal seja sempre restaurada
+                    if not sys.stdout.closed:
+                        sys.stdout.close()
                     sys.stdout = original_stdout
 
                 self.is_connected = True
@@ -59,6 +57,11 @@ class TraciConnection:
             except traci.TraCIException:
                 logger.debug(f"Aguardando o SUMO... (tentativa {i + 1}/{max_retries})")
                 time.sleep(1)
+            except KeyboardInterrupt:
+                # Permite que a interrupção do usuário pare o processo de forma limpa
+                logger.warning("Conexão com o SUMO interrompida pelo usuário.")
+                self.close()
+                raise
         
         raise Exception("Não foi possível estabelecer a conexão com o SUMO/TraCI.")
 
@@ -68,7 +71,7 @@ class TraciConnection:
             try:
                 traci.close()
                 logger.info("Conexão TraCI encerrada.")
-            except traci.TraCIException:
+            except (traci.TraCIException, AttributeError):
                 logger.warning("Não foi possível fechar a conexão TraCI. Pode já estar encerrada.")
         
         if self.sumo_process:
