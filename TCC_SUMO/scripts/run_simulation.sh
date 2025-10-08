@@ -32,9 +32,16 @@ execute_with_spinner() {
     mkdir -p "$LOG_DIR"
     local log_file_path="${LOG_DIR}/${log_file_name}"
     
-    # Limpa o log específico antes de cada execução
-    >"$log_file_path"
+    # [CORREÇÃO: PRESERVAÇÃO DE LOGS]
+    # A opção original era limpar o log antes da execução (>).
+    # Agora, permitimos que os logs (que já usam RotatingFileHandler) e 
+    # o shell (com >>) APENDEM o novo conteúdo para preservar o histórico.
+    if [ "$log_file_name" == "analysis.log" ] || [ "$log_file_name" == "sumo_simulation.log" ]; then
+        # Estes logs são limpos, pois são logs auxiliares que devem ser frescos por execução.
+        >"$log_file_path"
+    fi
     
+    # Redireciona a saída do shell (STDOUT e STDERR) para o arquivo, APENDANDO (>>)
     eval $cmd_to_run >> "$log_file_path" 2>&1 &
     local pid=$!; local spin='|/-\'; local i=0
     

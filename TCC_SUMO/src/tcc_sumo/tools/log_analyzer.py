@@ -154,9 +154,12 @@ class LogAnalyzer:
 
         new_record = self.consolidated_data.copy()
         new_record.update(simulation_metadata)
+        # CORREÇÃO CRÍTICA: Adiciona o timestamp ao registro que será retornado
         new_record["analysis_timestamp"] = datetime.now().isoformat()
         records.append(new_record)
         
         with open(json_path, 'w', encoding='utf-8') as f:
             json.dump(records, f, indent=4, ensure_ascii=False)
-        return self.consolidated_data
+            
+        # Retorna o dicionário COMPLETO com o timestamp e metadata.
+        return new_record

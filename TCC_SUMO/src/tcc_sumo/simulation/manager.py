@@ -9,7 +9,9 @@ import pandas as pd
 if 'SUMO_HOME' in os.environ:
     sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
 else:
-    sys.exit("ERRO: 'SUMO_HOME' não definida.")
+    # A correção no traci_connection.py já garante o uso da versão local,
+    # mas esta verificação de ambiente é mantida para o módulo tools do SUMO.
+    pass
 
 from tcc_sumo.simulation.traci_connection import TraciConnection
 from tcc_sumo.tools.log_analyzer import LogAnalyzer
@@ -41,8 +43,9 @@ class SimulationManager:
             task_fail("Simulação interrompida pelo teclado")
             logger.warning("Simulação interrompida pelo usuário via CTRL+C.")
         except (FatalTraCIError, TraCIException) as e:
+            # CORREÇÃO: Eleva o nível para WARNING, pois é um encerramento não planeado (como fechar a GUI).
             task_success("Simulação encerrada pelo usuário (janela fechada)")
-            logger.info(f"A simulação foi encerrada via TraCI: {e}")
+            logger.warning(f"A simulação foi encerrada via TraCI: {e}")
         except Exception as e:
             task_fail("Erro crítico inesperado")
             logger.critical("Erro não tratado no manager.run", exc_info=True)
@@ -109,20 +112,20 @@ class SimulationManager:
         else:
             summary_text = "A simulação demonstrou um FLUXO DE TRÁFEGO ESTÁVEL, com congestionamentos mínimos ou inexistentes."
 
-        # ATUALIZAÇÃO NO TEMPLATE HUMANIZADO: Substitui Teletransporte por Veículos Removidos
+        # TEMPLATE DE RELATÓRIO HUMANIZADO (TICKET)
         ticket_template = f"""
 #########################################################################
 #                                                                       #
-#              TICKET DE ANÁLISE DE SIMULAÇÃO DE TRÁFEGO                #
+#          RELATÓRIO RESUMIDO DE ANÁLISE DE TRÁFEGO (SUMO)              #
 #                                                                       #
 #########################################################################
 
 ID DO RELATÓRIO: SIM-{pd.Timestamp(data.get('analysis_timestamp')).strftime('%Y%m%d-%H%M%S')}
 DATA DA ANÁLISE: {pd.Timestamp(data.get('analysis_timestamp')).strftime('%d/%m/%Y %H:%M:%S')}
 
-CENÁRIO ANALISADO...: {data.get('scenario', 'N/A').upper()}
-MODO DE OPERAÇÃO....: {data.get('mode', 'N/A').upper()}
-DURAÇÃO DA SIMULAÇÃO: {format_time(metrics.get('simulation_duration_seconds', 0))}
+CENÁRIO: {data.get('scenario', 'N/A').upper()}
+MODO DE CONTROLE: {data.get('mode', 'N/A').upper()}
+DURAÇÃO TOTAL: {format_time(metrics.get('simulation_duration_seconds', 0))}
 
 -------------------------------------------------------------------------
                            SUMÁRIO EXECUTIVO
@@ -134,26 +137,24 @@ DURAÇÃO DA SIMULAÇÃO: {format_time(metrics.get('simulation_duration_seconds'
                       INDICADORES CHAVE DE PERFORMANCE (KPIs)
 -------------------------------------------------------------------------
 
-  - EFICIÊNCIA DE FLUXO (VIAGENS CONCLUÍDAS)......: {completed} de {total} ({rate:.2f}%)
-  - NÍVEL DE CONGESTIONAMENTO (VEÍCULOS REMOVIDOS): {removed}
-  - VELOCIDADE MÉDIA GERAL......................: {metrics.get('Velocidade Média Geral (km/h)', 0):.2f} km/h
+  - FLUXO EFICIENTE (Viagens Concluídas).: {completed} de {total} ({rate:.2f}%)
+  - NÍVEL DE CONGESTIONAMENTO (Removidos): {removed} Veículos Removidos
+  - VELOCIDADE MÉDIA GERAL.............: {metrics.get('Velocidade Média Geral (km/h)', 0):.2f} km/h
 
 -------------------------------------------------------------------------
-                       ANÁLISE DETALHADA DE PERFORMANCE
+                       DETALHES DA EFICIÊNCIA DE VIAGEM
 -------------------------------------------------------------------------
 
-  [+] EFICIÊNCIA DA VIAGEM:
-      - Tempo Médio de Viagem...................: {format_time(metrics.get('Tempo Médio de Viagem (s)', 0))}
-      - Deste tempo, em média:
-          -> {format_time(metrics.get('Tempo Médio Perdido (s)', 0))} foram perdidos em congestionamento ({metrics.get('Percentual de Tempo Perdido', 0):.2f}%)
-          -> {format_time(metrics.get('Tempo Médio de Espera (s)', 0))} foram em espera nos semáforos ({metrics.get('Percentual de Tempo de Espera', 0):.2f}%)
+  [+] TEMPO MÉDIO TOTAL POR VIAGEM: {format_time(metrics.get('Tempo Médio de Viagem (s)', 0))}
+      - Tempo Perdido em Congestionamento.: {format_time(metrics.get('Tempo Médio Perdido (s)', 0))} ({metrics.get('Percentual de Tempo Perdido', 0):.2f}%)
+      - Tempo de Espera em Semáforos......: {format_time(metrics.get('Tempo Médio de Espera (s)', 0))} ({metrics.get('Percentual de Tempo de Espera', 0):.2f}%)
 
-  [+] PONTOS DE CONGESTIONAMENTO:
-      - Tamanho Médio da Fila nos Semáforos.....: {queue.get('Tamanho Médio da Fila (veículos)', 0):.2f} veículos
-      - Pico de Tempo de Espera numa Fila.......: {format_time(queue.get('Tempo Máximo de Espera (s)', 0))}
+  [+] PONTOS CRÍTICOS:
+      - Tamanho Médio da Fila............: {queue.get('Tamanho Médio da Fila (veículos)', 0):.2f} veículos
+      - Pico de Espera numa Fila.........: {format_time(queue.get('Tempo Máximo de Espera (s)', 0))}
 
 -------------------------------------------------------------------------
-                          ANÁLISE DE IMPACTO AMBIENTAL
+                          IMPACTO AMBIENTAL
 -------------------------------------------------------------------------
 
   - Consumo Total de Combustível..: {pollution.get('Total de fuel', '0.00 L')}

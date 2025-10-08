@@ -1,0 +1,4 @@
+<configuration>
+    <input><net-file value="api.net.xml"/><route-files value="api.rou.xml"/></input>
+    <output><tripinfo-output value="tripinfo.xml"/><emission-output value="emissions.xml"/><queue-output value="queueinfo.xml"/></output>
+</configuration>

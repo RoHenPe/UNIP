@@ -4,14 +4,16 @@ import re
 from pathlib import Path
 import pandas as pd
 from jinja2 import Environment, FileSystemLoader
+import sys
+import os
 
 # --- Configuração de Paths ---
-# Garante que o script encontre os módulos, independentemente de onde é chamado
+# O script confia que o run_simulation.sh (ou o ambiente de execução)
+# já configurou o PYTHONPATH para permitir a importação direta.
 try:
     from tcc_sumo.utils.helpers import get_logger, setup_logging, PROJECT_ROOT
 except ImportError:
-    import sys
-    # Adiciona o diretório 'src' ao path se o script for executado diretamente
+    # Fallback para execução direta
     src_path = Path(__file__).resolve().parents[2]
     sys.path.insert(0, str(src_path))
     from tcc_sumo.utils.helpers import get_logger, setup_logging, PROJECT_ROOT
@@ -41,6 +43,18 @@ def parse_log_file(file_path: Path) -> pd.DataFrame:
                 })
     return pd.DataFrame(log_records)
 
+# Definimos as cores para os níveis de log (adaptado da sua imagem)
+LEVEL_COLORS = {
+    'CRITICAL': '#000000', # Preto
+    'ERROR': '#dc3545',    # Vermelho
+    'WARNING': '#ffc107',  # Amarelo/Laranja
+    'INFO': '#007bff',     # Azul
+    'DEBUG': '#6c757d',    # Cinza
+    'NOTSET': '#6c757d'
+}
+# Define a ordem que as chaves devem aparecer no Dashboard
+LEVEL_ORDER = ['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG']
+
 def generate_log_dashboard():
     """Gera o dashboard de análise dos ficheiros de log."""
     logger.info("Iniciando geração do Dashboard de Logs.")
@@ -56,11 +70,28 @@ def generate_log_dashboard():
 
     # Processa os dados
     log_summary = {}
+    
+    # Adiciona a coluna de classes para o template usar no JS
     if not sim_log_df.empty:
-        log_summary['simulation_counts'] = sim_log_df['level'].value_counts().to_dict()
-        log_summary['simulation_modules'] = sim_log_df['module'].value_counts().head(10).to_dict()
-    if not gen_log_df.empty:
-        log_summary['generation_counts'] = gen_log_df['level'].value_counts().to_dict()
+        # Usamos apenas logs de simulação e ajustamos a coluna de classes para o JS
+        sim_log_df['level_class'] = sim_log_df['level'].apply(lambda x: x.lower())
+        
+        # Consolida todos os logs estruturados (simulação + geração)
+        all_logs_df = pd.concat([sim_log_df, gen_log_df.copy()], ignore_index=True)
+        
+        # 1. Total de Contagens por Nível
+        level_counts_raw = all_logs_df['level'].value_counts()
+        
+        log_summary['all_level_counts'] = []
+        for level in LEVEL_ORDER:
+            count = level_counts_raw.get(level, 0)
+            log_summary['all_level_counts'].append({
+                'level': level,
+                'count': int(count),
+                'color': LEVEL_COLORS.get(level, '#6c757d')
+            })
+        
+        log_summary['total_logs'] = all_logs_df.shape[0]
 
     # Renderiza o template HTML
     env = Environment(loader=FileSystemLoader(str(PROJECT_ROOT / "src/tcc_sumo/templates")))
@@ -68,7 +99,8 @@ def generate_log_dashboard():
     html_content = template.render(
         generation_time=pd.Timestamp.now().strftime('%d/%m/%Y %H:%M:%S'),
         summary=log_summary,
-        simulation_logs=sim_log_df.tail(1000).to_dict(orient='records'), # Limita aos últimos 1000 registos
+        # Passamos todos os logs de simulação, agora com a classe de nível
+        simulation_logs=sim_log_df.to_dict(orient='records'),
     )
     
     output_path = PROJECT_ROOT / "output"
@@ -97,12 +129,14 @@ def generate_traffic_dashboard():
         data = json.load(f)
         
     # Extrai as métricas para o template
-    metrics = data.get("metrics", {})
-    pollution = data.get("pollution", {})
-    queue_metrics = data.get("queue_metrics", {})
+    data_record = data[-1] if isinstance(data, list) and data else {}
+    
+    metrics = data_record.get("metrics", {})
+    pollution = data_record.get("pollution", {})
+    queue_metrics = data_record.get("queue_metrics", {})
     
     # Lógica para encontrar o ficheiro de dados brutos
-    raw_data_path = PROJECT_ROOT / "scenarios" / f"from_{data.get('scenario')}" / "raw_vehicle_data.json"
+    raw_data_path = PROJECT_ROOT / "scenarios" / f"from_{data_record.get('scenario')}" / "raw_vehicle_data.json"
     raw_data = []
     if raw_data_path.exists():
         with open(raw_data_path, 'r', encoding='utf-8') as f:
@@ -113,7 +147,7 @@ def generate_traffic_dashboard():
     template = env.get_template("traffic_dashboard.html")
     html_content = template.render(
         generation_time=pd.Timestamp.now().strftime('%d/%m/%Y %H:%M:%S'),
-        data=data,
+        data=data_record,
         metrics=metrics,
         pollution=pollution,
         queue_metrics=queue_metrics,
