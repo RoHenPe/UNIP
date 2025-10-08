@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!-- generated on 2025-10-08 00:18:48.152525 by randomTrips.py UNKNOWN
+<!-- generated on 2025-10-08 03:09:26.915738 by randomTrips.py UNKNOWN
 <configuration>
     <net-file value="scenarios/from_api/api.net.xml"/>
     <output-trip-file value="scenarios/from_api/api.trips.xml"/>
@@ -12,7 +12,7 @@
 </configuration>
 -->
 
-<!-- generated on 2025-10-08 00:18:47 by Eclipse SUMO duarouter Version 1.18.0
+<!-- generated on 2025-10-08 03:09:22 by Eclipse SUMO duarouter Version 1.18.0
 <configuration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://sumo.dlr.de/xsd/duarouterConfiguration.xsd">
 
     <input>

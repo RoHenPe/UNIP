@@ -13,13 +13,14 @@ setup_logging()
 logger = get_logger("ScenarioGenerator")
 
 def run_simple_command(command):
+    # PILAR DE QUALIDADE: Diagnósticabilidade
+    # DESCRIÇÃO: Centraliza a execução de comandos externos, capturando as suas
+    # saídas para facilitar a depuração de ferramentas como o SUMO.
     cmd_str_list = [str(item) for item in command]
     cmd_str = ' '.join(cmd_str_list)
     logger.info(f"Executando sub-comando: {cmd_str}")
     
-    # CORREÇÃO: Captura a saída do subprocesso para garantir a estabilidade do logging
     try:
-        # Executa o comando, captura STDOUT e STDERR.
         result = subprocess.run(cmd_str_list, 
                                 cwd=PROJECT_ROOT, 
                                 check=True, 
@@ -27,7 +28,6 @@ def run_simple_command(command):
                                 text=True,
                                 encoding='utf-8')
         
-        # Loga a saída capturada (ex: warnings do netconvert/randomTrips) usando DEBUG
         if result.stdout and result.stdout.strip():
             logger.debug(f"Saída STDOUT do comando:\n{result.stdout.strip()}")
         if result.stderr and result.stderr.strip():
@@ -44,6 +44,9 @@ def run_simple_command(command):
         raise 
 
 def generate_scenario(scenario_type: str, base_file_path: Path):
+    # PILAR DE QUALIDADE: Manutenibilidade
+    # DESCRIÇÃO: Orquestra a geração do cenário de forma modular, separando a
+    # lógica de criação da malha da geração dos ficheiros de simulação.
     output_dir = PROJECT_ROOT / "scenarios" / f"from_{scenario_type}"
     if output_dir.exists(): shutil.rmtree(output_dir)
     output_dir.mkdir(parents=True)
@@ -69,7 +72,7 @@ def generate_scenario(scenario_type: str, base_file_path: Path):
             f.write('<nodes>\n')
             for node in data.get("nodes",[]):
                 prop = node.get('properties',{})
-                if "lon" in prop and "lat" in prop: # Lógica de Lon/Lat preservada
+                if "lon" in prop and "lat" in prop:
                     node_type = "traffic_light" if prop.get("highway")=="traffic_signals" else "priority"
                     f.write(f'    <node id="{node["id"]}" x="{prop["lon"]}" y="{prop["lat"]}" type="{node_type}"/>\n')
                     valid_node_ids.add(str(node["id"]))
@@ -84,14 +87,13 @@ def generate_scenario(scenario_type: str, base_file_path: Path):
             f.write('</edges>')
         logger.debug(f"Ficheiro 'edg.xml' criado.")
         
-        # Correção Crítica do NETCONVERT para a API para evitar teletransporte e falhas de malha
         run_simple_command([
             Path(os.environ["SUMO_HOME"]) / 'bin' / 'netconvert',
             '--node-files', nodes_file.relative_to(PROJECT_ROOT),
             '--edge-files', edges_file.relative_to(PROJECT_ROOT),
             '-o', net_file.relative_to(PROJECT_ROOT), 
             '--geometry.remove',
-            '--proj.utm', # Essencial para lon/lat
+            '--proj.utm',
             '--roundabouts.guess', 
             '--junctions.join', 
             '--no-turnarounds' 
@@ -100,11 +102,13 @@ def generate_scenario(scenario_type: str, base_file_path: Path):
     generate_common_files(output_dir, net_file, scenario_type)
 
 def generate_common_files(output_dir: Path, net_file: Path, scenario_name: str):
+    # PILAR DE QUALIDADE: Flexibilidade
+    # DESCRIÇÃO: A lógica adapta-se à densidade de veículos configurada,
+    # permitindo simular cenários de baixo fluxo ou de tráfego intenso.
     routes_file, trips_file, config_file = (output_dir/f"{scenario_name}.rou.xml", output_dir/f"{scenario_name}.trips.xml", output_dir/f"{scenario_name}.sumocfg")
     
-    num_vehicles = os.environ.get('VEHICLE_COUNT', '50000') # Usa 50k como fallback
+    num_vehicles = os.environ.get('VEHICLE_COUNT', '50000')
     
-    # --- CÁLCULO DE PERÍODO OTIMIZADO ---
     insertion_duration = 3600 
     if int(num_vehicles) > 100000:
         insertion_duration = 7200 
@@ -136,13 +140,15 @@ def generate_common_files(output_dir: Path, net_file: Path, scenario_name: str):
     logger.info(f"Ficheiro de configuração '{config_file}' criado.")
 
 if __name__ == "__main__":
+    # PILAR DE QUALIDADE: Usabilidade
+    # DESCRIÇÃO: A interface de linha de comando `argparse` permite que o script
+    # seja executado com diferentes parâmetros de forma controlada.
     parser = argparse.ArgumentParser(description="Gerador de Cenários para Simulação de Tráfego SUMO.")
     parser.add_argument("--type", type=str, required=True, choices=['osm', 'api'])
     parser.add_argument("--input", type=str, required=True)
     args = parser.parse_args()
     try:
         ensure_sumo_home()
-        # Garante a hierarquia de caminho correta: TCC_SUMO/scenarios/base_files/nome_do_arquivo
         base_file_name = Path(args.input).name
         base_file = PROJECT_ROOT / "scenarios" / "base_files" / base_file_name
         logger.info(f"Iniciando geração de cenário do tipo '{args.type}' com o ficheiro de entrada '{args.input}'.")

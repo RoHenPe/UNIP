@@ -8,8 +8,10 @@ import sys
 import os
 
 # --- Configuração de Paths ---
-# O script confia que o run_simulation.sh (ou o ambiente de execução)
-# já configurou o PYTHONPATH para permitir a importação direta.
+# PILAR DE QUALIDADE: Robustez
+# DESCRIÇÃO: O bloco try/except garante que o script funcione tanto quando
+# executado através do orquestrador (que configura o PYTHONPATH) quanto de
+# forma independente, tornando-o mais versátil e menos propenso a erros de importação.
 try:
     from tcc_sumo.utils.helpers import get_logger, setup_logging, PROJECT_ROOT
 except ImportError:
@@ -25,6 +27,9 @@ logger = get_logger("TrafficAnalyzer")
 
 def parse_log_file(file_path: Path) -> pd.DataFrame:
     """Lê um ficheiro de log e o transforma num DataFrame do Pandas."""
+    # PILAR DE QUALIDADE: Manutenibilidade
+    # DESCRIÇÃO: Isola a lógica de parsing de logs numa função coesa. Se o formato
+    # do log mudar, apenas esta função precisa ser atualizada.
     log_pattern = re.compile(r"\[(.*?)\] \[(.*?)\] \[(.*?)\] : (.*)")
     log_records = []
     if not file_path.exists():
@@ -43,7 +48,8 @@ def parse_log_file(file_path: Path) -> pd.DataFrame:
                 })
     return pd.DataFrame(log_records)
 
-# Definimos as cores para os níveis de log (adaptado da sua imagem)
+# Ponto de manutenibilidade: Centraliza a configuração de cores e ordem,
+# facilitando a personalização visual do dashboard num único local.
 LEVEL_COLORS = {
     'CRITICAL': '#000000', # Preto
     'ERROR': '#dc3545',    # Vermelho
@@ -52,14 +58,16 @@ LEVEL_COLORS = {
     'DEBUG': '#6c757d',    # Cinza
     'NOTSET': '#6c757d'
 }
-# Define a ordem que as chaves devem aparecer no Dashboard
 LEVEL_ORDER = ['CRITICAL', 'ERROR', 'WARNING', 'INFO', 'DEBUG']
 
 def generate_log_dashboard():
     """Gera o dashboard de análise dos ficheiros de log."""
+    # PILAR DE QUALIDADE: Usabilidade
+    # DESCRIÇÃO: Transforma logs textuais, difíceis de ler, numa interface
+    # visual e interativa, melhorando a capacidade do utilizador de diagnosticar
+    # o comportamento do sistema.
     logger.info("Iniciando geração do Dashboard de Logs.")
     
-    # Carrega os logs
     sim_log_df = parse_log_file(PROJECT_ROOT / "logs" / "simulation.log")
     gen_log_df = parse_log_file(PROJECT_ROOT / "logs" / "generation.log")
     
@@ -68,18 +76,12 @@ def generate_log_dashboard():
         print("[✗] Nenhum dado de log encontrado.")
         return
 
-    # Processa os dados
     log_summary = {}
     
-    # Adiciona a coluna de classes para o template usar no JS
     if not sim_log_df.empty:
-        # Usamos apenas logs de simulação e ajustamos a coluna de classes para o JS
         sim_log_df['level_class'] = sim_log_df['level'].apply(lambda x: x.lower())
-        
-        # Consolida todos os logs estruturados (simulação + geração)
         all_logs_df = pd.concat([sim_log_df, gen_log_df.copy()], ignore_index=True)
         
-        # 1. Total de Contagens por Nível
         level_counts_raw = all_logs_df['level'].value_counts()
         
         log_summary['all_level_counts'] = []
@@ -93,13 +95,14 @@ def generate_log_dashboard():
         
         log_summary['total_logs'] = all_logs_df.shape[0]
 
-    # Renderiza o template HTML
+    # Ponto de manutenibilidade: Utiliza o motor de templates Jinja2, que separa
+    # a lógica (Python) da apresentação (HTML). O design do dashboard pode ser
+    # alterado no ficheiro .html sem tocar no código Python.
     env = Environment(loader=FileSystemLoader(str(PROJECT_ROOT / "src/tcc_sumo/templates")))
     template = env.get_template("log_dashboard.html")
     html_content = template.render(
         generation_time=pd.Timestamp.now().strftime('%d/%m/%Y %H:%M:%S'),
         summary=log_summary,
-        # Passamos todos os logs de simulação, agora com a classe de nível
         simulation_logs=sim_log_df.to_dict(orient='records'),
     )
     
@@ -128,21 +131,18 @@ def generate_traffic_dashboard():
     with open(data_path, 'r', encoding='utf-8') as f:
         data = json.load(f)
         
-    # Extrai as métricas para o template
     data_record = data[-1] if isinstance(data, list) and data else {}
     
     metrics = data_record.get("metrics", {})
     pollution = data_record.get("pollution", {})
     queue_metrics = data_record.get("queue_metrics", {})
     
-    # Lógica para encontrar o ficheiro de dados brutos
     raw_data_path = PROJECT_ROOT / "scenarios" / f"from_{data_record.get('scenario')}" / "raw_vehicle_data.json"
     raw_data = []
     if raw_data_path.exists():
         with open(raw_data_path, 'r', encoding='utf-8') as f:
             raw_data = json.load(f)
 
-    # Renderiza o template HTML
     env = Environment(loader=FileSystemLoader(str(PROJECT_ROOT / "src/tcc_sumo/templates")))
     template = env.get_template("traffic_dashboard.html")
     html_content = template.render(
@@ -167,6 +167,10 @@ def generate_traffic_dashboard():
 # --- Ponto de Entrada do Script ---
 
 if __name__ == "__main__":
+    # PILAR DE QUALIDADE: Usabilidade
+    # DESCRIÇÃO: A utilização de `argparse` cria uma interface de linha de comando
+    # clara e auto-documentada, informando o utilizador sobre como usar o script
+    # e quais são as opções disponíveis.
     parser = argparse.ArgumentParser(description="Gerador de Dashboards de Análise para a Simulação SUMO.")
     parser.add_argument('--source', type=str, required=True, choices=['logs', 'traffic'],
                         help="Define a fonte de dados para gerar o dashboard ('logs' ou 'traffic').")

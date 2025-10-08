@@ -1,3 +1,12 @@
+# -*- coding: utf-8 -*-
+"""
+Módulo responsável por gerenciar todo o ciclo de vida da simulação.
+
+PILAR DE QUALIDADE: Coesão e Baixo Acoplamento
+DESCRIÇÃO: A classe SimulationManager orquestra a simulação, mas delega
+responsabilidades específicas (conexão TraCI, lógica de tráfego) para
+outras classes. Isso mantém o código organizado e fácil de manter.
+"""
 import logging
 import os
 import sys
@@ -6,77 +15,98 @@ import traci
 from traci.exceptions import TraCIException, FatalTraCIError
 import pandas as pd
 
-if 'SUMO_HOME' in os.environ:
-    sys.path.append(os.path.join(os.environ['SUMO_HOME'], 'tools'))
-else:
-    # A correção no traci_connection.py já garante o uso da versão local,
-    # mas esta verificação de ambiente é mantida para o módulo tools do SUMO.
-    pass
-
 from tcc_sumo.simulation.traci_connection import TraciConnection
 from tcc_sumo.tools.log_analyzer import LogAnalyzer
+from tcc_sumo.traffic_logic.controllers import StaticController, AdaptiveController, BaseController
 from tcc_sumo.utils.helpers import task_start, task_success, task_fail, PROJECT_ROOT, format_time
-from tcc_sumo.traffic_logic.controllers import StaticController, AdaptiveController
 
 logger = logging.getLogger(__name__)
 
 class SimulationManager:
+    """
+    Orquestra a inicialização, execução e finalização da simulação SUMO.
+    """
     def __init__(self, config: dict, scenario_name: str, mode_name: str):
-        self.config, self.scenario_name, self.mode_name = config, scenario_name, mode_name.upper()
+        self.config = config
+        self.scenario_name = scenario_name
+        self.mode_name = mode_name.upper()
         self.step = 0
-        logger.debug(f"Iniciando SimulationManager com cenário='{scenario_name}' e modo='{mode_name}'.")
+        self.controller: BaseController
+
         self.traci_connection = TraciConnection(
             config.get('sumo_executable', 'sumo-gui'),
             config['scenarios'][scenario_name],
             config.get('traci_port', 8813)
         )
-        self.controller = AdaptiveController() if self.mode_name == 'ADAPTIVE' else StaticController()
+        self._setup_controller()
         task_success(f"Sistema inicializado em modo '{self.mode_name}'")
 
+    def _setup_controller(self):
+        """Inicializa o controlador de tráfego correto com base no modo."""
+        if self.mode_name == 'ADAPTIVE':
+            self.controller = AdaptiveController()
+        else:
+            self.controller = StaticController()
+        logger.info(f"Controlador '{self.controller.__class__.__name__}' selecionado.")
+
     def run(self):
+        """Ponto principal de execução do ciclo de vida da simulação."""
         try:
             task_start("Conectando ao SUMO")
             self.traci_connection.start()
             task_success("Conectado ao SUMO")
+            self.controller.setup()
             self._simulation_loop()
         except KeyboardInterrupt:
             task_fail("Simulação interrompida pelo teclado")
             logger.warning("Simulação interrompida pelo usuário via CTRL+C.")
         except (FatalTraCIError, TraCIException) as e:
-            # CORREÇÃO: Eleva o nível para WARNING, pois é um encerramento não planeado (como fechar a GUI).
             task_success("Simulação encerrada pelo usuário (janela fechada)")
             logger.warning(f"A simulação foi encerrada via TraCI: {e}")
-        except Exception as e:
-            task_fail("Erro crítico inesperado")
+        except Exception:
+            task_fail("Erro crítico inesperado durante a simulação")
             logger.critical("Erro não tratado no manager.run", exc_info=True)
         finally:
             self._cleanup()
-            
+
     def _simulation_loop(self):
+        """Executa o loop principal da simulação, avançando os passos."""
         task_start(f"Simulação iniciada em modo '{self.mode_name}'...")
         logger.info(f"Loop de simulação iniciado. Modo: {self.mode_name}.")
-        while True:
+        # Melhoria: O loop agora verifica se ainda há veículos na simulação.
+        while traci.simulation.getMinExpectedNumber() > 0:
             traci.simulationStep()
-            logger.debug(f"Passo {self.step}: Executando simulationStep.")
             self.controller.manage_traffic_lights(self.step)
-            if self.step % 100 == 0: self._log_progress()
+            if self.step % 100 == 0:
+                self._log_progress()
             self.step += 1
+        logger.info("Todos os veículos concluíram suas rotas ou foram removidos. Encerrando simulação.")
 
     def _log_progress(self):
+        """Registra o progresso da simulação no log."""
         try:
-            active = traci.vehicle.getIDCount(); arrived = traci.simulation.getArrivedNumber()
+            active = traci.vehicle.getIDCount()
+            arrived = traci.simulation.getArrivedNumber()
             logger.info(f"Progresso - Passo: {self.step} ({format_time(self.step)}) | Ativos: {active} | Chegaram: {arrived}")
         except traci.TraCIException as e:
             logger.warning(f"Não foi possível obter dados de progresso no passo {self.step}: {e}")
 
     def _cleanup(self):
-        task_start("Encerrando conexão"); self.traci_connection.close(); task_success("Conexão encerrada")
+        """Encerra a conexão e dispara a análise de resultados."""
+        task_start("Encerrando conexão")
+        self.traci_connection.close()
+        task_success("Conexão encerrada")
         if self.step > 0:
-            task_start("Analisando resultados"); self._analyze_and_report()
+            task_start("Analisando resultados")
+            self._analyze_and_report()
         else:
             logger.warning("Nenhum passo de simulação executado. Análise ignorada.")
 
     def _analyze_and_report(self):
+        """
+        FUNCIONALIDADE RESTAURADA:
+        Coordena a análise dos arquivos de saída e a geração de relatórios.
+        """
         try:
             logger.info("Iniciando fase de análise e geração de relatórios.")
             output_dir = Path(self.config['scenarios'][self.scenario_name]).parent
@@ -86,22 +116,23 @@ class SimulationManager:
                 queue_info_path=str(output_dir / "queueinfo.xml")
             )
             data = analyzer.run_analysis({"scenario": self.scenario_name, "mode": self.mode_name}, self.step)
-            self.generate_reports(data); self._display_summary_labels(data)
+            self.generate_reports(data)
+            self._display_summary_labels(data)
             task_success("Análise e relatórios concluídos")
         except Exception as e:
             task_fail("Falha na análise dos resultados")
             logger.critical(f"Erro na fase de análise: {e}", exc_info=True)
 
     def generate_reports(self, data: dict):
-        json_path = PROJECT_ROOT / "logs" / "consolidated_data.json"
-        if json_path.exists():
-            logger.info(f"Dados estruturados para base de dados disponíveis em '{json_path}'.")
-        else:
-            logger.error("Ficheiro JSON consolidado não foi gerado.")
-            
+        """
+        FUNCIONALIDADE RESTAURADA:
+        Gera o relatório de análise em formato de "ticket".
+        """
         report_ticket_path = PROJECT_ROOT / "logs" / "human_analysis_report.log"
         metrics, pollution, queue = data.get("metrics",{}), data.get("pollution",{}), data.get("queue_metrics",{})
-        total, completed, removed = metrics.get('Veículos Processados (Entraram na Malha)',0), metrics.get('Veículos que Concluíram a Viagem',0), metrics.get('Veículos Removidos (Não Concluídos)', 0) # Usa o novo campo
+        total = metrics.get('Veículos Processados (Entraram na Malha)',0)
+        completed = metrics.get('Veículos que Concluíram a Viagem',0)
+        removed = metrics.get('Veículos Removidos (Não Concluídos)', 0)
         rate = (completed / total * 100) if total > 0 else 0
 
         summary_text = "Análise concluída com sucesso."
@@ -112,7 +143,6 @@ class SimulationManager:
         else:
             summary_text = "A simulação demonstrou um FLUXO DE TRÁFEGO ESTÁVEL, com congestionamentos mínimos ou inexistentes."
 
-        # TEMPLATE DE RELATÓRIO HUMANIZADO (TICKET)
         ticket_template = f"""
 #########################################################################
 #                                                                       #
@@ -169,11 +199,16 @@ DURAÇÃO TOTAL: {format_time(metrics.get('simulation_duration_seconds', 0))}
         logger.info(f"Relatório de análise humana (ticket) salvo em '{report_ticket_path}'.")
 
     def _display_summary_labels(self, data: dict):
+        """
+        FUNCIONALIDADE RESTAURADA:
+        Exibe a tabela de resumo da simulação no console.
+        """
         metrics = data.get("metrics", {})
-        total, completed, removed = metrics.get('Veículos Processados (Entraram na Malha)',0), metrics.get('Veículos que Concluíram a Viagem',0), metrics.get('Veículos Removidos (Não Concluídos)', 0) # Usa o novo campo
+        total = metrics.get('Veículos Processados (Entraram na Malha)',0)
+        completed = metrics.get('Veículos que Concluíram a Viagem',0)
+        removed = metrics.get('Veículos Removidos (Não Concluídos)', 0)
         rate = (completed / total * 100) if total > 0 else 0
-        RED, ENDC = '\033[91m', '\033[0m'
-        removed_str = f"{RED}{removed}{ENDC}"
+        removed_str = str(removed)
         summary = f"""
 +-----------------------------------------------------+
 |              RESUMO DA SIMULAÇÃO                    |
