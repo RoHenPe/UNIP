@@ -16,8 +16,13 @@ class StaticController:
 class AdaptiveController:
     """Controlador Adaptativo que ajusta os semáforos com base no tráfego."""
     def __init__(self):
+        # Campos inicializados, mas as chamadas TraCI são removidas daqui.
         self.traffic_light_ids: List[str] = []
         self.traffic_light_states: Dict[str, Dict[str, Any]] = {}
+        logger.info("Controlador Adaptativo inicializado (Aguardando conexão TraCI).") 
+
+    def setup(self):
+        """Inicializa as estruturas de dados após a conexão TraCI ser estabelecida."""
         try:
             self.traffic_light_ids = traci.trafficlight.getIDList()
             for tl_id in self.traffic_light_ids:
@@ -25,12 +30,18 @@ class AdaptiveController:
                     'current_phase_index': traci.trafficlight.getPhase(tl_id),
                     'last_phase_change_step': 0
                 }
-            logger.info(f"Controlador Adaptativo inicializado para {len(self.traffic_light_ids)} semáforos.")
-        except traci.TraCIException:
-            logger.warning("Não foi possível obter a lista de semáforos na inicialização.")
+            logger.info(f"Controlador Adaptativo configurado para {len(self.traffic_light_ids)} semáforos.")
+        except traci.TraCIException as e:
+            # Garante que qualquer falha de configuração TraCI aqui seja CRÍTICA.
+            logger.critical(f"Falha CRÍTICA ao configurar o AdaptiveController: {e}")
+            raise # Re-raise a exceção para interromper o Manager
 
     def manage_traffic_lights(self, step: int) -> None:
         """Lógica de controle adaptativo para gerenciar os semáforos."""
+        # Se a simulação for reiniciada ou o setup falhar, evita erros no loop.
+        if not self.traffic_light_ids: 
+            return
+
         for tl_id in self.traffic_light_ids:
             try:
                 state = self.traffic_light_states[tl_id]
