@@ -1,0 +1,6 @@
+services:
+  unip:
+    image: unip
+    build:
+      context: .
+      dockerfile: ./Dockerfile
